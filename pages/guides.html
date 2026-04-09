@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гайды · Tim Gray · 7 Days to Die</title>
+    <meta name="description" content="Полные гайды по 7 Days to Die: первые шаги, перки, крафт, строительство, советы.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: #050805;
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed; top:0; left:0; width:100%; height:100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
+            pointer-events: none; z-index: -1;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0f0a; }
+        ::-webkit-scrollbar-thumb { background: #2ecc71; border-radius: 4px; box-shadow: 0 0 10px #2ecc71; }
+        .neon-text { text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71, 0 0 20px #27ae60; }
+        .neon-border { box-shadow: 0 0 5px #2ecc71, 0 0 15px #27ae60, inset 0 0 5px #2ecc71; }
+        .glass-panel {
+            background: rgba(10, 20, 10, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(46, 204, 113, 0.25);
+            border-radius: 24px;
+        }
+        .pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 15px #2ecc71; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.5), 0 0 20px rgba(46,204,113,0.2);
+            border-color: #2ecc71;
+        }
+        .tab-btn {
+            transition: all 0.2s;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color: #cbd5e1;
+        }
+        .tab-btn.active {
+            background: rgba(46, 204, 113, 0.15);
+            color: #a3e635;
+            border-bottom: 3px solid #2ecc71;
+            text-shadow: 0 0 5px #2ecc71;
+        }
+        .tab-pane { display: none; animation: fadeSlide 0.5s ease; }
+        .tab-pane.active { display: block; }
+        @keyframes fadeSlide { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(46,204,113,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(46,204,113,0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-grid">
+
+<!-- Навигация -->
+<nav class="glass-panel fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 px-6 py-3 flex items-center justify-between shadow-2xl neon-border" style="border-radius: 60px;">
+    <div class="flex items-center gap-3" data-aos="fade-right">
+        <i class="fas fa-skull text-3xl text-green-400"></i>
+        <a href="../index.html" class="font-bold text-xl text-green-300 neon-text tracking-wider">TIM GRAY</a>
+    </div>
+    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="../index.html" class="hover:text-green-300 transition">Главная</a>
+        <a href="guides.html" class="text-green-300 border-b-2 border-green-400 pb-1">Гайды</a>
+        <a href="zombies.html" class="hover:text-green-300 transition">Зомби</a>
+        <a href="weapons.html" class="hover:text-green-300 transition">Оружие</a>
+        <a href="about.html" class="hover:text-green-300 transition">О канале</a>
+    </div>
+    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 pulse-btn transition">
+        <i class="fab fa-youtube"></i> Подписаться
+    </a>
+</nav>
+
+<div class="h-24"></div>
+
+<!-- Заголовок страницы -->
+<header class="py-16 text-center border-b border-green-900/40">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">
+        <span class="text-gradient" style="background: linear-gradient(135deg, #a3e635, #2ecc71); -webkit-background-clip: text; background-clip: text; color: transparent;">Гайды по 7 Days to Die</span>
+    </h1>
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">От первых шагов до эндгейма — всё, что нужно для выживания</p>
+</header>
+
+<!-- Основной контент с табами -->
+<section class="py-12 max-w-6xl mx-auto px-4">
+    <!-- Табы -->
+    <div class="border-b border-green-800/50 mb-8 flex flex-wrap gap-2">
+        <button class="tab-btn active px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="beginner">Первые шаги</button>
+        <button class="tab-btn px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="perks">Перки и навыки</button>
+        <button class="tab-btn px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="crafting">Крафт и ресурсы</button>
+        <button class="tab-btn px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="base">Строительство базы</button>
+        <button class="tab-btn px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="horde">Кровавая луна</button>
+    </div>
+
+    <!-- ПАНЕЛЬ 1: ПЕРВЫЕ ШАГИ -->
+    <div id="beginner" class="tab-pane active">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-panel p-6" data-aos="fade-right">
+                <h3 class="text-2xl font-bold mb-4 flex items-center"><i class="fas fa-flag-checkered text-green-400 mr-2"></i> Старт игры</h3>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex gap-3"><span class="text-green-400 font-bold w-6">1.</span> Выберите сложность «Искатель приключений» или «Кочевник».</li>
+                    <li class="flex gap-3"><span class="text-green-400 font-bold w-6">2.</span> Выполните стартовые задания (сбор травы, камня, дерева).</li>
+                    <li class="flex gap-3"><span class="text-green-400 font-bold w-6">3.</span> Получите 4 очка навыков и откройте первого торговца.</li>
+                    <li class="flex gap-3"><span class="text-green-400 font-bold w-6">4.</span> Скрафтите каменный топор, примитивный лук и деревянную дубину.</li>
+                    <li class="flex gap-3"><span class="text-green-400 font-bold w-6">5.</span> Поставьте спальный мешок в безопасном месте.</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-6" data-aos="fade-left">
+                <h3 class="text-2xl font-bold mb-4 flex items-center"><i class="fas fa-moon text-blue-300 mr-2"></i> Первая ночь</h3>
+                <ul class="space-y-3 text-gray-300">
+                    <li>🌙 Не бегайте по шумным поверхностям (металл, мусор).</li>
+                    <li>🏠 Забаррикадируйте окна и двери деревянными блоками.</li>
+                    <li>🔇 Используйте лук для тихого устранения одиночных зомби.</li>
+                    <li>💡 Факел привлекает внимание — лучше сидеть в темноте.</li>
+                </ul>
+                <div class="mt-4 p-3 bg-green-950/30 rounded-lg border border-green-800/50">
+                    <i class="fas fa-lightbulb text-yellow-400 mr-2"></i>
+                    <span class="font-medium">Совет Tim Gray:</span> «Первые пару ночей можно переждать на крыше небольшого здания — зомби не умеют лазать по лестницам, если сломать нижний пролёт.»
+                </div>
+            </div>
+        </div>
+        <!-- Дополнительные карточки -->
+        <div class="grid md:grid-cols-3 gap-4 mt-6">
+            <div class="glass-panel p-4 hover-lift">
+                <i class="fas fa-apple-alt text-red-400 text-2xl mb-2"></i>
+                <h4 class="font-bold">Еда и вода</h4>
+                <p class="text-sm">Собирайте росу по утрам, сажайте кукурузу и картофель. Избегайте сырого мяса.</p>
+            </div>
+            <div class="glass-panel p-4 hover-lift">
+                <i class="fas fa-tools text-gray-400 text-2xl mb-2"></i>
+                <h4 class="font-bold">Ресурсы</h4>
+                <p class="text-sm">Латунь из радиаторов, клей из костей и гнилой плоти, сталь из сейфов.</p>
+            </div>
+            <div class="glass-panel p-4 hover-lift">
+                <i class="fas fa-store text-yellow-400 text-2xl mb-2"></i>
+                <h4 class="font-bold">Торговец</h4>
+                <p class="text-sm">Выполняйте квесты для дукатов. Повышайте уровень торговца до 5 для лучшего лута.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПАНЕЛЬ 2: ПЕРКИ И НАВЫКИ -->
+    <div id="perks" class="tab-pane">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-dumbbell text-red-400 mr-2"></i> Сила</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><span class="text-green-300">Дубины/Дробовики</span> — увеличение урона и шанса оглушения.</li>
+                    <li><span class="text-green-300">Тяжёлая броня</span> — снижение штрафов к скорости.</li>
+                    <li><span class="text-green-300">Шахтёр 69'er</span> — добыча ресурсов и урон по блокам.</li>
+                    <li><span class="text-green-300">Мать-природа</span> — сбор урожая и фермерство.</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-running text-yellow-400 mr-2"></i> Ловкость</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><span class="text-green-300">Пистолеты/Ножи</span> — скрытное убийство и крит. шанс.</li>
+                    <li><span class="text-green-300">Лёгкая броня</span> — уклонение и мобильность.</li>
+                    <li><span class="text-green-300">Паркур</span> — высота прыжка и безопасное падение.</li>
+                    <li><span class="text-green-300">Скрытность</span> — меньше шума, больше урона в спину.</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-brain text-blue-400 mr-2"></i> Интеллект</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><span class="text-green-300">Роботизированные турели</span> — автоматическая защита.</li>
+                    <li><span class="text-green-300">Медицина</span> — улучшенные аптечки и перевязка.</li>
+                    <li><span class="text-green-300">Взрывчатка</span> — гранаты, динамит, ракеты.</li>
+                    <li><span class="text-green-300">Торговля</span> — лучшие цены и секретный ассортимент.</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-shield-virus text-purple-400 mr-2"></i> Выносливость</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><span class="text-green-300">Кулачный бой</span> — кастеты и пивные кружки.</li>
+                    <li><span class="text-green-300">Выживание</span> — меньше голода и жажды.</li>
+                    <li><span class="text-green-300">Закалка</span> — сопротивление температуре и погодным эффектам.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-sm text-gray-400 mt-4">Каждое очко навыка в атрибуте повышает урон соответствующим оружием и открывает новые уровни перков.</p>
+    </div>
+
+    <!-- ПАНЕЛЬ 3: КРАФТ И РЕСУРСЫ -->
+    <div id="crafting" class="tab-pane">
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="glass-panel p-5">
+                <h4 class="font-bold text-lg mb-2">🔨 Инструменты</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Каменный топор → Железный → Стальной</li>
+                    <li>Кирка (добыча руды)</li>
+                    <li>Лопата (глина, песок)</li>
+                    <li>Гаечный ключ (разбор машин)</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-5">
+                <h4 class="font-bold text-lg mb-2">⚔️ Оружие</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Деревянная дубина → Бейсбольная бита → Стальной клуб</li>
+                    <li>Примитивный лук → Составной лук → Арбалет</li>
+                    <li>Трубчатый дробовик → Помповый → Автоматический</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-5">
+                <h4 class="font-bold text-lg mb-2">🛡️ Броня</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Тканевая → Кожаная → Военная → Стальная</li>
+                    <li>Моды: обшивка, карманы, защита от радиации</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-5">
+                <h4 class="font-bold text-lg mb-2">🍲 Еда и медицина</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Бекон и яйца, мясное рагу, кукурузный хлеб</li>
+                    <li>Алоэ вера (лечение), аптечка, антибиотики</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-5">
+                <h4 class="font-bold text-lg mb-2">🧪 Ресурсы</h4>
+                <ul class="text-sm space-y-1">
+                    <li>Клей (кость + гнилая плоть)</li>
+                    <li>Кованое железо (железо + глина)</li>
+                    <li>Сталь (железо + уголь)</li>
+                    <li>Порох (уголь + сера)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ПАНЕЛЬ 4: СТРОИТЕЛЬСТВО БАЗЫ -->
+    <div id="base" class="tab-pane">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3">🏗️ Основные принципы</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-300">
+                    <li>Стройте опоры из усиленных блоков (железо/сталь).</li>
+                    <li>Делайте базу приподнятой — зомби не умеют прыгать на 2 блока.</li>
+                    <li>Используйте люки как мосты, которые можно закрыть.</li>
+                    <li>Ставьте колья и колючую проволоку на пути орды.</li>
+                    <li>Не забывайте про блок притязания (Land Claim Block) для защиты от спавна.</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3">🧱 Типы защиты</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><span class="text-green-300">Наковальни и сейфы</span> — очень прочные, но тяжёлые.</li>
+                    <li><span class="text-green-300">Железные шипы</span> — наносят урон и замедляют.</li>
+                    <li><span class="text-green-300">Электрические заборы</span> — оглушают зомби.</li>
+                    <li><span class="text-green-300">Лопасти и турели</span> — автоматическая оборона (требуют энергию).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="glass-panel p-5 mt-4">
+            <i class="fas fa-video text-green-400 mr-2"></i>
+            <span class="font-medium">Tim Gray рекомендует:</span> «Не ставьте спальник и верстаки на первом этаже — орда их снесёт. Лучше сделать отдельную "боевую" башню для кровавой луны.»
+        </div>
+    </div>
+
+    <!-- ПАНЕЛЬ 5: КРОВАВАЯ ЛУНА -->
+    <div id="horde" class="tab-pane">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3">🌕 Подготовка</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Запаситесь патронами, аптечками, едой и водой.</li>
+                    <li>Укрепите пути подхода к базе (лабиринты, ловушки).</li>
+                    <li>Поставьте спальный мешок рядом, но не в зоне боя.</li>
+                    <li>Убедитесь, что у вас есть запасной выход.</li>
+                </ul>
+            </div>
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3">⚡ Тактика боя</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Используйте взрывчатку и коктейли Молотова против толп.</li>
+                    <li>Дробовик эффективен против бронированных и особых зомби.</li>
+                    <li>Не стойте на одном месте — зомби разрушают блоки.</li>
+                    <li>Приоритетные цели: подрывники, крикуньи, полицейские.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+<footer class="bg-black/80 border-t border-green-900/50 py-10 mt-10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="#" class="text-gray-400 hover:text-green-400 text-2xl"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="text-gray-400 hover:text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-gray-400 hover:text-green-400 text-2xl"><i class="fab fa-telegram"></i></a>
+        </div>
+        <p class="text-gray-500 text-sm">© 2025 Tim Gray · Фан-сайт 7 Days to Die</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+    // Табы
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>

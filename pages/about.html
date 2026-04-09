@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О канале · Tim Gray · 7 Days to Die</title>
+    <meta name="description" content="Информация о YouTube-канале Tim Gray: статистика, контент, ссылки.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: #050805;
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed; top:0; left:0; width:100%; height:100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
+            pointer-events: none; z-index: -1;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0f0a; }
+        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; box-shadow: 0 0 10px #3b82f6; }
+        .neon-text { text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 20px #2563eb; }
+        .neon-border { box-shadow: 0 0 5px #3b82f6, 0 0 15px #2563eb, inset 0 0 5px #3b82f6; }
+        .glass-panel {
+            background: rgba(10, 20, 30, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: 24px;
+        }
+        .pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 15px #3b82f6; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5), 0 0 15px rgba(59,130,246,0.2); border-color: #3b82f6; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.03) 1px, transparent 1px); }
+        .stat-card { transition: all 0.3s; }
+        .stat-card:hover { background: rgba(59, 130, 246, 0.1); }
+    </style>
+</head>
+<body class="bg-grid">
+
+<!-- Навигация -->
+<nav class="glass-panel fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 px-6 py-3 flex items-center justify-between shadow-2xl neon-border" style="border-radius: 60px;">
+    <div class="flex items-center gap-3" data-aos="fade-right">
+        <i class="fas fa-user-astronaut text-3xl text-blue-400"></i>
+        <a href="../index.html" class="font-bold text-xl text-blue-300 neon-text tracking-wider">TIM GRAY</a>
+    </div>
+    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="../index.html" class="hover:text-blue-300 transition">Главная</a>
+        <a href="guides.html" class="hover:text-blue-300 transition">Гайды</a>
+        <a href="zombies.html" class="hover:text-blue-300 transition">Зомби</a>
+        <a href="weapons.html" class="hover:text-blue-300 transition">Оружие</a>
+        <a href="about.html" class="text-blue-300 border-b-2 border-blue-400 pb-1">О канале</a>
+    </div>
+    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 pulse-btn transition">
+        <i class="fab fa-youtube"></i> Подписаться
+    </a>
+</nav>
+
+<div class="h-24"></div>
+
+<!-- Заголовок -->
+<header class="py-16 text-center border-b border-blue-900/40">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">
+        <span class="text-gradient" style="background: linear-gradient(135deg, #93c5fd, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent;">Tim Gray</span>
+    </h1>
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">YouTube-канал о 7 Days to Die и выживании в постапокалипсисе</p>
+</header>
+
+<!-- Основная информация -->
+<section class="py-12 max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-8">
+        <!-- Левая колонка -->
+        <div class="space-y-6" data-aos="fade-right">
+            <div class="glass-panel p-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-20 h-20 rounded-full bg-blue-900/60 flex items-center justify-center border-4 border-blue-400">
+                        <i class="fas fa-user-secret text-4xl text-blue-300"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold">Tim Gray</h2>
+                        <p class="text-blue-300">@Tim_Gray</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 leading-relaxed">
+                    Tim Gray — русскоязычный ютубер, создающий контент по игре 7 Days to Die (версии 1.0+ и 2.5/2.6). 
+                    На канале выходят гайды, разборы обновлений, советы по выживанию, летсплеи и стримы. 
+                    Несмотря на скромное количество подписчиков, контент отличается глубиной и вниманием к деталям.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-3">
+                <div class="glass-panel p-4 text-center stat-card">
+                    <i class="fas fa-users text-3xl text-blue-400 mb-2"></i>
+                    <div class="text-2xl font-bold">858+</div>
+                    <div class="text-xs text-gray-400">подписчиков</div>
+                </div>
+                <div class="glass-panel p-4 text-center stat-card">
+                    <i class="fas fa-video text-3xl text-blue-400 mb-2"></i>
+                    <div class="text-2xl font-bold">47+</div>
+                    <div class="text-xs text-gray-400">видео</div>
+                </div>
+                <div class="glass-panel p-4 text-center stat-card">
+                    <i class="fas fa-calendar-alt text-3xl text-blue-400 mb-2"></i>
+                    <div class="text-2xl font-bold">2024</div>
+                    <div class="text-xs text-gray-400">год старта</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Правая колонка -->
+        <div class="space-y-6" data-aos="fade-left">
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-link text-blue-400 mr-2"></i> Ссылки</h3>
+                <div class="space-y-3">
+                    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="flex items-center justify-between bg-red-900/30 hover:bg-red-900/60 p-3 rounded-lg transition">
+                        <span><i class="fab fa-youtube mr-2"></i> YouTube канал</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Tim_Gray/videos" target="_blank" class="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg transition">
+                        <span><i class="fas fa-play mr-2"></i> Все видео</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Tim_Gray/playlists" target="_blank" class="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg transition">
+                        <span><i class="fas fa-list mr-2"></i> Плейлисты</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Tim_Gray/community" target="_blank" class="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg transition">
+                        <span><i class="fas fa-users mr-2"></i> Сообщество</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="glass-panel p-6">
+                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-clock text-blue-400 mr-2"></i> Последние видео</h3>
+                <ul class="space-y-2 text-sm">
+                    <li class="border-b border-blue-800/30 pb-2">• 7 Days To Die 2.6 · Обзор обновления</li>
+                    <li class="border-b border-blue-800/30 pb-2">• Где найти латунь? Лучшие способы</li>
+                    <li class="border-b border-blue-800/30 pb-2">• Руда и ресурсы · Гайд для новичков</li>
+                    <li>• Боевые хитрости и оборона базы</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Контент-план -->
+    <div class="mt-8 glass-panel p-6" data-aos="fade-up">
+        <h3 class="text-xl font-bold mb-3"><i class="fas fa-calendar-check mr-2 text-blue-400"></i> Что выходит на канале</h3>
+        <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="p-3 rounded-lg bg-blue-950/20"><span class="font-bold text-blue-300">Понедельник</span> — новости и патчи</div>
+            <div class="p-3 rounded-lg bg-blue-950/20"><span class="font-bold text-blue-300">Среда</span> — гайд или разбор механики</div>
+            <div class="p-3 rounded-lg bg-blue-950/20"><span class="font-bold text-blue-300">Пятница</span> — стрим / летсплей</div>
+        </div>
+    </div>
+</section>
+
+<!-- Футер -->
+<footer class="bg-black/80 border-t border-blue-900/50 py-10 mt-10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="text-gray-400 hover:text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-telegram"></i></a>
+        </div>
+        <p class="text-gray-500 text-sm">© 2025 Tim Gray · Фан-сайт 7 Days to Die</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>

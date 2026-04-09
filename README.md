@@ -26,26 +26,6 @@
 - JavaScript (ванильный, для интерактивности)
 - Font Awesome 6 (иконки)
 
-## 📁 Структура проекта
-tim-gray-7dtd-fansite/
-├── index.html # Главная страница
-├── css/
-│ └── style.css # Дополнительные стили
-├── js/
-│ └── main.js # Скрипты (табы, скролл)
-├── assets/
-│ ├── images/ # Изображения (фоны, иконки)
-│ └── data/ # Данные в JSON (опционально)
-├── pages/ # Дополнительные страницы
-│ ├── guides.html
-│ ├── zombies.html
-│ └── about.html
-├── .vscode/
-│ └── settings.json # Настройки редактора
-├── .gitignore
-└── README.md
-
-text
 
 ## 📺 О канале Tim Gray
 

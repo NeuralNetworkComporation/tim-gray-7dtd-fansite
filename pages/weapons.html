@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оружие · Tim Gray · 7 Days to Die</title>
+    <meta name="description" content="Всё оружие 7 Days to Die: характеристики, крафт, моды. Лучшие стволы и холодное оружие.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: #050805;
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed; top:0; left:0; width:100%; height:100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
+            pointer-events: none; z-index: -1;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0f0a; }
+        ::-webkit-scrollbar-thumb { background: #eab308; border-radius: 4px; box-shadow: 0 0 10px #eab308; }
+        .neon-text { text-shadow: 0 0 5px #eab308, 0 0 10px #eab308, 0 0 20px #ca8a04; }
+        .neon-border { box-shadow: 0 0 5px #eab308, 0 0 15px #ca8a04, inset 0 0 5px #eab308; }
+        .glass-panel {
+            background: rgba(10, 20, 10, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(234, 179, 8, 0.25);
+            border-radius: 24px;
+        }
+        .pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 15px #eab308; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(234, 179, 8, 0); } 100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); } }
+        .hover-lift { transition: all 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5), 0 0 15px rgba(234,179,8,0.2); border-color: #eab308; }
+        .filter-btn.active { background: rgba(234, 179, 8, 0.2); color: #fde047; border: 1px solid #eab308; }
+        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(234,179,8,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(234,179,8,0.03) 1px, transparent 1px); }
+    </style>
+</head>
+<body class="bg-grid">
+
+<!-- Навигация -->
+<nav class="glass-panel fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 px-6 py-3 flex items-center justify-between shadow-2xl neon-border" style="border-radius: 60px;">
+    <div class="flex items-center gap-3" data-aos="fade-right">
+        <i class="fas fa-skull text-3xl text-yellow-400"></i>
+        <a href="../index.html" class="font-bold text-xl text-yellow-300 neon-text tracking-wider">TIM GRAY</a>
+    </div>
+    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="../index.html" class="hover:text-yellow-300 transition">Главная</a>
+        <a href="guides.html" class="hover:text-yellow-300 transition">Гайды</a>
+        <a href="zombies.html" class="hover:text-yellow-300 transition">Зомби</a>
+        <a href="weapons.html" class="text-yellow-300 border-b-2 border-yellow-400 pb-1">Оружие</a>
+        <a href="about.html" class="hover:text-yellow-300 transition">О канале</a>
+    </div>
+    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 pulse-btn transition">
+        <i class="fab fa-youtube"></i> Подписаться
+    </a>
+</nav>
+
+<div class="h-24"></div>
+
+<!-- Заголовок -->
+<header class="py-16 text-center border-b border-yellow-900/40">
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">
+        <span class="text-gradient" style="background: linear-gradient(135deg, #fde047, #eab308); -webkit-background-clip: text; background-clip: text; color: transparent;">Арсенал 7 Days to Die</span>
+    </h1>
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Холодное, огнестрельное, взрывчатка — всё для уничтожения орды</p>
+</header>
+
+<!-- Фильтры -->
+<section class="py-8 max-w-6xl mx-auto px-4">
+    <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up">
+        <button class="filter-btn active px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="all">Всё</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="melee">Холодное</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="ranged">Огнестрел</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="explosive">Взрывчатка</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="tool">Инструменты</button>
+    </div>
+</section>
+
+<!-- Сетка оружия -->
+<section class="py-8 max-w-6xl mx-auto px-4">
+    <div id="weaponsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <!-- Сюда будет вставлен контент -->
+    </div>
+</section>
+
+<!-- Футер -->
+<footer class="bg-black/80 border-t border-yellow-900/50 py-10 mt-10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="#" class="text-gray-400 hover:text-yellow-400 text-2xl"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="text-gray-400 hover:text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-gray-400 hover:text-yellow-400 text-2xl"><i class="fab fa-telegram"></i></a>
+        </div>
+        <p class="text-gray-500 text-sm">© 2025 Tim Gray · Фан-сайт 7 Days to Die</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({ duration: 800, once: true });
+
+        const weapons = [
+            { name: "Каменная кувалда", type: "melee", dmg: 25, speed: "Медленная", stamina: 20, desc: "Огромный урон, сбивает с ног. Идеальна для старта.", craft: "Камень x10, Дерево x10" },
+            { name: "Бейсбольная бита", type: "melee", dmg: 18, speed: "Средняя", stamina: 12, desc: "Хороший баланс скорости и урона. Можно модифицировать.", craft: "Кованое железо x10, Дерево x10" },
+            { name: "Стальной клуб", type: "melee", dmg: 32, speed: "Средняя", stamina: 15, desc: "Максимальный урон среди дубин. Оглушает.", craft: "Сталь x20, Кожа x5" },
+            { name: "Стальные кастеты", type: "melee", dmg: 20, speed: "Очень быстрая", stamina: 5, desc: "Для билдов на ловкость. Скорость и шанс кровотечения.", craft: "Сталь x10, Кожа x5" },
+            { name: "Мачете", type: "melee", dmg: 22, speed: "Быстрая", stamina: 8, desc: "Высокий шанс обезглавливания.", craft: "Кованое железо x15" },
+            { name: "Примитивный лук", type: "ranged", dmg: 18, speed: "Медленная", ammo: "Каменные стрелы", desc: "Тихое оружие для скрытного прохождения.", craft: "Дерево x10, Растительные волокна x5" },
+            { name: "Составной лук", type: "ranged", dmg: 28, speed: "Средняя", ammo: "Железные/Стальные стрелы", desc: "Улучшенная версия, выше урон и точность.", craft: "Кованое железо x20, Кожа x10" },
+            { name: "Арбалет", type: "ranged", dmg: 35, speed: "Медленная", ammo: "Болты", desc: "Огромный урон, долгая перезарядка.", craft: "Кованое железо x25, Пружины x5" },
+            { name: "Трубчатый дробовик", type: "ranged", dmg: 45, speed: "Очень медленная", ammo: "Патроны 12 кал.", desc: "Дешёвый дробовик для ранней игры.", craft: "Трубы x10, Клей x5" },
+            { name: "Помповый дробовик", type: "ranged", dmg: 65, speed: "Медленная", ammo: "Патроны 12 кал.", desc: "Лучший дробовик для ближнего боя.", craft: "Сталь x30, Пружины x10" },
+            { name: "Пистолет", type: "ranged", dmg: 22, speed: "Быстрая", ammo: "9mm", desc: "Стандартный пистолет, хорош в начале.", craft: "Кованое железо x15, Пружины x5" },
+            { name: "Снайперская винтовка", type: "ranged", dmg: 85, speed: "Очень медленная", ammo: "7.62mm", desc: "Огромный урон на дальней дистанции.", craft: "Сталь x40, Оптика x1" },
+            { name: "Трубчатая бомба", type: "explosive", dmg: 150, radius: "5 блоков", desc: "Примитивная взрывчатка. Осторожно с таймером!", craft: "Трубы x5, Порох x20" },
+            { name: "Динамит", type: "explosive", dmg: 300, radius: "7 блоков", desc: "Мощная взрывчатка, уничтожает блоки.", craft: "Порох x50, Бумага x10" },
+            { name: "Коктейль Молотова", type: "explosive", dmg: 40, radius: "3 блока", desc: "Поджигает область, эффективен против толп.", craft: "Бензин x10, Ткань x5" },
+            { name: "Каменный топор", type: "tool", dmg: 12, desc: "Универсальный инструмент: рубит дерево, ломает блоки.", craft: "Камень x5, Дерево x5" },
+            { name: "Железная кирка", type: "tool", dmg: 15, desc: "Добыча руды и камня. Эффективнее каменной.", craft: "Кованое железо x10, Дерево x10" },
+            { name: "Стальная кирка", type: "tool", dmg: 22, desc: "Максимальная скорость добычи.", craft: "Сталь x20, Дерево x10" },
+            { name: "Бензопила", type: "tool", dmg: 30, desc: "Мгновенно валит деревья. Требует бензин.", craft: "Двигатель x1, Сталь x20" },
+            { name: "Дрель", type: "tool", dmg: 25, desc: "Быстро ломает блоки и добывает руду.", craft: "Двигатель x1, Сталь x25" }
+        ];
+
+        const grid = document.getElementById('weaponsGrid');
+        
+        function getTypeName(type) {
+            const map = { melee: 'Холодное', ranged: 'Огнестрел', explosive: 'Взрывчатка', tool: 'Инструмент' };
+            return map[type] || type;
+        }
+
+        function renderWeapons(filter = 'all') {
+            if (!grid) return;
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? weapons : weapons.filter(w => w.type === filter);
+            filtered.forEach(w => {
+                const card = document.createElement('div');
+                card.className = 'glass-panel p-5 hover-lift';
+                card.setAttribute('data-aos', 'fade-up');
+                card.innerHTML = `
+                    <div class="flex items-start justify-between mb-2">
+                        <h3 class="text-xl font-bold text-yellow-300">${w.name}</h3>
+                        <span class="text-xs px-2 py-1 rounded bg-yellow-900/50 text-yellow-200">${getTypeName(w.type)}</span>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between"><span class="text-gray-400">⚔️ Урон:</span> <span class="font-medium">${w.dmg}</span></div>
+                        ${w.speed ? `<div class="flex justify-between"><span class="text-gray-400">⏱️ Скорость:</span> <span class="font-medium">${w.speed}</span></div>` : ''}
+                        ${w.stamina ? `<div class="flex justify-between"><span class="text-gray-400">💨 Выносливость:</span> <span class="font-medium">${w.stamina}</span></div>` : ''}
+                        ${w.ammo ? `<div class="flex justify-between"><span class="text-gray-400">🔫 Патроны:</span> <span class="font-medium">${w.ammo}</span></div>` : ''}
+                        ${w.radius ? `<div class="flex justify-between"><span class="text-gray-400">💥 Радиус:</span> <span class="font-medium">${w.radius}</span></div>` : ''}
+                        <p class="text-gray-300 mt-3 border-t border-yellow-800/30 pt-2">${w.desc}</p>
+                        ${w.craft ? `<p class="text-xs text-green-300 mt-2"><i class="fas fa-hammer mr-1"></i> ${w.craft}</p>` : ''}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            AOS.refresh();
+        }
+
+        // Первоначальный рендер
+        renderWeapons();
+
+        // Фильтры
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                renderWeapons(this.dataset.filter);
+            });
+        });
+    });
+</script>
+</body>
+</html>
