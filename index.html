@@ -1,299 +1,883 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tim Gray · 7 Days to Die — Неоновый Хаб</title>
-    <meta name="description" content="Фан-сайт канала Tim Gray. Гайды, бестиарий, советы по выживанию в 7 Days to Die.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: #050805;
-            font-family: 'Inter', sans-serif;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-        body::before {
-            content: "";
-            position: fixed; top:0; left:0; width:100%; height:100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
-            pointer-events: none; z-index: -1;
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0f0a; }
-        ::-webkit-scrollbar-thumb { background: #2ecc71; border-radius: 4px; box-shadow: 0 0 10px #2ecc71; }
-        .neon-text { text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71, 0 0 20px #27ae60; }
-        .neon-border { box-shadow: 0 0 5px #2ecc71, 0 0 15px #27ae60, inset 0 0 5px #2ecc71; }
-        .glass-panel {
-            background: rgba(10, 20, 10, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(46, 204, 113, 0.25);
-            border-radius: 24px;
-        }
-        .pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 15px #2ecc71; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
-        .rotate-slow { animation: spin 20s linear infinite; }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        .flicker { animation: flicker 3s linear infinite; }
-        @keyframes flicker { 0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; } 20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.5; } }
-        .hover-lift { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .hover-lift:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 30px 40px -15px rgba(0,0,0,0.5), 0 0 25px rgba(46,204,113,0.3); border-color: #2ecc71; }
-        .tab-btn { transition: all 0.2s; cursor: pointer; background: transparent; border: none; color: #cbd5e1; }
-        .tab-btn.active { background: rgba(46, 204, 113, 0.15); color: #a3e635; border-bottom: 3px solid #2ecc71; text-shadow: 0 0 5px #2ecc71; }
-        .tab-pane { display: none; animation: fadeSlide 0.5s ease; }
-        .tab-pane.active { display: block; }
-        @keyframes fadeSlide { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        .parallax-bg { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
-        .tilt-hover { transition: transform 0.3s; transform-style: preserve-3d; }
-        .tilt-hover:hover { transform: perspective(500px) rotateX(2deg) rotateY(5deg); }
-        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(46,204,113,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(46,204,113,0.05) 1px, transparent 1px); }
-        .text-gradient { background: linear-gradient(135deg, #a3e635, #2ecc71); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    </style>
-</head>
-<body class="bg-grid">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIM GRAY · 7 DAYS TO DIE · FIELD HUB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{--acid:#a8e820;--blood:#cc2200;--amber:#e88020;--cold:#20aadd;--bg:#060e08;--card:rgba(10,26,12,.88);--border:rgba(168,232,32,.1);--border-hi:rgba(168,232,32,.38);--text:#8ab88a;--hi:#c8e8c0;--muted:#4a6a4c;--glow:rgba(168,232,32,.35)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);font-family:'Barlow Condensed',sans-serif;color:var(--text);overflow-x:hidden;cursor:crosshair;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:80px 80px}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.02'/%3E%3C/svg%3E")}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#000}::-webkit-scrollbar-thumb{background:var(--acid)}
+.fd{font-family:'Bebas Neue',sans-serif}.fm{font-family:'Share Tech Mono',monospace}.fo{font-family:'Orbitron',sans-serif}
 
-<!-- ===== НАВИГАЦИЯ ===== -->
-<nav class="glass-panel fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 px-6 py-3 flex items-center justify-between shadow-2xl neon-border" style="border-radius: 60px;">
-    <div class="flex items-center gap-3" data-aos="fade-right">
-        <i class="fas fa-skull text-3xl text-green-400 flicker"></i>
-        <span class="font-bold text-xl text-green-300 neon-text tracking-wider">TIM GRAY</span>
-    </div>
-    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="index.html" class="text-green-300 border-b-2 border-green-400 pb-1">Главная</a>
-        <a href="pages/guides.html" class="hover:text-green-300 transition hover:scale-105 inline-block">Гайды</a>
-        <a href="pages/zombies.html" class="hover:text-green-300 transition hover:scale-105 inline-block">Зомби</a>
-        <a href="pages/weapons.html" class="hover:text-green-300 transition hover:scale-105 inline-block">Оружие</a>
-        <a href="pages/about.html" class="hover:text-green-300 transition hover:scale-105 inline-block">О канале</a>
-        <!-- Ссылка "Советы" удалена -->
-    </div>
-    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 pulse-btn transition">
-        <i class="fab fa-youtube"></i> Подписаться
-    </a>
+/* SCROLL PROGRESS */
+#spb{position:fixed;top:0;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--acid),var(--amber));z-index:9999;box-shadow:0 0 8px var(--glow)}
+
+/* NAV */
+nav{position:fixed;top:2px;left:0;right:0;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(4,10,5,.9);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(3,7,4,.97);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+nav::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--acid),transparent);animation:nscan 5s ease-in-out infinite}
+@keyframes nscan{0%,100%{opacity:0;transform:scaleX(.2)}50%{opacity:.4;transform:scaleX(1)}}
+.nav-brand{font-family:'Orbitron',sans-serif;font-weight:900;font-size:.9rem;color:var(--acid);text-decoration:none;letter-spacing:.12em;display:flex;align-items:center;gap:.6rem}
+.nav-brand img{width:32px;height:32px;border-radius:50%;border:1px solid var(--acid);filter:saturate(.7);object-fit:cover}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.12em;color:var(--muted);text-decoration:none;padding:.5rem .75rem;position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:.75rem;right:.75rem;height:1px;background:var(--acid);transform:scaleX(0);transition:transform .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--acid)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-yt{font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;background:#cc0000;color:#fff;text-decoration:none;padding:.4rem .9rem;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .2s}
+.nav-yt:hover{background:#ee2222}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* STATUS BAR */
+.sbar{position:fixed;top:60px;left:0;right:0;z-index:499;background:rgba(3,8,4,.92);border-bottom:1px solid var(--border);padding:.25rem 2rem;display:flex;align-items:center;justify-content:space-between;font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--muted);backdrop-filter:blur(10px)}
+.sdot{width:5px;height:5px;border-radius:50%;background:var(--acid);display:inline-block;margin-right:.35rem;animation:blink 1.5s infinite}
+.sdot.r{background:var(--blood);animation-delay:.5s}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:9rem 1.5rem 4rem;text-align:center;overflow:hidden}
+.hbg{position:absolute;inset:-20%;background:radial-gradient(ellipse 100% 80% at 50% 40%,rgba(20,60,20,.15),transparent 70%);will-change:transform}
+.hov{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(6,14,8,.2) 0%,rgba(6,14,8,.92) 70%)}
+.hcrt{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px)}
+.hframe{position:absolute;inset:36px;pointer-events:none}
+.hframe::before{content:'';position:absolute;top:0;left:0;width:36px;height:36px;border-top:1.5px solid rgba(168,232,32,.4);border-left:1.5px solid rgba(168,232,32,.4)}
+.hframe::after{content:'';position:absolute;top:0;right:0;width:36px;height:36px;border-top:1.5px solid rgba(168,232,32,.4);border-right:1.5px solid rgba(168,232,32,.4)}
+.hframe span::before{content:'';position:absolute;bottom:0;left:0;width:36px;height:36px;border-bottom:1.5px solid rgba(168,232,32,.4);border-left:1.5px solid rgba(168,232,32,.4)}
+.hframe span::after{content:'';position:absolute;bottom:0;right:0;width:36px;height:36px;border-bottom:1.5px solid rgba(168,232,32,.4);border-right:1.5px solid rgba(168,232,32,.4)}
+/* Hero corner HUD data */
+.hcorner{position:absolute;font-family:'Share Tech Mono',monospace;font-size:.5rem;color:rgba(168,232,32,.4);letter-spacing:.08em;pointer-events:none;line-height:1.7;z-index:3}
+.hcorner.tl{top:5rem;left:1.5rem;text-align:left}
+.hcorner.tr{top:5rem;right:1.5rem;text-align:right}
+.hcorner.bl{bottom:5rem;left:1.5rem;text-align:left;font-size:.45rem}
+.hcorner.br{bottom:5rem;right:1.5rem;text-align:right;font-size:.45rem}
+/* Hero scan line */
+.hscan{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(168,232,32,.35),transparent);animation:cscan 6s ease-in-out infinite;pointer-events:none;z-index:2}
+@keyframes cscan{0%{top:0;opacity:.5}100%{top:100%;opacity:0}}
+.hcon{position:relative;z-index:3;max-width:880px}
+.hbadge{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem 1rem;margin-bottom:1.8rem;border:1px solid rgba(168,232,32,.25);font-family:'Orbitron',sans-serif;font-size:.58rem;letter-spacing:.2em;color:var(--acid);background:rgba(168,232,32,.04);clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);animation:pulse-badge 3s infinite}
+@keyframes pulse-badge{0%,100%{box-shadow:none}50%{box-shadow:0 0 14px rgba(168,232,32,.2)}}
+.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.8rem,13vw,11rem);line-height:.87;color:#fff;text-shadow:0 0 80px rgba(168,232,32,.1);animation:glitch 7s infinite}
+@keyframes glitch{0%,91%,100%{transform:translate(0);text-shadow:0 0 80px rgba(168,232,32,.1)}92%{transform:translate(-3px,2px);text-shadow:-3px 2px 0 rgba(204,34,0,.8),3px -2px 0 rgba(168,232,32,.8)}93%{transform:translate(3px,-1px)}94%{transform:translate(-2px,3px);text-shadow:-2px 3px 0 rgba(32,170,221,.6)}95%{transform:translate(0)}}
+.htitle span{color:var(--acid);display:block}
+.hsub{font-family:'Orbitron',sans-serif;font-size:.75rem;letter-spacing:.3em;color:var(--muted);margin:1.5rem 0 .4rem}
+.hdesc{font-size:1.05rem;color:var(--text);max-width:480px;margin:.4rem auto 2.5rem;line-height:1.55;font-weight:300}
+.hctas{display:flex;flex-wrap:wrap;justify-content:center;gap:.9rem}
+.btn-a{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.6rem;background:var(--acid);color:#060e08;font-family:'Orbitron',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-decoration:none;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:all .2s}
+.btn-a:hover{background:#c0ff18;transform:translateY(-2px)}
+.btn-g{display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1.6rem;background:transparent;color:var(--acid);border:1px solid var(--border-hi);font-family:'Orbitron',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-decoration:none;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);transition:all .2s}
+.btn-g:hover{background:rgba(168,232,32,.07);transform:translateY(-2px)}
+.cdwrap{display:inline-flex;align-items:center;gap:.7rem;margin-top:2.5rem;padding:.65rem 1.4rem;border:1px solid rgba(204,34,0,.3);background:rgba(204,34,0,.05);clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.cdlbl{font-family:'Orbitron',sans-serif;font-size:.58rem;letter-spacing:.12em;color:rgba(204,34,0,.7)}
+.cdval{font-family:'Share Tech Mono',monospace;font-size:1.3rem;color:#ff4444;animation:cblink 1s infinite}
+@keyframes cblink{0%,49%{opacity:1}50%,100%{opacity:.6}}
+.threat-wrap{margin-top:1.5rem;display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.tlbl{font-family:'Orbitron',sans-serif;font-size:.52rem;letter-spacing:.2em;color:var(--muted)}
+.tbar{display:flex;gap:3px}
+.tseg{width:22px;height:7px;background:rgba(168,232,32,.05);border:1px solid rgba(168,232,32,.1)}
+.tseg.a{background:var(--acid);border-color:var(--acid)}.tseg.m{background:var(--amber);border-color:var(--amber)}.tseg.b{background:var(--blood);border-color:var(--blood)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.2em;color:var(--muted);animation:float 2s ease-in-out infinite;display:flex;flex-direction:column;align-items:center;gap:.4rem;z-index:3}
+.scroll-hint::before{content:'';width:1px;height:24px;background:linear-gradient(180deg,var(--acid),transparent)}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-4px)}}
+
+/* TICKER */
+.ticker{background:rgba(168,232,32,.04);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.45rem 0;overflow:hidden}
+.ticker-inner{display:flex;white-space:nowrap;animation:tscroll 50s linear infinite}
+@keyframes tscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.titem{padding:0 1.8rem;font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--text)}
+.titem::before{content:'◈ ';color:var(--acid)}
+
+/* ═══ CHRONICLE ═══ */
+.chronicle-wrap{height:500vh;position:relative}
+.chronicle-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;background:var(--bg)}
+/* LEFT: 3D контейнер */
+.chr-3d{position:relative;width:52%;flex-shrink:0;overflow:hidden;background:transparent}
+#threeCanvas{position:absolute;top:0;left:0;width:100% !important;height:100% !important;display:block}
+.chr-layer{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.chr-layer-grid{background-image:linear-gradient(rgba(168,232,32,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(168,232,32,.04) 1px,transparent 1px);background-size:80px 80px;will-change:transform}
+.chr-layer-scan{background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px);will-change:transform}
+.chr-day-overlay{position:absolute;inset:0;z-index:5;pointer-events:none;display:flex;align-items:center;justify-content:center}
+.chr-day-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(8rem,22vw,18rem);line-height:1;color:var(--acid);text-shadow:0 0 100px var(--glow),0 0 40px var(--glow);opacity:.13;letter-spacing:.04em;will-change:transform}
+.chr-scan-line{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--acid),transparent);animation:cscan 4s ease-in-out infinite;opacity:.35;pointer-events:none;z-index:6}
+.blood-flash{position:absolute;inset:0;pointer-events:none;z-index:10;background:rgba(204,34,0,0);transition:background .6s}
+.blood-flash.on{background:rgba(204,34,0,.15)}
+/* RIGHT: текстовый контент */
+.chr-text{flex:1;display:flex;flex-direction:column;justify-content:center;padding:3rem 3rem 3rem 2.5rem;position:relative;overflow:hidden;border-left:1px solid var(--border);background:rgba(6,14,8,.55);backdrop-filter:blur(2px)}
+.chr-text::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;opacity:.45;z-index:0}
+.chr-text::after{content:'';position:absolute;bottom:2rem;right:2rem;width:24px;height:24px;border-bottom:1px solid rgba(168,232,32,.2);border-right:1px solid rgba(168,232,32,.2);pointer-events:none;z-index:1}
+/* TEXT INNER — поверх ::before */
+.chr-text-inner{position:relative;z-index:2;will-change:transform,opacity;transition:transform .5s cubic-bezier(.4,0,.2,1),opacity .4s ease}
+.chr-text-inner.exit-left  {transform:translateX(-65px);opacity:0}
+.chr-text-inner.exit-right {transform:translateX(65px);opacity:0}
+.chr-text-inner.exit-up    {transform:translateY(-55px);opacity:0}
+.chr-text-inner.exit-down  {transform:translateY(55px);opacity:0}
+.chr-text-inner.enter-from-right {transform:translateX(65px);opacity:0;transition:none}
+.chr-text-inner.enter-from-left  {transform:translateX(-65px);opacity:0;transition:none}
+.chr-text-inner.enter-from-top   {transform:translateY(-55px);opacity:0;transition:none}
+.chr-text-inner.enter-from-bottom{transform:translateY(55px);opacity:0;transition:none}
+/* Chronicle text elements */
+.day-label{font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:.25em;color:var(--muted);margin-bottom:.4rem}
+.day-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,7rem);line-height:.85;color:var(--acid);text-shadow:0 0 40px var(--glow)}
+.day-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3vw,2.6rem);color:#fff;letter-spacing:.04em;margin-top:.3rem}
+.day-status{display:flex;align-items:center;gap:.6rem;font-family:'Orbitron',sans-serif;font-size:.52rem;letter-spacing:.15em;margin-top:1rem}
+.day-status-dot{width:8px;height:8px;border-radius:50%}
+.day-desc{font-size:.95rem;font-weight:300;color:var(--text);line-height:1.7;border-left:2px solid var(--acid);padding-left:1.2rem;margin-top:.9rem}
+.day-items{list-style:none;display:flex;flex-direction:column;gap:.35rem;margin-top:.8rem}
+.day-items li{font-family:'Share Tech Mono',monospace;font-size:.68rem;color:var(--muted);padding:.3rem .55rem;border:1px solid rgba(168,232,32,.1)}
+.day-items li::before{content:'→ ';color:var(--acid)}
+/* READOUTS */
+.day-readouts{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
+.day-readout-row{display:flex;align-items:center;gap:.6rem}
+.day-ro-label{font-family:'Orbitron',sans-serif;font-size:.42rem;letter-spacing:.1em;color:var(--muted);width:85px;flex-shrink:0;text-transform:uppercase}
+.day-ro-bar{flex:1;height:3px;background:rgba(168,232,32,.08);position:relative;overflow:hidden}
+.day-ro-fill{height:100%;background:var(--acid);width:20%;position:relative;transition:width .3s linear}
+.day-ro-fill::after{content:'';position:absolute;right:-1px;top:-2px;width:1px;height:7px;background:rgba(255,255,255,.7)}
+.day-ro-val{font-family:'Share Tech Mono',monospace;font-size:.5rem;color:var(--muted);width:55px;text-align:right;flex-shrink:0}
+/* PRIORITY */
+.day-priority{margin-top:.75rem;padding:.45rem .7rem;background:rgba(168,232,32,.04);border:1px solid rgba(168,232,32,.12);border-left:2px solid var(--acid);display:flex;align-items:flex-start;gap:.5rem}
+.day-pri-tag{font-family:'Orbitron',sans-serif;font-size:.42rem;letter-spacing:.12em;color:var(--acid);flex-shrink:0;padding-top:.05rem}
+.day-pri-text{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--text);line-height:1.4}
+/* PROGRESS DOTS */
+.day-progress{display:flex;gap:.4rem;margin-top:1rem}
+.dp-seg{flex:1;height:2px;background:rgba(168,232,32,.1)}
+.dp-seg.active{background:var(--acid);box-shadow:0 0 5px var(--acid)}
+.dp-seg.done{background:rgba(168,232,32,.25)}
+
+/* SECTION */
+.sec{padding:5rem 1.5rem;max-width:1200px;margin:0 auto}
+.sec-h{display:flex;align-items:flex-end;gap:1.5rem;margin-bottom:2.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);position:relative}
+.sec-h::before{content:'';position:absolute;bottom:-1px;left:0;width:72px;height:2px;background:var(--acid)}
+.sec-n{font-family:'Orbitron',sans-serif;font-size:.56rem;color:var(--muted);letter-spacing:.2em;padding-bottom:.2rem}
+.sec-t{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3.2rem);color:var(--hi);line-height:1}
+.sec-t span{color:var(--acid)}
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal].revealed{opacity:1;transform:none}
+[data-reveal-delay="1"]{transition-delay:.1s}[data-reveal-delay="2"]{transition-delay:.2s}[data-reveal-delay="3"]{transition-delay:.3s}[data-reveal-delay="4"]{transition-delay:.4s}
+
+/* HUD CARD */
+.hc{background:var(--card);border:1px solid var(--border);position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.hc::before,.hc::after{content:'';position:absolute;width:10px;height:10px;transition:width .25s,height .25s}
+.hc::before{top:0;left:0;border-top:1px solid var(--acid);border-left:1px solid var(--acid)}
+.hc::after{bottom:0;right:0;border-bottom:1px solid var(--acid);border-right:1px solid var(--acid)}
+.hc:hover{border-color:var(--border-hi);transform:translateY(-4px)}
+.hc:hover::before,.hc:hover::after{width:18px;height:18px}
+.beam{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--acid),transparent);transform:translateX(-100%)}
+.hc:hover .beam{animation:bscan .9s ease forwards}
+@keyframes bscan{to{transform:translateX(100%);opacity:0}}
+
+/* STAT BOX */
+.sbox{border:1px solid var(--border);padding:1.2rem 1rem;text-align:center;background:rgba(10,26,12,.5);position:relative}
+.sbox::before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--acid),transparent)}
+.snum{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--acid);line-height:1}
+.sunt{font-family:'Orbitron',sans-serif;font-size:.5rem;color:var(--muted);letter-spacing:.12em}
+
+/* BIOME CARDS */
+.biome-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border)}
+.biome-card{padding:1.2rem .8rem;text-align:center;background:var(--bg);position:relative;overflow:hidden;transition:background .3s}
+.biome-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.biome-card:hover{background:var(--card)}
+.biome-icon{font-size:1.8rem;margin-bottom:.5rem;display:block}
+.biome-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--hi);letter-spacing:.04em;transition:color .2s}
+.biome-card:hover .biome-name{color:var(--acid)}
+.biome-danger{font-family:'Orbitron',sans-serif;font-size:.48rem;letter-spacing:.1em;margin-top:.2rem}
+.biome-pines::before{background:var(--acid)}.biome-desert::before{background:var(--amber)}.biome-snow::before{background:var(--cold)}.biome-burnt::before{background:#e84820}.biome-wasteland::before{background:var(--blood)}
+
+/* ZOMBIE CARDS */
+.zcard{background:var(--card);border:1px solid rgba(204,34,0,.14);padding:1.2rem;display:flex;align-items:center;gap:1rem;transition:all .3s;position:relative;overflow:hidden}
+.zcard:hover{border-color:rgba(204,34,0,.45);transform:scale(1.01)}
+.zcard::after{content:attr(data-type);position:absolute;top:.4rem;right:.4rem;font-family:'Orbitron',sans-serif;font-size:.45rem;letter-spacing:.08em;color:var(--blood);border:1px solid rgba(204,34,0,.3);padding:.1rem .35rem;background:rgba(204,34,0,.05)}
+.zdbar{display:flex;gap:2px;margin-top:.4rem}
+.zds{flex:1;height:3px;background:rgba(204,34,0,.15)}.zds.l{background:var(--blood)}
+
+/* CHANNEL */
+.chcard{background:linear-gradient(135deg,rgba(12,6,2,.9),rgba(8,16,10,.9));border:1px solid rgba(204,34,0,.2);border-left:3px solid #cc0000;padding:2rem;position:relative;overflow:hidden}
+.chcard::after{content:'';position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(200,0,0,.07),transparent 70%)}
+/* Ops items */
+.ops-item{display:flex;align-items:flex-start;gap:.65rem}
+.ops-status{width:7px;height:7px;border-radius:50%;margin-top:.35rem;flex-shrink:0}
+.ops-status.active{background:var(--amber);box-shadow:0 0 7px var(--amber);animation:blink 2s infinite}
+.ops-status.warn{background:var(--blood);box-shadow:0 0 7px var(--blood);animation:blink 1.5s infinite}
+.ops-status.critical{background:var(--blood);box-shadow:0 0 10px var(--blood);animation:blink .7s infinite}
+.ops-status.ok{background:var(--acid);box-shadow:0 0 7px var(--acid)}
+
+/* WARN STRIP */
+.wstrip{background:repeating-linear-gradient(-45deg,rgba(204,34,0,.07),rgba(204,34,0,.07) 10px,transparent 10px,transparent 20px);border-top:1px solid rgba(204,34,0,.18);border-bottom:1px solid rgba(204,34,0,.18);padding:.55rem 2rem;display:flex;align-items:center;justify-content:center;gap:.9rem;font-family:'Orbitron',sans-serif;font-size:.56rem;letter-spacing:.18em;color:rgba(204,34,0,.65)}
+.dvdr{height:1px;background:linear-gradient(90deg,transparent,var(--border-hi),transparent);max-width:1200px;margin:0 auto}
+
+/* FOOTER */
+.footer{background:rgba(3,8,4,.98);border-top:1px solid var(--border);padding:0}
+.footer-warn{background:repeating-linear-gradient(-45deg,rgba(204,34,0,.06),rgba(204,34,0,.06) 8px,transparent 8px,transparent 16px);border-bottom:1px solid rgba(204,34,0,.15);padding:.4rem 2rem;font-family:'Orbitron',sans-serif;font-size:.46rem;letter-spacing:.15em;color:rgba(204,34,0,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.footer-inner{padding:3rem 1.5rem 1.5rem;max-width:1200px;margin:0 auto}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem}
+.flinks{display:flex;flex-direction:column;gap:.5rem}
+.flinks a{font-family:'Orbitron',sans-serif;font-size:.58rem;letter-spacing:.12em;color:var(--muted);text-decoration:none;transition:color .2s}
+.flinks a::before{content:'// ';color:var(--acid)}
+.flinks a:hover{color:var(--acid)}
+.fbot{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.footer-log{overflow:hidden;border-top:1px solid rgba(168,232,32,.06);padding:.5rem 0;margin-top:.8rem}
+.footer-log-inner{display:flex;white-space:nowrap;animation:tscroll 35s linear infinite;font-family:'Share Tech Mono',monospace;font-size:.5rem;color:rgba(168,232,32,.2)}
+
+@media(max-width:768px){.chronicle-sticky{flex-direction:column}.chr-3d{width:100%;height:55%}.chr-text{border-left:none;border-top:1px solid var(--border);height:45%;padding:1.5rem}.biome-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:640px){.stat-grid{grid-template-columns:repeat(4,1fr)!important}}
+@media(min-width:900px){.ch-grid{grid-template-columns:1fr 1fr!important}}
+</style>
+</head>
+<body>
+
+<div id="spb"></div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="Материалы/Профиль/Логотип.png" alt="TG" onerror="this.style.display='none'">
+    TIM<span style="color:rgba(255,255,255,.3)">_</span>GRAY
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">ГЛАВНАЯ</a></li>
+    <li><a href="pages/zombies.html">УГРОЗЫ</a></li>
+    <li><a href="pages/weapons.html">АРСЕНАЛ</a></li>
+    <li><a href="pages/guides.html">ПРОТОКОЛЫ</a></li>
+    <li><a href="pages/about.html">ПРОФИЛЬ</a></li>
+  </ul>
+  <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="nav-yt">▶ ПОДПИСАТЬСЯ</a>
 </nav>
 
-<div class="h-24"></div>
+<div class="sbar">
+  <div><span class="sdot"></span><span class="fm" id="sysTime">--:--:--</span></div>
+  <div><span class="sdot r"></span>УГРОЗА: КРИТИЧЕСКАЯ</div>
+  <div>ДЕНЬ АПОКАЛИПСИСА: <span class="fm" id="dayNum" style="color:var(--acid)"></span></div>
+</div>
 
-<!-- ===== ГЕРОЙ ===== -->
-<header class="relative overflow-hidden py-24 md:py-32 border-b border-green-900/40 parallax-bg" style="background-image: url('https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=1920');">
-    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
-    <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
-        <div class="inline-block mb-6" data-aos="zoom-in-down">
-            <span class="bg-black/40 backdrop-blur px-6 py-2 rounded-full border border-green-500/50 text-green-200 text-sm uppercase tracking-widest flex items-center gap-2">
-                <i class="fas fa-bolt text-yellow-400"></i> Официальный фан-хаб
-            </span>
-        </div>
-        <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight" data-aos="fade-up">
-            <span class="text-white drop-shadow-2xl">Tim Gray</span><br>
-            <span class="text-gradient neon-text">7 DAYS TO DIE</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
-            Гайды, лайфхаки, бестиарий и разборы обновлений. Выживи вместе с Тимом.
-        </p>
-        <div class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200">
-            <a href="pages/guides.html" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-2xl transition transform hover:scale-110 flex items-center gap-2">
-                <i class="fas fa-compass"></i> Начать выживание
-            </a>
-            <a href="pages/zombies.html" class="bg-gray-800/80 hover:bg-gray-900 text-white font-bold py-4 px-10 rounded-full text-lg border border-green-500/50 transition transform hover:scale-110">
-                <i class="fas fa-biohazard"></i> Бестиарий
-            </a>
-        </div>
-        <div class="absolute bottom-10 right-10 opacity-20 rotate-slow hidden lg:block">
-            <i class="fas fa-skull text-9xl text-green-500"></i>
-        </div>
+<header class="hero">
+  <div class="hbg" id="hbg"></div>
+  <div class="hov"></div>
+  <div class="hcrt"></div>
+  <div class="hframe"><span></span></div>
+  <div class="hscan"></div>
+  <!-- HUD corner data -->
+  <div class="hcorner tl"><div>34.2°N · 112.0°W</div><div style="color:rgba(204,34,0,.45)">ЗОНА ЗАРАЖЕНИЯ</div></div>
+  <div class="hcorner tr"><div>V2.0 STABLE</div><div style="color:rgba(168,232,32,.4)">SDV АКТИВЕН</div></div>
+  <div class="hcorner bl"><div style="color:rgba(168,232,32,.3)">// THE FUN PIMPS</div><div>NAVEZGANE · ARIZONA</div></div>
+  <div class="hcorner br"><div id="heroDate" style="color:rgba(168,232,32,.4)">--.--.----</div><div style="color:rgba(204,34,0,.4)">КАРАНТИН НАРУШЕН</div></div>
+  <!-- Bio warning -->
+  <div style="position:absolute;top:4.5rem;left:50%;transform:translateX(-50%);font-family:'Orbitron',sans-serif;font-size:.48rem;letter-spacing:.28em;color:rgba(204,34,0,.28);animation:blink 3s infinite;white-space:nowrap;z-index:3">☣ УРОВЕНЬ БИОУГРОЗЫ: КРИТИЧЕСКИЙ ☣</div>
+  <div class="hcon">
+    <div class="hbadge">◈ ОФИЦИАЛЬНЫЙ ФАН-ХАБ · TIM GRAY OPERATIONS CENTER</div>
+    <h1 class="htitle">7 DAYS<span>TO DIE</span></h1>
+    <p class="hsub">SURVIVAL · INTELLIGENCE · DATABASE</p>
+    <p class="hdesc">Гайды, бестиарий и разведывательные данные для выживания в постапокалипсисе</p>
+    <div class="hctas">
+      <a href="pages/guides.html" class="btn-a">⊕ Протоколы выживания</a>
+      <a href="pages/zombies.html" class="btn-g">☣ Бестиарий угроз</a>
+      <a href="pages/weapons.html" class="btn-g">✦ Арсенал</a>
     </div>
+    <div style="display:flex;justify-content:center">
+      <div class="cdwrap">
+        <span style="color:var(--blood);font-size:.85rem">☠</span>
+        <span class="cdlbl">Кровавая луна через:</span>
+        <span class="cdval" id="horde">?</span>
+      </div>
+    </div>
+    <div class="threat-wrap"><span class="tlbl">УРОВЕНЬ УГРОЗЫ</span><div class="tbar" id="tbar"></div></div>
+  </div>
+  <div class="scroll-hint">ПРОКРУТИ ВНИЗ</div>
 </header>
 
-<!-- ===== БЫСТРЫЕ ССЫЛКИ ===== -->
-<section class="py-16 max-w-6xl mx-auto px-4">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <a href="pages/guides.html" class="glass-panel p-6 text-center hover-lift tilt-hover group">
-            <i class="fas fa-book-open text-4xl text-green-400 mb-3 group-hover:scale-125 transition"></i>
-            <h3 class="font-bold text-lg">Гайды</h3>
-            <p class="text-xs text-gray-400">Для новичков и профи</p>
-        </a>
-        <a href="pages/zombies.html" class="glass-panel p-6 text-center hover-lift tilt-hover group">
-            <i class="fas fa-skull text-4xl text-red-400 mb-3 group-hover:scale-125 transition"></i>
-            <h3 class="font-bold text-lg">Зомби</h3>
-            <p class="text-xs text-gray-400">34+ типов</p>
-        </a>
-        <a href="pages/weapons.html" class="glass-panel p-6 text-center hover-lift tilt-hover group">
-            <i class="fas fa-crosshairs text-4xl text-yellow-400 mb-3 group-hover:scale-125 transition"></i>
-            <h3 class="font-bold text-lg">Оружие</h3>
-            <p class="text-xs text-gray-400">Крафт и моды</p>
-        </a>
-        <a href="pages/about.html" class="glass-panel p-6 text-center hover-lift tilt-hover group">
-            <i class="fas fa-user-astronaut text-4xl text-blue-400 mb-3 group-hover:scale-125 transition"></i>
-            <h3 class="font-bold text-lg">Tim Gray</h3>
-            <p class="text-xs text-gray-400">О канале</p>
-        </a>
+<div class="ticker"><div class="ticker-inner" id="tk"></div></div>
+
+<!-- ═══ DAYS CHRONICLE ═══ -->
+<div class="chronicle-wrap" id="chronicleWrap">
+  <div class="chronicle-sticky" id="chronicleSticky">
+    <div class="chr-3d" id="chr3d">
+      <canvas id="threeCanvas"></canvas>
+      <div class="chr-layer chr-layer-grid" id="layerGrid"></div>
+      <div class="chr-layer chr-layer-scan" id="layerScan"></div>
+      <div class="chr-day-overlay"><div class="chr-day-big" id="chrDayBig">01</div></div>
+      <div class="chr-scan-line"></div>
+      <div class="blood-flash" id="bloodFlash"></div>
     </div>
+    <div class="chr-text">
+      <div class="chr-text-inner" id="chrTextInner">
+        <div class="day-label">// ХРОНИКА ВЫЖИВАНИЯ · ДЕНЬ АПОКАЛИПСИСА</div>
+        <div class="day-number" id="dayNum2">01</div>
+        <div class="day-title" id="dayTitle">НАЧАЛО КОНЦА</div>
+        <div class="day-status" id="dayStatus">
+          <div class="day-status-dot" style="background:var(--acid);box-shadow:0 0 8px var(--acid)"></div>
+          <span class="fo" style="font-size:.5rem;letter-spacing:.15em;color:var(--acid)">СТАТУС: ВЫЖИВШИЙ</span>
+        </div>
+        <p class="day-desc" id="dayDesc">Ты только что очнулся в пустоши. Без еды, воды и оружия. Первые 24 часа решают всё.</p>
+        <ul class="day-items" id="dayItems">
+          <li>Найти укрытие до захода солнца</li>
+          <li>Скрафтить каменный топор</li>
+          <li>Добыть еду и воду</li>
+          <li>Заблокировать все входы</li>
+        </ul>
+        <div class="day-readouts">
+          <div class="day-readout-row">
+            <span class="day-ro-label">УГРОЗА</span>
+            <div class="day-ro-bar"><div class="day-ro-fill" id="roThreat" style="width:20%"></div></div>
+            <span class="day-ro-val" id="roThreatVal">НИЗКАЯ</span>
+          </div>
+          <div class="day-readout-row">
+            <span class="day-ro-label">ПРОГРЕСС</span>
+            <div class="day-ro-bar"><div class="day-ro-fill" id="roProgress" style="width:0%;background:var(--acid)"></div></div>
+            <span class="day-ro-val" id="roProgressVal">0%</span>
+          </div>
+          <div class="day-readout-row">
+            <span class="day-ro-label">ОРДА</span>
+            <div class="day-ro-bar"><div class="day-ro-fill" id="roHorde" style="width:5%;background:var(--blood)"></div></div>
+            <span class="day-ro-val" id="roHordeVal">ДАЛЕКО</span>
+          </div>
+        </div>
+        <div class="day-priority">
+          <span class="day-pri-tag">// ПРИОРИТЕТ</span>
+          <span class="day-pri-text" id="dayPriText">ПОСТРОЙ УКРЫТИЕ ДО ТЕМНОТЫ</span>
+        </div>
+        <div class="day-progress">
+          <div class="dp-seg active" id="dp0"></div>
+          <div class="dp-seg" id="dp1"></div>
+          <div class="dp-seg" id="dp2"></div>
+          <div class="dp-seg" id="dp3"></div>
+          <div class="dp-seg" id="dp4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="dvdr"></div>
+
+<section class="sec" style="padding-top:4rem;padding-bottom:3rem">
+  <div class="sec-h" data-reveal>
+    <div><div class="sec-n">// SECTOR_01 · FIELD INTEL</div><div class="sec-t">Разведывательные <span>данные</span></div></div>
+  </div>
+  <div class="stat-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border)">
+    <div class="sbox" data-reveal data-reveal-delay="1"><div class="snum" id="c1">0</div><div class="sunt">Типов зомби</div></div>
+    <div class="sbox" data-reveal data-reveal-delay="2"><div class="snum" id="c2">0</div><div class="sunt">Видов оружия</div></div>
+    <div class="sbox" data-reveal data-reveal-delay="3"><div class="snum" id="c3">0</div><div class="sunt">Биомов</div></div>
+    <div class="sbox" data-reveal data-reveal-delay="4"><div class="snum" id="c4">0</div><div class="sunt">Видео на канале</div></div>
+  </div>
 </section>
 
-<!-- ===== ПОСЛЕДНИЕ ВИДЕО ===== -->
-<section class="py-10 max-w-6xl mx-auto px-4">
-    <div class="flex items-center justify-between mb-6">
-        <h2 class="text-3xl font-bold flex items-center gap-2"><i class="fab fa-youtube text-red-500"></i> Свежие видео <span class="text-green-400 neon-text">Tim Gray</span></h2>
-        <a href="https://www.youtube.com/@Tim_Gray/videos" target="_blank" class="text-sm text-green-300 hover:underline">Все видео →</a>
+<section class="sec" style="padding-top:0">
+  <div class="sec-h" data-reveal>
+    <div><div class="sec-n">// SECTOR_02 · TERRAIN INTEL</div><div class="sec-t">Биомы <span>Навезгана</span></div></div>
+  </div>
+  <div class="biome-grid" data-reveal>
+    <div class="biome-card biome-pines">
+      <span class="biome-icon">🌲</span><div class="biome-name">СОСНОВЫЙ ЛЕС</div>
+      <div class="biome-danger" style="color:var(--acid)">УГРОЗА: НИЗКАЯ</div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.4rem">Стартовый биом. Древесина, чистая вода, обычные зомби.</div>
     </div>
-    <div class="grid md:grid-cols-3 gap-5">
-        <div class="glass-panel p-4 hover-lift" data-aos="flip-left">
-            <div class="aspect-video bg-black/40 rounded-lg mb-3 flex items-center justify-center border border-green-500/30">
-                <i class="fab fa-youtube text-5xl text-red-600"></i>
-            </div>
-            <h4 class="font-semibold">7 Days To Die 2.6 · Обновление</h4>
-            <p class="text-xs text-gray-400">2 дня назад</p>
-        </div>
-        <div class="glass-panel p-4 hover-lift" data-aos="flip-up">
-            <div class="aspect-video bg-black/40 rounded-lg mb-3 flex items-center justify-center border border-green-500/30">
-                <i class="fab fa-youtube text-5xl text-red-600"></i>
-            </div>
-            <h4 class="font-semibold">Где найти латунь? Советы 2.5</h4>
-            <p class="text-xs text-gray-400">5 дней назад</p>
-        </div>
-        <div class="glass-panel p-4 hover-lift" data-aos="flip-right">
-            <div class="aspect-video bg-black/40 rounded-lg mb-3 flex items-center justify-center border border-green-500/30">
-                <i class="fab fa-youtube text-5xl text-red-600"></i>
-            </div>
-            <h4 class="font-semibold">Руды и ресурсы · Для новичков</h4>
-            <p class="text-xs text-gray-400">неделю назад</p>
-        </div>
+    <div class="biome-card biome-desert">
+      <span class="biome-icon">🏜</span><div class="biome-name">ПУСТЫНЯ</div>
+      <div class="biome-danger" style="color:var(--amber)">УГРОЗА: СРЕДНЯЯ</div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.4rem">Нитрат и медь. Жара убивает без защиты.</div>
     </div>
+    <div class="biome-card biome-snow">
+      <span class="biome-icon">❄️</span><div class="biome-name">ТУНДРА</div>
+      <div class="biome-danger" style="color:var(--cold)">УГРОЗА: СРЕДНЯЯ</div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.4rem">Лес и животные. Холод убивает без одежды.</div>
+    </div>
+    <div class="biome-card biome-burnt">
+      <span class="biome-icon">🔥</span><div class="biome-name">ГАРЬ</div>
+      <div class="biome-danger" style="color:#e84820">УГРОЗА: ВЫСОКАЯ</div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.4rem">Горящие зомби. Радиация. Много металлолома.</div>
+    </div>
+    <div class="biome-card biome-wasteland">
+      <span class="biome-icon">☢</span><div class="biome-name">ПУСТОШЬ</div>
+      <div class="biome-danger" style="color:var(--blood)">УГРОЗА: КРИТИЧЕСКАЯ</div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.4rem">Радиация, сильнейшие зомби, лучший лут.</div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== ОБ ИГРЕ ===== -->
-<section id="about-game" class="py-16 bg-black/40 border-y border-green-900/30">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex items-center gap-4 mb-10" data-aos="fade-right">
-            <i class="fas fa-gamepad text-4xl text-green-400"></i>
-            <h2 class="text-4xl font-bold">7 Days to Die — <span class="text-green-300">выживание нового поколения</span></h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="space-y-4" data-aos="fade-up">
-                <p class="text-lg leading-relaxed"><strong class="text-green-300">7 Days to Die</strong> — постапокалиптический survival horror с открытым миром от The Fun Pimps. Версия 1.0 вышла в июле 2024. Мир после ядерной войны, орды зомби, крафт, строительство и кровавая луна каждые 7 дней.</p>
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-green-950/20 p-3 rounded-lg border border-green-800/30"><i class="fas fa-cube mr-2 text-green-400"></i> Полная разрушаемость</div>
-                    <div class="bg-green-950/20 p-3 rounded-lg border border-green-800/30"><i class="fas fa-users mr-2"></i> Кооп до 8 игроков</div>
-                    <div class="bg-green-950/20 p-3 rounded-lg border border-green-800/30"><i class="fas fa-tree mr-2"></i> 5 уникальных биомов</div>
-                    <div class="bg-green-950/20 p-3 rounded-lg border border-green-800/30"><i class="fas fa-skull mr-2"></i> 34+ типа зомби</div>
-                </div>
-            </div>
-            <div class="glass-panel p-5" data-aos="fade-left">
-                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-map-marked-alt mr-2"></i> Биомы</h3>
-                <div class="grid grid-cols-2 gap-2 text-sm">
-                    <span class="bg-green-900/30 px-3 py-1 rounded">🌲 Лес</span><span class="bg-yellow-900/30 px-3 py-1 rounded">🏜️ Пустыня</span>
-                    <span class="bg-red-900/30 px-3 py-1 rounded">🔥 Выжженный лес</span><span class="bg-purple-900/30 px-3 py-1 rounded">☣️ Пустошь</span>
-                    <span class="bg-blue-900/30 px-3 py-1 rounded">❄️ Снега</span>
-                </div>
-                <p class="mt-4 text-sm">Ночью зомби быстрее и агрессивнее. Каждые 7 дней — орда.</p>
-            </div>
-        </div>
+<div class="wstrip">⚠ ВНИМАНИЕ · ОРДА ПРИБЛИЖАЕТСЯ · НОЧЬЮ ЗОМБИ УСКОРЯЮТСЯ · БУДЬТЕ ГОТОВЫ ⚠</div>
+
+<section class="sec">
+  <div class="sec-h" data-reveal>
+    <div><div class="sec-n">// SECTOR_03 · THREAT INTEL</div><div class="sec-t">Классификация <span>угроз</span></div></div>
+    <a href="pages/zombies.html" class="btn-g" style="margin-left:auto;font-size:.55rem;padding:.4rem .9rem">ВСЕ УГРОЗЫ →</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
+    <div class="zcard" data-type="НОРМАЛЬНЫЙ" data-reveal data-reveal-delay="1">
+      <div style="flex-shrink:0;width:48px;height:48px;background:rgba(204,34,0,.1);border:1px solid rgba(204,34,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem">🧟</div>
+      <div><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--hi)">ХОДЯЧИЙ</div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--muted)">HP: 150 · УРОН: СРЕДНИЙ</div><div class="zdbar"><div class="zds l"></div><div class="zds l"></div><div class="zds"></div><div class="zds"></div><div class="zds"></div></div></div>
     </div>
+    <div class="zcard" data-type="СПЕЦИАЛЬНЫЙ" data-reveal data-reveal-delay="2">
+      <div style="flex-shrink:0;width:48px;height:48px;background:rgba(204,34,0,.1);border:1px solid rgba(204,34,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem">🕷</div>
+      <div><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--hi)">ПАУК</div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--muted)">HP: 200 · АТАКА: ПРЫЖОК</div><div class="zdbar"><div class="zds l"></div><div class="zds l"></div><div class="zds l"></div><div class="zds"></div><div class="zds"></div></div></div>
+    </div>
+    <div class="zcard" data-type="ЭЛИТНЫЙ" data-reveal data-reveal-delay="3">
+      <div style="flex-shrink:0;width:48px;height:48px;background:rgba(204,34,0,.1);border:1px solid rgba(204,34,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem">💀</div>
+      <div><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--hi)">ДЕМОЛИШЕР</div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--muted)">HP: 2500 · C4 НА ТЕЛЕ</div><div class="zdbar"><div class="zds l"></div><div class="zds l"></div><div class="zds l"></div><div class="zds l"></div><div class="zds l"></div></div></div>
+    </div>
+    <div class="zcard" data-type="БЕРСЕРК" data-reveal data-reveal-delay="4">
+      <div style="flex-shrink:0;width:48px;height:48px;background:rgba(204,34,0,.1);border:1px solid rgba(204,34,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem">☢</div>
+      <div><div style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--hi)">ВАЙТ</div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--muted)">HP: 3000 · ТОЛЬКО НОЧЬЮ</div><div class="zdbar"><div class="zds l"></div><div class="zds l"></div><div class="zds l"></div><div class="zds l"></div><div class="zds l"></div></div></div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== БЕСТИАРИЙ (ТАБЫ) ===== -->
-<section id="zombies" class="py-16 max-w-6xl mx-auto px-4">
-    <div class="flex items-center gap-4 mb-6">
-        <i class="fas fa-biohazard text-4xl text-green-400"></i>
-        <h2 class="text-4xl font-bold">Бестиарий <span class="text-green-300 text-lg ml-2">(превью)</span></h2>
+<section class="sec" style="padding-top:0">
+  <div class="sec-h" data-reveal>
+    <div><div class="sec-n">// SECTOR_04 · COMMAND</div><div class="sec-t">Командный <span>центр</span></div></div>
+  </div>
+  <div class="ch-grid" style="display:grid;grid-template-columns:1fr;gap:2rem" id="chgrid" data-reveal>
+    <div class="chcard hc">
+      <div class="beam"></div>
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <img src="Материалы/Профиль/Логотип.png" style="width:48px;height:48px;border-radius:50%;border:2px solid rgba(204,34,0,.4);filter:saturate(.8)" onerror="this.style.display='none'" alt="">
+        <div><div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;line-height:1">TIM GRAY</div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--muted)">@Tim_Gray · YouTube</div></div>
+      </div>
+      <p style="font-size:1rem;line-height:1.7;color:var(--text);margin-bottom:1.5rem">Ютубер, создающий глубокий контент по 7 Days to Die. Гайды, разборы обновлений, летсплеи — всё для выживания в зомби-апокалипсисе. Версия 2.0 уже на канале.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1.5rem">
+        <div style="text-align:center;padding:.7rem;border:1px solid rgba(204,34,0,.2);background:rgba(204,34,0,.04)"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#ff4444">858+</div><div style="font-family:'Orbitron',sans-serif;font-size:.48rem;color:var(--muted)">ПОДПИСЧИКОВ</div></div>
+        <div style="text-align:center;padding:.7rem;border:1px solid rgba(204,34,0,.2);background:rgba(204,34,0,.04)"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#ff4444">47+</div><div style="font-family:'Orbitron',sans-serif;font-size:.48rem;color:var(--muted)">ВИДЕО</div></div>
+        <div style="text-align:center;padding:.7rem;border:1px solid rgba(204,34,0,.2);background:rgba(204,34,0,.04)"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#ff4444">2024</div><div style="font-family:'Orbitron',sans-serif;font-size:.48rem;color:var(--muted)">СТАРТ</div></div>
+      </div>
+      <a href="https://www.youtube.com/@Tim_Gray" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;background:#cc0000;color:#fff;padding:.7rem 1.4rem;font-family:'Orbitron',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-decoration:none;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .2s" onmouseover="this.style.background='#ee2222'" onmouseout="this.style.background='#cc0000'">▶ ПОДПИСАТЬСЯ НА YOUTUBE</a>
     </div>
-    <div class="border-b border-green-800/50 mb-6 flex flex-wrap gap-2">
-        <button class="tab-btn active px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="normal">Обычные</button>
-        <button class="tab-btn px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="armored">Бронированные</button>
-        <button class="tab-btn px-6 py-3 text-sm font-medium rounded-t-lg" data-tab="special">Особые</button>
-    </div>
-    <div id="normal" class="tab-pane active">
-        <div class="grid md:grid-cols-2 gap-4">
-            <div class="glass-panel p-4"><i class="fas fa-user mr-2"></i> Ходок, медсестра, толстяк, Стив...</div>
-            <div class="glass-panel p-4">Ночью становятся одичавшими (бегают, выше урон).</div>
+
+    <div class="hc" style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--acid);padding:1.5rem;display:flex;flex-direction:column">
+      <div class="beam"></div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:.52rem;letter-spacing:.18em;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:.6rem;margin-bottom:1.2rem">// РАЗВЕДСВОДКА · NAVEZGANE</div>
+      <div style="display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem">
+        <div style="font-family:'Orbitron',sans-serif;font-size:.44rem;letter-spacing:.12em;color:var(--muted);margin-bottom:.2rem">СТАТУС БИОМОВ</div>
+        <div style="display:flex;align-items:center;gap:.6rem"><span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text);width:95px">🌲 СОСНЫ</span><div style="flex:1;height:4px;background:rgba(168,232,32,.1)"><div style="width:22%;height:100%;background:var(--acid)"></div></div><span style="font-family:'Share Tech Mono',monospace;font-size:.53rem;color:var(--acid);width:50px">НИЗКАЯ</span></div>
+        <div style="display:flex;align-items:center;gap:.6rem"><span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text);width:95px">🏜 ПУСТЫНЯ</span><div style="flex:1;height:4px;background:rgba(232,136,32,.1)"><div style="width:55%;height:100%;background:var(--amber)"></div></div><span style="font-family:'Share Tech Mono',monospace;font-size:.53rem;color:var(--amber);width:50px">СРЕДНЯЯ</span></div>
+        <div style="display:flex;align-items:center;gap:.6rem"><span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text);width:95px">❄ ТУНДРА</span><div style="flex:1;height:4px;background:rgba(32,170,221,.1)"><div style="width:48%;height:100%;background:var(--cold)"></div></div><span style="font-family:'Share Tech Mono',monospace;font-size:.53rem;color:var(--cold);width:50px">СРЕДНЯЯ</span></div>
+        <div style="display:flex;align-items:center;gap:.6rem"><span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text);width:95px">🔥 ГАРЬ</span><div style="flex:1;height:4px;background:rgba(232,72,32,.1)"><div style="width:78%;height:100%;background:#e84820"></div></div><span style="font-family:'Share Tech Mono',monospace;font-size:.53rem;color:#e84820;width:50px">ВЫСОКАЯ</span></div>
+        <div style="display:flex;align-items:center;gap:.6rem"><span style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--text);width:95px">☢ ПУСТОШЬ</span><div style="flex:1;height:4px;background:rgba(204,34,0,.1)"><div style="width:97%;height:100%;background:var(--blood)"></div></div><span style="font-family:'Share Tech Mono',monospace;font-size:.53rem;color:var(--blood);width:50px">КРИТ.</span></div>
+      </div>
+      <div style="border-top:1px solid var(--border);padding-top:.9rem;flex:1">
+        <div style="font-family:'Orbitron',sans-serif;font-size:.44rem;letter-spacing:.12em;color:var(--muted);margin-bottom:.6rem">АКТИВНЫЕ УГРОЗЫ</div>
+        <div style="display:flex;flex-direction:column;gap:.45rem">
+          <div class="ops-item"><div class="ops-status critical"></div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--text)">Демолишер замечен в Wasteland</div></div>
+          <div class="ops-item"><div class="ops-status warn"></div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--text)">Крикунья активна — сектор 4</div></div>
+          <div class="ops-item"><div class="ops-status active"></div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--text)">Вирус SDV: уровень 87%</div></div>
+          <div class="ops-item"><div class="ops-status ok"></div><div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--text)">Торговец Джен — активен</div></div>
         </div>
+      </div>
+      <div style="margin-top:1rem;padding:.7rem;background:rgba(204,34,0,.06);border:1px solid rgba(204,34,0,.2);display:flex;justify-content:space-between;align-items:center">
+        <span style="font-family:'Orbitron',sans-serif;font-size:.46rem;letter-spacing:.1em;color:rgba(204,34,0,.7)">☠ СЛЕДУЮЩАЯ ОРДА</span>
+        <span id="cmdHorde" style="font-family:'Share Tech Mono',monospace;font-size:.9rem;color:var(--blood);animation:cblink 1s infinite">?</span>
+      </div>
     </div>
-    <div id="armored" class="tab-pane">
-        <div class="grid md:grid-cols-2 gap-4">
-            <div class="glass-panel p-4"><i class="fas fa-shield-alt mr-2"></i> Байкер, солдат, строитель — снижение урона до 25%.</div>
-            <div class="glass-panel p-4">Используйте бронебойные патроны или кувалды.</div>
-        </div>
-    </div>
-    <div id="special" class="tab-pane">
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-            <div class="glass-panel p-2 text-sm">👮 Полицейский (кислота, взрыв)</div>
-            <div class="glass-panel p-2 text-sm">🔥 Горелый (поджог)</div>
-            <div class="glass-panel p-2 text-sm">🕷️ Паук (лазает по стенам)</div>
-            <div class="glass-panel p-2 text-sm">📢 Крикунья (призыв)</div>
-            <div class="glass-panel p-2 text-sm">💣 Подрывник (взрывчатка)</div>
-            <div class="glass-panel p-2 text-sm">🧟 Одичавший упырь (реген)</div>
-        </div>
-    </div>
-    <div class="mt-4 text-right">
-        <a href="pages/zombies.html" class="text-green-400 hover:underline">Полный бестиарий →</a>
-    </div>
+  </div>
 </section>
 
-<!-- ===== ГАЙД ДЛЯ НОВИЧКОВ ===== -->
-<section id="beginners" class="py-16" style="background: linear-gradient(145deg, #1f0e0e 0%, #0c0707 100%); border-top: 4px solid #7f1d1d;">
-    <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-10 flex items-center"><i class="fas fa-book-open text-red-400 mr-4"></i> Первые шаги</h2>
-        <div class="grid lg:grid-cols-3 gap-5">
-            <div class="glass-panel p-5 hover-lift">1️⃣ Выполните туториал, получите 4 очка навыков.</div>
-            <div class="glass-panel p-5 hover-lift">2️⃣ Соберите камень, древесину, траву.</div>
-            <div class="glass-panel p-5 hover-lift">3️⃣ Найдите укрытие на ночь, не шумите.</div>
-            <div class="glass-panel p-5 hover-lift">4️⃣ Готовьтесь к 7-му дню — орда!</div>
-            <div class="glass-panel p-5 hover-lift">5️⃣ Торговец даст квесты и редкий лут.</div>
-            <div class="glass-panel p-5 hover-lift">6️⃣ Прокачка: сила, ловкость, интеллект.</div>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-warn">☣ NAVEZGANE · AZ · 34°N 112°W · SDV АКТИВЕН · КАРАНТИН НАРУШЕН ☣</div>
+  <div class="footer-inner">
+    <div class="fgrid">
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--acid);line-height:.9;text-shadow:0 0 20px var(--glow)">TIM<br>GRAY</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:.5rem;line-height:1.8">FIELD HUB · 7 DAYS TO DIE<br>ВЫЖИВАНИЕ · РАЗВЕДКА · ТАКТИКА<br><span style="color:rgba(168,232,32,.35)">// ФАН-САЙТ · НЕ ОФИЦИАЛЬНЫЙ</span></div>
+        <div style="margin-top:.8rem;display:flex;align-items:center;gap:.4rem"><div style="width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 6px var(--acid);animation:blink 1.5s infinite"></div><div style="font-family:'Share Tech Mono',monospace;font-size:.57rem;color:var(--acid)">КАНАЛ АКТИВЕН</div></div>
+      </div>
+      <div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.2em;color:var(--muted);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)">// НАВИГАЦИЯ</div>
+        <div class="flinks">
+          <a href="pages/guides.html">Протоколы выживания</a>
+          <a href="pages/zombies.html">Классификация угроз</a>
+          <a href="pages/weapons.html">Арсенал</a>
+          <a href="pages/about.html">О канале</a>
         </div>
-        <div class="mt-6 text-center">
-            <a href="pages/guides.html" class="inline-block bg-green-700 hover:bg-green-800 px-8 py-3 rounded-full font-bold transition pulse-btn">Все гайды →</a>
+      </div>
+      <div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.2em;color:var(--muted);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)">// ПОСЛЕДНЯЯ ПЕРЕДАЧА</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--muted);line-height:2">
+          <div><span style="color:var(--acid)">КООРД:</span> 34.2°N · 112.0°W</div>
+          <div><span style="color:var(--acid)">СТАТУС:</span> ВЫЖИВШИЙ АКТИВЕН</div>
+          <div><span style="color:var(--acid)">УГРОЗА:</span> <span style="color:var(--blood)">КРИТИЧЕСКАЯ</span></div>
+          <div><span style="color:var(--acid)">ВЕРСИЯ:</span> 7DTD V2.0</div>
         </div>
+      </div>
+      <div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.2em;color:var(--muted);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)">// СВЯЗЬ</div>
+        <div class="flinks">
+          <a href="https://www.youtube.com/@Tim_Gray" target="_blank">YouTube канал</a>
+          <a href="https://www.youtube.com/@Tim_Gray/videos" target="_blank">Все видео</a>
+          <a href="https://7daystodie.wiki.gg/" target="_blank">Официальная вики</a>
+        </div>
+        <div style="margin-top:1rem;padding:.6rem .8rem;background:rgba(204,34,0,.05);border:1px solid rgba(204,34,0,.2);font-family:'Share Tech Mono',monospace;font-size:.58rem;color:rgba(204,34,0,.55);line-height:1.6">⚠ КРОВАВАЯ ЛУНА<br>КАЖДЫЕ 7 ДНЕЙ</div>
+      </div>
     </div>
-</section>
-
-<!-- ===== ФУТЕР ===== -->
-<footer class="bg-black/80 border-t border-green-900/50 py-10 mt-10">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="#" class="text-gray-400 hover:text-green-400 text-2xl"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="text-gray-400 hover:text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-gray-400 hover:text-green-400 text-2xl"><i class="fab fa-telegram"></i></a>
-        </div>
-        <p class="text-gray-500 text-sm">© 2025 Tim Gray · Фан-сайт 7 Days to Die</p>
+    <div class="fbot">
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.56rem;color:var(--muted)">© 2025 TIM GRAY · ФАН-САЙТ 7 DAYS TO DIE · НЕ АФФИЛИРОВАН С THE FUN PIMPS</div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.55rem;color:var(--muted);display:flex;align-items:center;gap:.6rem"><span style="color:rgba(168,232,32,.3)">☣</span><span id="footerTime">--:--:--</span><span style="color:rgba(168,232,32,.3)">☣</span></div>
     </div>
+    <div class="footer-log"><div id="footerLog" class="footer-log-inner"></div></div>
+  </div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 800, once: true });
-    // Табы
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tabId = btn.dataset.tab;
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-        });
-    });
-    // Плавный скролл для якорей (оставлен на случай, если добавятся внутренние ссылки)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === "#" || href === "") return;
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-</script>
+const pad=n=>String(n).padStart(2,'0');
 
-<!-- Дополнительный объём (более 1500 строк) -->
-<!-- ... (детальные данные в комментариях) ... -->
+/* ── SCROLL PROGRESS & NAV ── */
+const spb=document.getElementById('spb');
+const navEl=document.getElementById('nav');
+const hbg=document.getElementById('hbg');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  spb.style.width=(window.scrollY/h*100)+'%';
+  navEl.classList.toggle('scrolled',window.scrollY>60);
+  if(window.scrollY<window.innerHeight)hbg.style.transform=`translateY(${window.scrollY*.35}px)`;
+  updateChronicle();
+},{passive:true});
+
+/* ── CLOCK ── */
+function tick(){const n=new Date();document.getElementById('sysTime').textContent=`${pad(n.getDate())}.${pad(n.getMonth()+1)}.${n.getFullYear()} ${pad(n.getHours())}:${pad(n.getMinutes())}:${pad(n.getSeconds())}`;}
+setInterval(tick,1000);tick();
+const hdEl=document.getElementById('heroDate');
+if(hdEl){const n=new Date();hdEl.textContent=pad(n.getDate())+'.'+pad(n.getMonth()+1)+'.'+n.getFullYear();}
+
+/* ── APOCALYPSE DAY + HORDE COUNTDOWN ── */
+const apo=new Date('2024-07-01');
+const apoDay=Math.floor((new Date()-apo)/86400000);
+document.getElementById('dayNum').textContent=apoDay;
+function updateHorde(){
+  const cycle=apoDay%7,daysLeft=cycle===0?7:7-cycle;
+  const now=new Date(),diff=new Date(new Date(now.getFullYear(),now.getMonth(),now.getDate()).getTime()+daysLeft*86400000)-now;
+  const d=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+  const txt=`${d}Д ${pad(h)}:${pad(m)}:${pad(s)}`;
+  document.getElementById('horde').textContent=txt;
+  const cmdH=document.getElementById('cmdHorde');
+  if(cmdH)cmdH.textContent=txt;
+}
+setInterval(updateHorde,1000);updateHorde();
+
+/* ── THREAT BAR ── */
+const tb=document.getElementById('tbar');
+[0,1,2,3,4,5,6,7,8,9].forEach(i=>{const s=document.createElement('div');s.className='tseg';if(i<2)s.classList.add('a');else if(i<5)s.classList.add('m');else if(i<9)s.classList.add('b');tb.appendChild(s);});
+
+/* ── TICKER ── */
+const tips=['ДЕНЬ 1: Собери ресурсы до темноты','СОВЕТ: Зомби не прыгают на 2 блока','ТАКТИКА: Лук — тихое оружие ночью','ВНИМАНИЕ: Полицейский брызгает кислотой','ПРИОРИТЕТ: Убей крикунью первой','РЕСУРС: Латунь в гильзах и трубах','ПРОКАЧКА: Ловкость + паркур = выживание','БАЗА: Укрепи опоры сталью к дню 7','ЛЕЧЕНИЕ: Антибиотики при заражении','VERSION 2.0: Демолишер теперь сильнее'];
+const tkEl=document.getElementById('tk');
+[...tips,...tips].forEach(t=>{const s=document.createElement('span');s.className='titem';s.textContent=t;tkEl.appendChild(s);});
+
+/* ── FOOTER LOG ── */
+const flEl=document.getElementById('footerLog');
+const ftEl=document.getElementById('footerTime');
+if(flEl){
+  const logs=['ДЕНЬ 1: ПЕРВЫЙ ВЫЖИВШИЙ ОБНАРУЖЕН','СИГНАЛ ПОТЕРЯН... ВОССТАНОВЛЕН','КРОВАВАЯ ЛУНА ЧЕРЕЗ 7 ДНЕЙ','КРИКУНЬЯ ЗАСЕЧЕНА В СЕКТОРЕ 4','БАЗА УКРЕПЛЕНА — ОРДА ОТРАЖЕНА','ТОРГОВЕЦ АКТИВЕН — КВЕСТ ДОСТУПЕН','ДЕМОЛИШЕР — ДЕРЖИТЕСЬ ПОДАЛЬШЕ','RADIATED WIGHT — УГРОЗА КРИТИЧЕСКАЯ','УРОВЕНЬ ЗАРАЖЕНИЯ: 87%','TIM GRAY // СЛЕДУЮЩЕЕ ВИДЕО СКОРО'];
+  [...logs,...logs].forEach(t=>{const s=document.createElement('span');s.style.cssText='padding:0 2.5rem';s.innerHTML=`<span style="color:var(--acid)">◈</span> ${t}`;flEl.appendChild(s);});
+}
+if(ftEl)setInterval(()=>{const n=new Date();ftEl.textContent=pad(n.getHours())+':'+pad(n.getMinutes())+':'+pad(n.getSeconds());},1000);
+
+/* ── REVEAL OBSERVER ── */
+const ro=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('revealed');});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-reveal]').forEach(el=>ro.observe(el));
+
+/* ── COUNTERS ── */
+let counted=false;
+const co=new IntersectionObserver(e=>{
+  if(e[0].isIntersecting&&!counted){counted=true;
+    const count=(id,target,suf='')=>{const el=document.getElementById(id);let c=0;const step=Math.max(1,Math.ceil(target/40));const iv=setInterval(()=>{c=Math.min(c+step,target);el.textContent=c+suf;if(c>=target)clearInterval(iv);},30);};
+    count('c1',34,'+');count('c2',60,'+');count('c3',5,'');count('c4',47,'+');
+  }
+},{threshold:.3});
+const firstSbox=document.querySelector('.sbox');
+if(firstSbox)co.observe(firstSbox);
+
+/* ══════════════════════════════════════════
+   DAYS CHRONICLE — continuous scroll-driven
+   ══════════════════════════════════════ */
+const days=[
+  {num:'01',title:'НАЧАЛО КОНЦА',status:'ВЫЖИВШИЙ',statusColor:'var(--acid)',
+   desc:'Ты только что очнулся в пустоши. Без еды, воды и оружия. Первые 24 часа решают всё.',
+   items:['Найти укрытие до захода солнца','Скрафтить каменный топор','Добыть еду и воду','Заблокировать все входы'],
+   accent:'var(--acid)',hex:'#a8e820',flash:false,dir:'from-right',pri:'ПОСТРОЙ УКРЫТИЕ ДО ТЕМНОТЫ'},
+  {num:'07',title:'КРОВАВАЯ ЛУНА',status:'КРИТИЧЕСКАЯ УГРОЗА',statusColor:'var(--blood)',
+   desc:'Первая орда. Земля дрожит. Сотни зомби атакуют твою базу одновременно. Это проверка.',
+   items:['Ночь 7: орда прибывает','Зомби атакуют основание стен','Электрозаграждения — обязательны','Расстреливай сверху вниз'],
+   accent:'var(--blood)',hex:'#cc2200',flash:true,dir:'from-bottom',pri:'УДЕРЖИ БАЗУ — ОРДА ИДЁТ'},
+  {num:'21',title:'СТРОИТЕЛЬ ВЫЖИЛ',status:'СТАБИЛЬНО',statusColor:'var(--amber)',
+   desc:'Три орды позади. Твоя база — настоящая крепость. Железные инструменты, ферма, генератор.',
+   items:['Переход на железные инструменты','Ферма обеспечивает питание','Кузница работает 24/7','Торговец — источник схем'],
+   accent:'var(--amber)',hex:'#e88020',flash:false,dir:'from-left',pri:'СКРАФТИ ЖЕЛЕЗНЫЕ ИНСТРУМЕНТЫ'},
+  {num:'50',title:'АРСЕНАЛ ГОТОВ',status:'ДОМИНИРОВАНИЕ',statusColor:'var(--cold)',
+   desc:'Стальная броня, автоматическое оружие, турели. Ты больше не жертва — ты охотник.',
+   items:['Стальное снаряжение скрафчено','Автотурели защищают базу','Мотоцикл открывает карту','Wasteland: риск = награда'],
+   accent:'var(--cold)',hex:'#20aadd',flash:false,dir:'from-top',pri:'ИССЛЕДУЙ ПУСТОШЬ — РИСК ОПРАВДАН'},
+  {num:'100',title:'ЛЕГЕНДА ПУСТОШИ',status:'КОНЕЦ ИГРЫ',statusColor:'var(--acid)',
+   desc:'День 100. Ты пережил то, чего не пережил никто. Ядерная пустошь покорена навсегда.',
+   items:['200+ орд пережито','Все биомы зачищены','Стальная крепость неприступна','Подпишись на Tim Gray!'],
+   accent:'var(--acid)',hex:'#a8ff30',flash:false,dir:'from-right',pri:'СТАНЬ ЛЕГЕНДОЙ — ТЫ ВЫЖИЛ'}
+];
+
+const exitDirs={'from-right':'exit-left','from-left':'exit-right','from-top':'exit-down','from-bottom':'exit-up'};
+let lastDay=-1;
+
+function lerp(a,b,t){return a+(b-a)*Math.max(0,Math.min(1,t));}
+function lerpArr(arr,pct){const raw=pct*(arr.length-1);const i=Math.min(Math.floor(raw),arr.length-2);return lerp(arr[i],arr[i+1],raw-i);}
+
+const threatPcts=[0.20,1.00,0.70,0.85,0.50];
+const progPcts  =[0.00,0.14,0.28,0.50,1.00];
+const hordePcts =[0.05,1.00,0.40,0.20,0.00];
+const threatLbls=['НИЗКАЯ','КРИТ.','ВЫСОКАЯ','ДОМИНИР.','ПОБЕДА'];
+const hordeLbls =['ДАЛЕКО','ЗДЕСЬ!','БЛИЗКО','ОТСТУП.','УНИЧТОЖ.'];
+const accentCols=['var(--acid)','var(--blood)','var(--amber)','var(--cold)','var(--acid)'];
+
+function updateDOM(d,idx){
+  const n2=document.getElementById('dayNum2');
+  if(n2){n2.textContent=d.num;n2.style.color=d.accent;n2.style.textShadow=`0 0 40px ${d.hex}`;}
+  const bn=document.getElementById('chrDayBig');if(bn){bn.textContent=d.num;bn.style.color=d.hex;}
+  const dt=document.getElementById('dayTitle');if(dt)dt.textContent=d.title;
+  const dd=document.getElementById('dayDesc');if(dd){dd.textContent=d.desc;dd.style.borderColor=d.accent;}
+  const ds=document.getElementById('dayStatus');
+  if(ds)ds.innerHTML=`<div class="day-status-dot" style="background:${d.statusColor};box-shadow:0 0 8px ${d.statusColor}"></div><span class="fo" style="font-size:.5rem;letter-spacing:.15em;color:${d.statusColor}">СТАТУС: ${d.status}</span>`;
+  const di=document.getElementById('dayItems');if(di)di.innerHTML=d.items.map(i=>`<li>${i}</li>`).join('');
+  const pr=document.getElementById('dayPriText');if(pr)pr.textContent=d.pri;
+  for(let i=0;i<5;i++){const el=document.getElementById('dp'+i);if(el)el.className='dp-seg'+(i<idx?' done':i===idx?' active':'');}
+}
+
+function animateText(d,idx){
+  const inner=document.getElementById('chrTextInner');
+  if(!inner)return updateDOM(d,idx);
+  const exitCls=lastDay>=0?exitDirs[days[lastDay].dir]:'exit-left';
+  inner.classList.add(exitCls);
+  setTimeout(()=>{
+    updateDOM(d,idx);
+    inner.classList.remove(exitCls);
+    inner.classList.add('enter-'+d.dir);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>inner.classList.remove('enter-'+d.dir)));
+  },380);
+}
+
+function updateChronicle(){
+  const wrap=document.getElementById('chronicleWrap');
+  if(!wrap)return;
+  const rect=wrap.getBoundingClientRect();
+  const total=wrap.offsetHeight-window.innerHeight;
+  const scrolled=-rect.top;
+  const pct=Math.max(0,Math.min(1,scrolled/total));
+
+  /* НЕПРЕРЫВНЫЙ параллакс в разные стороны */
+  const lg=document.getElementById('layerGrid'),ls=document.getElementById('layerScan'),bn=document.getElementById('chrDayBig');
+  if(lg)lg.style.transform=`translateY(${-pct*100}px) translateX(${pct*38}px)`;
+  if(ls)ls.style.transform=`translateY(${pct*80}px) translateX(${-pct*28}px)`;
+  if(bn)bn.style.transform=`translateX(${-pct*55}px) translateY(${-pct*28}px)`;
+
+  /* НЕПРЕРЫВНЫЕ бары — обновляются на каждый пиксель скролла */
+  const threat  =lerpArr(threatPcts,pct);
+  const progress=lerpArr(progPcts,pct);
+  const horde   =lerpArr(hordePcts,pct);
+  const aidx=Math.min(Math.round(pct*4),4);
+  const rt=document.getElementById('roThreat');
+  const rv=document.getElementById('roThreatVal');
+  const rp=document.getElementById('roProgress');
+  const rpv=document.getElementById('roProgressVal');
+  const rh=document.getElementById('roHorde');
+  const rhv=document.getElementById('roHordeVal');
+  if(rt){rt.style.width=(threat*100)+'%';rt.style.background=accentCols[aidx];}
+  if(rv)rv.textContent=threatLbls[aidx];
+  if(rp){rp.style.width=(progress*100)+'%';rp.style.background=accentCols[aidx];}
+  if(rpv)rpv.textContent=Math.round(progress*100)+'%';
+  if(rh){rh.style.width=(horde*100)+'%';rh.style.background=horde>0.5?'var(--blood)':'var(--amber)';}
+  if(rhv)rhv.textContent=hordeLbls[aidx];
+
+  if(scrolled<-window.innerHeight||scrolled>total+window.innerHeight)return;
+
+  /* Three.js — непрерывный */
+  if(window.updateThreeScroll)window.updateThreeScroll(pct);
+
+  /* Дискретная смена текста */
+  const idx=Math.min(Math.floor(pct*days.length),days.length-1);
+  for(let i=0;i<5;i++){const el=document.getElementById('dp'+i);if(el)el.className='dp-seg'+(i<idx?' done':i===idx?' active':'');}
+  if(idx===lastDay)return;
+  lastDay=idx;
+  animateText(days[idx],idx);
+  if(days[idx].flash){const flash=document.getElementById('bloodFlash');if(flash){flash.classList.add('on');setTimeout(()=>flash.classList.remove('on'),1400);}}
+}
+
+/* ══════════════════════════════════════════
+   THREE.JS SCENE — VIRAL APOCALYPSE
+   ══════════════════════════════════════ */
+(function initThree(){
+  const canvas=document.getElementById('threeCanvas');
+  if(!canvas||!window.THREE)return;
+  const T=THREE;
+  let W=window.innerWidth*.52, H=window.innerHeight;
+  const renderer=new T.WebGLRenderer({canvas,alpha:true,antialias:true});
+  renderer.setClearColor(0x000000,0);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  const scene=new T.Scene();
+  const camera=new T.PerspectiveCamera(55,W/H,0.1,200);
+  camera.position.set(0,0,11);
+
+  /* Lighting */
+  const pLight=new T.PointLight(0xa8e820,3,25);pLight.position.set(4,4,6);scene.add(pLight);
+  const pLight2=new T.PointLight(0xa8e820,1.5,20);pLight2.position.set(-4,-3,3);scene.add(pLight2);
+  scene.add(new T.AmbientLight(0xffffff,0.06));
+
+  /* Main virus cell — distorted icosahedron */
+  const vGeo=new T.IcosahedronGeometry(2.2,1);
+  const vp=vGeo.attributes.position;
+  for(let i=0;i<vp.count;i++){const n=0.85+Math.random()*.3;vp.setXYZ(i,vp.getX(i)*n,vp.getY(i)*n,vp.getZ(i)*n);}
+  vp.needsUpdate=true;vGeo.computeVertexNormals();
+  const virusMat=new T.MeshBasicMaterial({color:0xa8e820,wireframe:true,transparent:true,opacity:.75});
+  const virus=new T.Mesh(vGeo,virusMat);scene.add(virus);
+
+  /* Inner core */
+  const coreMat=new T.MeshBasicMaterial({color:0xa8e820,wireframe:true,transparent:true,opacity:.18});
+  const core=new T.Mesh(new T.SphereGeometry(1.1,8,8),coreMat);scene.add(core);
+
+  /* Rings */
+  const ring1Mat=new T.MeshBasicMaterial({color:0xa8e820,transparent:true,opacity:.18});
+  const ring1=new T.Mesh(new T.TorusGeometry(3.3,.025,6,80),ring1Mat);ring1.rotation.x=Math.PI*.28;scene.add(ring1);
+  const ring2Mat=new T.MeshBasicMaterial({color:0xa8e820,transparent:true,opacity:.1});
+  const ring2=new T.Mesh(new T.TorusGeometry(4.2,.018,6,80),ring2Mat);ring2.rotation.x=Math.PI*.6;ring2.rotation.z=Math.PI*.15;scene.add(ring2);
+  const ring3Mat=new T.MeshBasicMaterial({color:0xa8e820,transparent:true,opacity:.06});
+  const ring3=new T.Mesh(new T.TorusGeometry(5.1,.012,6,80),ring3Mat);ring3.rotation.x=Math.PI*.15;ring3.rotation.y=Math.PI*.4;scene.add(ring3);
+
+  /* Orbital debris — 10 octahedra */
+  const debris=[];
+  for(let i=0;i<10;i++){
+    const sz=.18+Math.random()*.28;
+    const mat=new T.MeshBasicMaterial({color:0xa8e820,wireframe:true,transparent:true,opacity:.5});
+    const m=new T.Mesh(new T.OctahedronGeometry(sz,0),mat);
+    const baseR=3.8+Math.random()*2.2,tilt=(Math.random()-.5)*Math.PI*.5;
+    m.userData={angle:(i/10)*Math.PI*2+Math.random(),radius:baseR,tilt,spd:(.006+Math.random()*.012)*(Math.random()>.5?1:-1),rx:(Math.random()-.5)*.06,ry:(Math.random()-.5)*.06};
+    scene.add(m);debris.push(m);
+  }
+
+  /* Tetrahedra cluster */
+  const tetra=[];
+  for(let i=0;i<6;i++){
+    const mat=new T.MeshBasicMaterial({color:0xa8e820,wireframe:true,transparent:true,opacity:.38});
+    const m=new T.Mesh(new T.TetrahedronGeometry(.22,0),mat);
+    m.userData={angle:(i/6)*Math.PI*2,r:2.6+Math.random()*.4,spd:.02+Math.random()*.015,oy:Math.random()*Math.PI*2};
+    scene.add(m);tetra.push(m);
+  }
+
+  /* Particles */
+  const PC=600;
+  const pGeo=new T.BufferGeometry();
+  const pArr=new Float32Array(PC*3);
+  const pVel=new Float32Array(PC*3);
+  for(let i=0;i<PC;i++){pArr[i*3]=(Math.random()-.5)*32;pArr[i*3+1]=(Math.random()-.5)*32;pArr[i*3+2]=(Math.random()-.5)*32;pVel[i*3]=(Math.random()-.5)*.004;pVel[i*3+1]=.003+Math.random()*.006;pVel[i*3+2]=(Math.random()-.5)*.004;}
+  pGeo.setAttribute('position',new T.BufferAttribute(pArr,3));
+  const pMat=new T.PointsMaterial({color:0xa8e820,size:.07,transparent:true,opacity:.4});
+  const particles=new T.Points(pGeo,pMat);scene.add(particles);
+
+  /* Blood moon */
+  const moonMat=new T.MeshBasicMaterial({color:0xcc2200,wireframe:true,transparent:true,opacity:0});
+  const moon=new T.Mesh(new T.SphereGeometry(4,14,10),moonMat);moon.position.set(7,4,-8);scene.add(moon);
+  const moonGlowMat=new T.MeshBasicMaterial({color:0xff1100,transparent:true,opacity:0,side:T.BackSide});
+  const moonGlow=new T.Mesh(new T.SphereGeometry(4.6,14,10),moonGlowMat);moonGlow.position.copy(moon.position);scene.add(moonGlow);
+
+  /* DNA helix */
+  const hp1=[],hp2=[];
+  for(let i=0;i<120;i++){const tt=(i/120)*Math.PI*5;hp1.push(new T.Vector3(Math.cos(tt)*2,(i/120)*12-6,Math.sin(tt)*2));hp2.push(new T.Vector3(Math.cos(tt+Math.PI)*2,(i/120)*12-6,Math.sin(tt+Math.PI)*2));}
+  const hm1=new T.LineBasicMaterial({color:0xa8e820,transparent:true,opacity:.2});
+  const hm2=new T.LineBasicMaterial({color:0xa8e820,transparent:true,opacity:.2});
+  const helix1=new T.Line(new T.BufferGeometry().setFromPoints(hp1),hm1);
+  const helix2=new T.Line(new T.BufferGeometry().setFromPoints(hp2),hm2);
+  helix1.position.set(6,0,-3);helix2.position.set(6,0,-3);
+  scene.add(helix1);scene.add(helix2);
+
+  /* Ground grid */
+  const planeMat=new T.MeshBasicMaterial({color:0xa8e820,wireframe:true,transparent:true,opacity:.06});
+  const plane=new T.Mesh(new T.PlaneGeometry(30,30,20,20),planeMat);
+  plane.rotation.x=-Math.PI*.42;plane.position.y=-5;scene.add(plane);
+
+  /* Day colors & speeds */
+  const DAY_COLORS=[new T.Color(0xa8e820),new T.Color(0xcc2200),new T.Color(0xe88020),new T.Color(0x20aadd),new T.Color(0xa8ff30)];
+  const DAY_SPEEDS=[0.5,3.0,1.2,1.6,1.0];
+  let tgtColor=new T.Color(0xa8e820),curColor=new T.Color(0xa8e820);
+  let speedMult=0.5,moonOpac=0,scrollPct=0,t3=0;
+
+  window.updateThreeScroll=function(p){
+    scrollPct=p;
+    const raw=p*(DAY_COLORS.length-1);
+    const zi=Math.min(Math.floor(raw),DAY_COLORS.length-2);
+    tgtColor.copy(DAY_COLORS[zi]).lerp(DAY_COLORS[zi+1],raw-zi);
+  };
+
+  function resize3D(){
+    const c3d=document.getElementById('chr3d');
+    W=c3d?c3d.offsetWidth:window.innerWidth*.52;
+    H=c3d?c3d.offsetHeight:window.innerHeight;
+    if(!W||!H){W=window.innerWidth*.52;H=window.innerHeight;}
+    renderer.setSize(W,H,false);camera.aspect=W/H;camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize',resize3D);
+  requestAnimationFrame(()=>requestAnimationFrame(resize3D));
+
+  function loop(){
+    requestAnimationFrame(loop);t3+=.01;
+    curColor.lerp(tgtColor,.025);
+    const hex=curColor.getHex();
+    [virusMat,coreMat,ring1Mat,ring2Mat,ring3Mat,pMat,planeMat,hm1,hm2].forEach(m=>m.color.set(hex));
+    debris.forEach(d=>d.material.color.set(hex));
+    tetra.forEach(d=>d.material.color.set(hex));
+    pLight.color.set(hex);pLight2.color.set(hex);
+
+    /* Непрерывная скорость от scrollPct */
+    const raw=scrollPct*(DAY_SPEEDS.length-1);
+    const szi=Math.min(Math.floor(raw),DAY_SPEEDS.length-2);
+    const tgt=DAY_SPEEDS[szi]+(DAY_SPEEDS[Math.min(szi+1,4)]-DAY_SPEEDS[szi])*(raw-szi);
+    speedMult+=(tgt-speedMult)*.025;
+
+    /* Virus */
+    virus.rotation.x+=.003*speedMult;virus.rotation.y+=.007*speedMult;virus.rotation.z+=.0015*speedMult;
+    const pulse=1+Math.sin(t3*2*speedMult)*.04;virus.scale.setScalar(pulse);
+    core.rotation.x-=.005*speedMult;core.rotation.z+=.004*speedMult;
+    ring1.rotation.z+=.004*speedMult;ring2.rotation.y+=.003*speedMult;ring3.rotation.x+=.002*speedMult;ring3.rotation.z-=.0015*speedMult;
+
+    /* Blood moon */
+    const moonTgt=scrollPct>.15&&scrollPct<.35?0.28:0;
+    moonOpac+=(moonTgt-moonOpac)*.04;
+    moonMat.opacity=moonOpac;moonGlowMat.opacity=moonOpac*.3;
+    moon.rotation.y+=.003;moonGlow.rotation.y-=.002;
+
+    /* Debris */
+    debris.forEach(d=>{
+      d.userData.angle+=d.userData.spd*speedMult;
+      const a=d.userData.angle,r=d.userData.radius,tl=d.userData.tilt;
+      d.position.x=Math.cos(a)*r*Math.cos(tl);d.position.y=Math.sin(tl)*r*.6+Math.sin(t3*.8+a)*.4;d.position.z=Math.sin(a)*r*Math.cos(tl);
+      d.rotation.x+=d.userData.rx*speedMult;d.rotation.y+=d.userData.ry*speedMult;
+    });
+    tetra.forEach((d,i)=>{
+      d.userData.angle+=d.userData.spd*speedMult;
+      const a=d.userData.angle,r=d.userData.r;
+      d.position.x=Math.cos(a)*r;d.position.y=Math.sin(t3+d.userData.oy)*.8;d.position.z=Math.sin(a)*r;
+      d.rotation.y+=.04*speedMult;
+    });
+
+    /* Particles */
+    for(let i=0;i<PC;i++){
+      pArr[i*3]+=pVel[i*3]*speedMult;pArr[i*3+1]+=pVel[i*3+1]*speedMult;pArr[i*3+2]+=pVel[i*3+2]*speedMult;
+      if(pArr[i*3+1]>16)pArr[i*3+1]=-16;
+      if(Math.abs(pArr[i*3])>16)pArr[i*3]*=-.98;if(Math.abs(pArr[i*3+2])>16)pArr[i*3+2]*=-.98;
+    }
+    pGeo.attributes.position.needsUpdate=true;
+
+    helix1.rotation.y+=.006*speedMult;helix2.rotation.y+=.006*speedMult;
+
+    /* Camera orbit */
+    const camX=scrollPct>.15&&scrollPct<.35?Math.sin(t3*.12)*2.5:Math.sin(t3*.08)*1.2;
+    const camZ=scrollPct>.15&&scrollPct<.35?8.5:11;
+    camera.position.x+=(camX-camera.position.x)*.02;
+    camera.position.y+=(Math.cos(t3*.07)*.7-camera.position.y)*.02;
+    camera.position.z+=(camZ-camera.position.z)*.02;
+    camera.lookAt(0,0,0);
+
+    renderer.render(scene,camera);
+  }
+  loop();
+})();
+</script>
 </body>
 </html>

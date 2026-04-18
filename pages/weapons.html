@@ -1,186 +1,312 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оружие · Tim Gray · 7 Days to Die</title>
-    <meta name="description" content="Всё оружие 7 Days to Die: характеристики, крафт, моды. Лучшие стволы и холодное оружие.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: #050805;
-            font-family: 'Inter', sans-serif;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-        body::before {
-            content: "";
-            position: fixed; top:0; left:0; width:100%; height:100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
-            pointer-events: none; z-index: -1;
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0f0a; }
-        ::-webkit-scrollbar-thumb { background: #eab308; border-radius: 4px; box-shadow: 0 0 10px #eab308; }
-        .neon-text { text-shadow: 0 0 5px #eab308, 0 0 10px #eab308, 0 0 20px #ca8a04; }
-        .neon-border { box-shadow: 0 0 5px #eab308, 0 0 15px #ca8a04, inset 0 0 5px #eab308; }
-        .glass-panel {
-            background: rgba(10, 20, 10, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(234, 179, 8, 0.25);
-            border-radius: 24px;
-        }
-        .pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 15px #eab308; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(234, 179, 8, 0); } 100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); } }
-        .hover-lift { transition: all 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5), 0 0 15px rgba(234,179,8,0.2); border-color: #eab308; }
-        .filter-btn.active { background: rgba(234, 179, 8, 0.2); color: #fde047; border: 1px solid #eab308; }
-        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(234,179,8,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(234,179,8,0.03) 1px, transparent 1px); }
-    </style>
-</head>
-<body class="bg-grid">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АРСЕНАЛ // TIM GRAY OPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--acid:#a8e820;--blood:#cc2200;--amber:#e88020;--cold:#20aadd;--bg:#0e0a04;--card:rgba(26,20,8,.9);--border:rgba(232,136,32,.14);--border-hi:rgba(232,136,32,.4);--text:#c8b888;--hi:#f0e0b0;--muted:#7a6545;--glow:rgba(232,136,32,.3);--pa:#e88020}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);font-family:'Barlow Condensed',sans-serif;color:var(--text);overflow-x:hidden;cursor:crosshair;
+  background-image:linear-gradient(rgba(232,136,32,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(232,136,32,.04) 1px,transparent 1px);
+  background-size:80px 80px}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.022'/%3E%3C/svg%3E")}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#000}::-webkit-scrollbar-thumb{background:var(--amber)}
+#spb{position:fixed;top:0;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--amber),var(--acid));z-index:9999;box-shadow:0 0 8px var(--glow)}
 
-<!-- Навигация -->
-<nav class="glass-panel fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 px-6 py-3 flex items-center justify-between shadow-2xl neon-border" style="border-radius: 60px;">
-    <div class="flex items-center gap-3" data-aos="fade-right">
-        <i class="fas fa-skull text-3xl text-yellow-400"></i>
-        <a href="../index.html" class="font-bold text-xl text-yellow-300 neon-text tracking-wider">TIM GRAY</a>
-    </div>
-    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="../index.html" class="hover:text-yellow-300 transition">Главная</a>
-        <a href="guides.html" class="hover:text-yellow-300 transition">Гайды</a>
-        <a href="zombies.html" class="hover:text-yellow-300 transition">Зомби</a>
-        <a href="weapons.html" class="text-yellow-300 border-b-2 border-yellow-400 pb-1">Оружие</a>
-        <a href="about.html" class="hover:text-yellow-300 transition">О канале</a>
-    </div>
-    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 pulse-btn transition">
-        <i class="fab fa-youtube"></i> Подписаться
-    </a>
+/* NAV */
+nav{position:fixed;top:2px;left:0;right:0;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(10,8,4,.9);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(8,6,2,.97);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+.nav-brand{font-family:'Orbitron',sans-serif;font-weight:900;font-size:.9rem;color:var(--amber);text-decoration:none;letter-spacing:.12em}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.12em;color:var(--muted);text-decoration:none;padding:.5rem .75rem;position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:.75rem;right:.75rem;height:1px;background:var(--amber);transform:scaleX(0);transition:transform .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--amber)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-yt{font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:700;background:#cc0000;color:#fff;text-decoration:none;padding:.4rem .9rem;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:50vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:9rem 1.5rem 3rem;text-align:center;overflow:hidden}
+.hbg{position:absolute;inset:-20%;background:radial-gradient(ellipse 80% 100% at 50% 50%,rgba(180,100,10,.07),transparent 70%);will-change:transform}
+.hcrt{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px)}
+.hframe{position:absolute;inset:36px;pointer-events:none}
+.hframe::before{content:'';position:absolute;top:0;left:0;width:36px;height:36px;border-top:1.5px solid rgba(232,136,32,.4);border-left:1.5px solid rgba(232,136,32,.4)}
+.hframe::after{content:'';position:absolute;top:0;right:0;width:36px;height:36px;border-top:1.5px solid rgba(232,136,32,.4);border-right:1.5px solid rgba(232,136,32,.4)}
+.hframe span::before{content:'';position:absolute;bottom:0;left:0;width:36px;height:36px;border-bottom:1.5px solid rgba(232,136,32,.4);border-left:1.5px solid rgba(232,136,32,.4)}
+.hframe span::after{content:'';position:absolute;bottom:0;right:0;width:36px;height:36px;border-bottom:1.5px solid rgba(232,136,32,.4);border-right:1.5px solid rgba(232,136,32,.4)}
+.htag{font-family:'Orbitron',sans-serif;font-size:.58rem;letter-spacing:.25em;color:var(--muted);margin-bottom:.8rem}
+.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,11vw,8rem);line-height:.87;color:#fff;text-shadow:0 0 60px rgba(232,136,32,.2)}
+.htitle span{color:var(--amber)}
+.hsub{font-family:'Share Tech Mono',monospace;font-size:.7rem;letter-spacing:.2em;color:var(--muted);margin-top:.8rem}
+
+/* FILTER BAR */
+.filters{position:sticky;top:60px;z-index:400;background:rgba(10,8,4,.97);border-bottom:1px solid var(--border);padding:.6rem 2rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;backdrop-filter:blur(10px)}
+.fbtn{font-family:'Orbitron',sans-serif;font-size:.52rem;font-weight:700;letter-spacing:.1em;background:transparent;border:1px solid rgba(232,136,32,.25);color:var(--muted);padding:.3rem .75rem;cursor:crosshair;transition:all .2s;clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
+.fbtn:hover,.fbtn.active{background:rgba(232,136,32,.1);border-color:var(--amber);color:var(--amber);box-shadow:0 0 10px rgba(232,136,32,.12)}
+.fcount{margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--amber)}
+
+/* LAYOUT */
+.main-layout{display:grid;grid-template-columns:1fr 260px;gap:2rem;max-width:1400px;margin:0 auto;padding:2rem;align-items:start}
+
+/* WEAPON GRID */
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.wcard{background:var(--card);border:1px solid var(--border);padding:1.2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer}
+.wcard::before,.wcard::after{content:'';position:absolute;width:10px;height:10px;transition:width .25s,height .25s}
+.wcard::before{top:0;left:0;border-top:1px solid var(--amber);border-left:1px solid var(--amber)}
+.wcard::after{bottom:0;right:0;border-bottom:1px solid var(--amber);border-right:1px solid var(--amber)}
+.wcard:hover{border-color:var(--border-hi);transform:translateY(-3px)}
+.wcard:hover::before,.wcard:hover::after{width:18px;height:18px}
+.beam{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--amber),transparent);transform:translateX(-100%)}
+.wcard:hover .beam{animation:bscan .9s ease forwards}
+@keyframes bscan{to{transform:translateX(100%);opacity:0}}
+.whead{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+.wimg{width:50px;height:50px;object-fit:contain;filter:brightness(.8) saturate(.65);flex-shrink:0;transition:filter .3s}
+.wcard:hover .wimg{filter:brightness(1.1) saturate(1)}
+.wname{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--hi);line-height:1}
+.wcat{font-family:'Orbitron',sans-serif;font-size:.46rem;letter-spacing:.08em;color:var(--muted);margin-top:.1rem}
+.tier{display:inline-block;margin-top:.3rem;font-family:'Orbitron',sans-serif;font-size:.44rem;letter-spacing:.08em;padding:.1rem .4rem;border:1px solid}
+.tier.s{color:#a8d0a8;border-color:#a8d0a8}
+.tier.i{color:#a8c8e8;border-color:#a8c8e8}
+.tier.st{color:var(--amber);border-color:var(--amber)}
+.wdesc{font-family:'Share Tech Mono',monospace;font-size:.65rem;color:var(--muted);line-height:1.5;margin-bottom:.7rem}
+.wbars{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.5rem}
+.wbar-row{display:flex;align-items:center;gap:.5rem}
+.wbar-lbl{font-family:'Orbitron',sans-serif;font-size:.42rem;color:var(--muted);width:50px;flex-shrink:0}
+.wbar-track{flex:1;height:4px;background:rgba(232,136,32,.1)}
+.wbar-fill{height:100%;background:var(--amber);transition:width .6s ease}
+.wstat-row{display:flex;flex-wrap:wrap;gap:.3rem .8rem;font-family:'Share Tech Mono',monospace;font-size:.62rem}
+.wstat-k{color:var(--muted)}
+.wstat-v{color:var(--text)}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+[data-reveal].revealed{opacity:1;transform:none}
+
+/* ═══ STICKY ARMORY DISPLAY ═══ */
+.armory-display{position:sticky;top:100px;background:rgba(10,8,4,.95);border:1px solid var(--border);padding:1.2rem}
+.ad-title{font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.25em;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:.6rem;margin-bottom:1rem}
+.ad-hologram{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:1rem;border:1px solid rgba(232,136,32,.1);background:rgba(232,136,32,.02)}
+.ad-hologram::before{content:'';position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,transparent,transparent 6px,rgba(232,136,32,.03) 6px,rgba(232,136,32,.03) 7px);
+  animation:scan 3s linear infinite}
+@keyframes scan{from{background-position:0 0}to{background-position:0 100px}}
+.ad-icon{font-size:3.5rem;filter:sepia(50%) hue-rotate(20deg);position:relative;z-index:1;transition:transform .3s}
+.ad-corner{position:absolute;width:12px;height:12px}
+.ad-corner.tl{top:4px;left:4px;border-top:1px solid var(--amber);border-left:1px solid var(--amber)}
+.ad-corner.tr{top:4px;right:4px;border-top:1px solid var(--amber);border-right:1px solid var(--amber)}
+.ad-corner.bl{bottom:4px;left:4px;border-bottom:1px solid var(--amber);border-left:1px solid var(--amber)}
+.ad-corner.br{bottom:4px;right:4px;border-bottom:1px solid var(--amber);border-right:1px solid var(--amber)}
+.ad-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--hi);line-height:1;margin-bottom:.2rem;transition:color .3s}
+.ad-cat{font-family:'Orbitron',sans-serif;font-size:.46rem;letter-spacing:.1em;color:var(--muted);margin-bottom:1rem}
+.ad-stat{display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid rgba(232,136,32,.07);font-family:'Share Tech Mono',monospace;font-size:.6rem}
+.ad-stat-k{color:var(--muted)}
+.ad-stat-v{color:var(--amber)}
+.ad-bar{height:3px;background:rgba(232,136,32,.1);margin-top:.6rem;margin-bottom:.3rem;position:relative;overflow:hidden}
+.ad-bar-fill{height:100%;background:linear-gradient(90deg,var(--amber),var(--acid));width:0%;transition:width .8s ease;position:relative}
+.ad-bar-fill::after{content:'';position:absolute;right:0;top:-2px;width:4px;height:7px;background:#fff;opacity:.8}
+.ad-hint{font-family:'Orbitron',sans-serif;font-size:.44rem;letter-spacing:.1em;color:var(--muted);text-align:center;margin-top:.8rem;opacity:.6}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.modal.open{display:flex}
+.mbox{background:rgba(14,10,4,.98);border:1px solid rgba(232,136,32,.4);max-width:600px;width:90%;max-height:85vh;overflow-y:auto;position:relative;padding:2rem}
+.mbox::before{content:'';position:absolute;top:0;left:0;width:24px;height:24px;border-top:2px solid var(--amber);border-left:2px solid var(--amber)}
+.mclose{position:absolute;top:.8rem;right:.8rem;background:transparent;border:1px solid var(--amber);color:var(--amber);font-family:'Orbitron',sans-serif;font-size:.55rem;padding:.25rem .6rem;cursor:crosshair;letter-spacing:.1em;transition:all .2s}
+.mclose:hover{background:var(--amber);color:#000}
+
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--muted)}
+footer a{color:var(--amber);text-decoration:none;margin:0 .5rem}
+
+@media(max-width:900px){.main-layout{grid-template-columns:1fr}.armory-display{display:none}}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-brand">TIM GRAY // OPS</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">ГЛАВНАЯ</a></li>
+    <li><a href="zombies.html">УГРОЗЫ</a></li>
+    <li><a href="weapons.html" class="active">АРСЕНАЛ</a></li>
+    <li><a href="guides.html">ПРОТОКОЛЫ</a></li>
+    <li><a href="about.html">ПРОФИЛЬ</a></li>
+  </ul>
+  <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="nav-yt">▶ КАНАЛ</a>
 </nav>
 
-<div class="h-24"></div>
-
-<!-- Заголовок -->
-<header class="py-16 text-center border-b border-yellow-900/40">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">
-        <span class="text-gradient" style="background: linear-gradient(135deg, #fde047, #eab308); -webkit-background-clip: text; background-clip: text; color: transparent;">Арсенал 7 Days to Die</span>
-    </h1>
-    <p class="text-xl text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Холодное, огнестрельное, взрывчатка — всё для уничтожения орды</p>
-</header>
-
-<!-- Фильтры -->
-<section class="py-8 max-w-6xl mx-auto px-4">
-    <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up">
-        <button class="filter-btn active px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="all">Всё</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="melee">Холодное</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="ranged">Огнестрел</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="explosive">Взрывчатка</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-yellow-800/50 transition" data-filter="tool">Инструменты</button>
-    </div>
+<section class="hero">
+  <div class="hbg" id="hbg"></div>
+  <div class="hcrt"></div>
+  <div class="hframe"><span></span></div>
+  <div style="position:relative;z-index:2">
+    <div class="htag">// ИНВЕНТАРЬ — СЕКТОР ВООРУЖЕНИЯ</div>
+    <h1 class="htitle">АРС<span>ЕНАЛ</span></h1>
+    <div class="hsub">ЗАРЕГИСТРИРОВАНО: <span id="wcount" style="color:var(--amber)">15</span> ЕДИНИЦ // ВЕРСИЯ ДАННЫХ: 2.0</div>
+  </div>
 </section>
 
-<!-- Сетка оружия -->
-<section class="py-8 max-w-6xl mx-auto px-4">
-    <div id="weaponsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        <!-- Сюда будет вставлен контент -->
-    </div>
-</section>
+<div class="filters" id="filterWrap"></div>
 
-<!-- Футер -->
-<footer class="bg-black/80 border-t border-yellow-900/50 py-10 mt-10">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="#" class="text-gray-400 hover:text-yellow-400 text-2xl"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="text-gray-400 hover:text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-gray-400 hover:text-yellow-400 text-2xl"><i class="fab fa-telegram"></i></a>
-        </div>
-        <p class="text-gray-500 text-sm">© 2025 Tim Gray · Фан-сайт 7 Days to Die</p>
+<div class="main-layout">
+  <div class="wgrid" id="wgrid"></div>
+
+  <!-- ═══ STICKY ARMORY DISPLAY ═══ -->
+  <aside class="armory-display">
+    <div class="ad-title">// ГОЛОГРАФИЧЕСКИЙ ДИСПЛЕЙ</div>
+    <div class="ad-hologram">
+      <div class="ad-corner tl"></div><div class="ad-corner tr"></div>
+      <div class="ad-corner bl"></div><div class="ad-corner br"></div>
+      <div class="ad-icon" id="adIcon">⚒</div>
     </div>
+    <div class="ad-name" id="adName">ВЫБЕРИТЕ</div>
+    <div class="ad-cat" id="adCat">НАВЕДИ НА ПРЕДМЕТ</div>
+    <div class="ad-stat"><span class="ad-stat-k">УРОН</span><span class="ad-stat-v" id="adDmg">—</span></div>
+    <div class="ad-stat"><span class="ad-stat-k">СКОРОСТЬ</span><span class="ad-stat-v" id="adSpd">—</span></div>
+    <div class="ad-stat"><span class="ad-stat-k">ПАТРОН</span><span class="ad-stat-v" id="adAmmo">—</span></div>
+    <div class="ad-stat"><span class="ad-stat-k">АТ/МИН</span><span class="ad-stat-v" id="adApm">—</span></div>
+    <div class="ad-stat"><span class="ad-stat-k">ТИР</span><span class="ad-stat-v" id="adTier">—</span></div>
+    <div style="margin-top:.6rem;font-family:'Orbitron',sans-serif;font-size:.44rem;letter-spacing:.1em;color:var(--muted)">ЭФФЕКТИВНОСТЬ</div>
+    <div class="ad-bar"><div class="ad-bar-fill" id="adBarFill"></div></div>
+    <div class="ad-hint">НАВЕДИ НА КАРТОЧКУ</div>
+  </aside>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="mbox">
+    <button class="mclose" id="mclose">[ ЗАКРЫТЬ ]</button>
+    <div id="mbody"></div>
+  </div>
+</div>
+
+<footer>
+  <a href="../index.html">ГЛАВНАЯ</a> | <a href="zombies.html">УГРОЗЫ</a> | <a href="weapons.html">АРСЕНАЛ</a> | <a href="guides.html">ПРОТОКОЛЫ</a> | <a href="about.html">ПРОФИЛЬ</a>
+  <div style="margin-top:.5rem">© 2025 TIM GRAY FANSITE // НЕ ОФИЦИАЛЬНЫЙ РЕСУРС</div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({ duration: 800, once: true });
+const items=[
+  {id:'W01',name:'Каменная кувалда',cat:'weapon',catN:'Ближний бой',tier:'s',tierN:'КАМЕНЬ',icon:'🔨',dmg:22.5,blkDmg:'45 / 50 / 55 / 57 / 62 / 67',stamina:24,speed:'Медленная',eff:30,desc:'Огромный урон по блокам, сбивает с ног. Идеальна для сноса стен.',tip:'Силовой удар мгновенно убивает обычных зомби.',img:'../Материалы/Картинки/meleeToolSalvageT1Wrench.png'},
+  {id:'W02',name:'Помповый дробовик',cat:'weapon',catN:'Дробовик',tier:'i',tierN:'ЖЕЛЕЗО',icon:'🔫',dmg:92,ammo:'12 калибр',speed:'Средняя',eff:78,desc:'Лучший дробовик для ближнего боя. Широкий разброс дроби.',tip:'Незаменим при орде — останавливает группы зомби.',img:'../Материалы/Картинки/Джен с дробовиком-no-bg.png'},
+  {id:'W03',name:'AK-47',cat:'weapon',catN:'Автомат',tier:'i',tierN:'ЖЕЛЕЗО',icon:'🔫',dmg:54,ammo:'7.62мм',attacksMin:600,speed:'Высокая',eff:70,desc:'Надёжный автомат для средней и дальней дистанции.',tip:'Короткие очереди для точности. Отлично при орде.',img:'../Материалы/Картинки/ammo762mmBulletAP.png'},
+  {id:'W04',name:'Снайперская винтовка',cat:'weapon',catN:'Снайперское',tier:'st',tierN:'СТАЛЬ',icon:'🎯',dmg:160,ammo:'7.62мм AP',speed:'Очень медленная',eff:90,desc:'Максимальный урон на дистанции. Один выстрел — одна цель.',tip:'Убивай крикуний и полицейских издалека.',img:'../Материалы/Картинки/ammo762mmBulletAP.png'},
+  {id:'T01',name:'Каменная кирка',cat:'mining',catN:'Кирка',tier:'s',tierN:'КАМЕНЬ',icon:'⛏',blkDmg:'15.2 / 16.9 / 18.5 / 19.1 / 20.8 / 22.4',stamina:22,attacksMin:70,eff:25,desc:'Базовый инструмент добычи. Начало пути шахтёра.',tip:'Прокачай Шахтёр 69\'er для двойного урона по блокам.',img:''},
+  {id:'T02',name:'Железная кирка',cat:'mining',catN:'Кирка',tier:'i',tierN:'ЖЕЛЕЗО',icon:'⛏',blkDmg:'28.8 / 32.0 / 35.2 / 36.2 / 39.5 / 42.5',stamina:19,attacksMin:70,eff:55,desc:'Значительно быстрее добывает руду. Незаменима в средней игре.',tip:'Лучший выбор до стальной кирки.',img:''},
+  {id:'T03',name:'Стальная кирка',cat:'mining',catN:'Кирка',tier:'st',tierN:'СТАЛЬ',icon:'⛏',blkDmg:'59.9 / 66.6 / 73.2 / 75.4 / 82.3 / 88.7',stamina:18,attacksMin:70,eff:85,desc:'Лучший инструмент добычи. Максимальная эффективность.',tip:'С перком и модами — королева добычи.',img:''},
+  {id:'T04',name:'Каменный топор',cat:'wood',catN:'Топор',tier:'s',tierN:'КАМЕНЬ',icon:'🪓',blkDmg:'11.2 / 12.5 / 13.7 / 14.1 / 15.4 / 16.6',stamina:18,attacksMin:80,eff:20,desc:'Начальный инструмент рубки дерева.',tip:'Руби всё в первые дни — нужна древесина для базы.',img:''},
+  {id:'T05',name:'Железный топор',cat:'wood',catN:'Топор',tier:'i',tierN:'ЖЕЛЕЗО',icon:'🪓',blkDmg:'21.1 / 23.5 / 25.8 / 26.6 / 29.0 / 31.3',stamina:17,attacksMin:80,eff:50,desc:'Оптимальный инструмент рубки в средней игре.',tip:'Перк Лесоруб для максимальной добычи.',img:''},
+  {id:'T06',name:'Нож мясника',cat:'butcher',catN:'Нож',tier:'i',tierN:'ЖЕЛЕЗО',icon:'🔪',blkDmg:'4.2 / 5.1 / 5.7 / 6.2',dmg:24,attacksMin:120,speed:'Очень быстрая',eff:65,desc:'Быстрый нож для скрытного убийства зомби.',tip:'Прокачай Ловкость. Тихое устранение без шума.',img:''},
+  {id:'T07',name:'Гаечный ключ',cat:'salvage',catN:'Разборка',tier:'s',tierN:'КАМЕНЬ',icon:'🔧',blkDmg:'39.6 / 43.9 / 48.1 / 54.1 / 58.4',stamina:16.5,attacksMin:50,eff:40,desc:'Разбирает машины для получения металла и запчастей.',tip:'Разбирай все машины — металлолом, пружины, масло.',img:'../Материалы/Картинки/meleeToolSalvageT1Wrench.png'},
+  {id:'T08',name:'Трещотка (Рэтчет)',cat:'salvage',catN:'Разборка',tier:'i',tierN:'ЖЕЛЕЗО',icon:'🔧',blkDmg:'70.8 / 78.6 / 86.5 / 97.2 / 104.5',stamina:18,attacksMin:50,eff:70,desc:'Улучшенный инструмент разбора. Вдвое эффективнее ключа.',tip:'Квест у торговца даст раньше срока.',img:''},
+  {id:'T09',name:'Молоток-коготь',cat:'repair',catN:'Строительство',tier:'s',tierN:'КАМЕНЬ',icon:'🔨',blkDmg:'22.3 / 24.7 / 27.2 / 30.4 / 32.9',stamina:17.1,attacksMin:70,eff:45,desc:'Улучшает и ремонтирует блоки строений.',tip:'Улучшай блоки до железа перед днём 7.',img:''},
+  {id:'T10',name:'Гвоздезабивной пистолет',cat:'repair',catN:'Строительство',tier:'i',tierN:'ЖЕЛЕЗО',icon:'🔫',blkDmg:'0.1',attacksMin:'2-3/сек',eff:80,desc:'Быстрое улучшение блоков — тратит патроны, экономит время.',tip:'Огромная экономия при подготовке к орде.',img:''},
+  {id:'T11',name:'Лопата',cat:'digging',catN:'Копка',tier:'s',tierN:'КАМЕНЬ',icon:'🪣',blkDmg:'14.4 / 16.0 / 17.6 / 19.7 / 21.3',stamina:20,attacksMin:70,eff:30,desc:'Инструмент копки земли, глины, песка. Рытьё бункеров.',tip:'Копай подземный бункер с первых дней.',img:''},
+];
 
-        const weapons = [
-            { name: "Каменная кувалда", type: "melee", dmg: 25, speed: "Медленная", stamina: 20, desc: "Огромный урон, сбивает с ног. Идеальна для старта.", craft: "Камень x10, Дерево x10" },
-            { name: "Бейсбольная бита", type: "melee", dmg: 18, speed: "Средняя", stamina: 12, desc: "Хороший баланс скорости и урона. Можно модифицировать.", craft: "Кованое железо x10, Дерево x10" },
-            { name: "Стальной клуб", type: "melee", dmg: 32, speed: "Средняя", stamina: 15, desc: "Максимальный урон среди дубин. Оглушает.", craft: "Сталь x20, Кожа x5" },
-            { name: "Стальные кастеты", type: "melee", dmg: 20, speed: "Очень быстрая", stamina: 5, desc: "Для билдов на ловкость. Скорость и шанс кровотечения.", craft: "Сталь x10, Кожа x5" },
-            { name: "Мачете", type: "melee", dmg: 22, speed: "Быстрая", stamina: 8, desc: "Высокий шанс обезглавливания.", craft: "Кованое железо x15" },
-            { name: "Примитивный лук", type: "ranged", dmg: 18, speed: "Медленная", ammo: "Каменные стрелы", desc: "Тихое оружие для скрытного прохождения.", craft: "Дерево x10, Растительные волокна x5" },
-            { name: "Составной лук", type: "ranged", dmg: 28, speed: "Средняя", ammo: "Железные/Стальные стрелы", desc: "Улучшенная версия, выше урон и точность.", craft: "Кованое железо x20, Кожа x10" },
-            { name: "Арбалет", type: "ranged", dmg: 35, speed: "Медленная", ammo: "Болты", desc: "Огромный урон, долгая перезарядка.", craft: "Кованое железо x25, Пружины x5" },
-            { name: "Трубчатый дробовик", type: "ranged", dmg: 45, speed: "Очень медленная", ammo: "Патроны 12 кал.", desc: "Дешёвый дробовик для ранней игры.", craft: "Трубы x10, Клей x5" },
-            { name: "Помповый дробовик", type: "ranged", dmg: 65, speed: "Медленная", ammo: "Патроны 12 кал.", desc: "Лучший дробовик для ближнего боя.", craft: "Сталь x30, Пружины x10" },
-            { name: "Пистолет", type: "ranged", dmg: 22, speed: "Быстрая", ammo: "9mm", desc: "Стандартный пистолет, хорош в начале.", craft: "Кованое железо x15, Пружины x5" },
-            { name: "Снайперская винтовка", type: "ranged", dmg: 85, speed: "Очень медленная", ammo: "7.62mm", desc: "Огромный урон на дальней дистанции.", craft: "Сталь x40, Оптика x1" },
-            { name: "Трубчатая бомба", type: "explosive", dmg: 150, radius: "5 блоков", desc: "Примитивная взрывчатка. Осторожно с таймером!", craft: "Трубы x5, Порох x20" },
-            { name: "Динамит", type: "explosive", dmg: 300, radius: "7 блоков", desc: "Мощная взрывчатка, уничтожает блоки.", craft: "Порох x50, Бумага x10" },
-            { name: "Коктейль Молотова", type: "explosive", dmg: 40, radius: "3 блока", desc: "Поджигает область, эффективен против толп.", craft: "Бензин x10, Ткань x5" },
-            { name: "Каменный топор", type: "tool", dmg: 12, desc: "Универсальный инструмент: рубит дерево, ломает блоки.", craft: "Камень x5, Дерево x5" },
-            { name: "Железная кирка", type: "tool", dmg: 15, desc: "Добыча руды и камня. Эффективнее каменной.", craft: "Кованое железо x10, Дерево x10" },
-            { name: "Стальная кирка", type: "tool", dmg: 22, desc: "Максимальная скорость добычи.", craft: "Сталь x20, Дерево x10" },
-            { name: "Бензопила", type: "tool", dmg: 30, desc: "Мгновенно валит деревья. Требует бензин.", craft: "Двигатель x1, Сталь x20" },
-            { name: "Дрель", type: "tool", dmg: 25, desc: "Быстро ломает блоки и добывает руду.", craft: "Двигатель x1, Сталь x25" }
-        ];
+const cats=[{k:'all',v:'ВСЁ'},{k:'weapon',v:'ОРУЖИЕ'},{k:'mining',v:'КИРКИ'},{k:'wood',v:'ТОПОРЫ'},{k:'butcher',v:'НОЖИ'},{k:'salvage',v:'РАЗБОР'},{k:'repair',v:'РЕМОНТ'},{k:'digging',v:'КОПКА'}];
+const tierLabel={s:'◈ КАМЕНЬ',i:'◈ ЖЕЛЕЗО',st:'◈ СТАЛЬ'};
+const fw=document.getElementById('filterWrap');
+const fcEl=document.createElement('span');fcEl.className='fcount';fcEl.id='fcount';
+cats.forEach(c=>{
+  const b=document.createElement('button');b.className='fbtn'+(c.k==='all'?' active':'');b.dataset.f=c.k;b.textContent=c.v;
+  b.onclick=()=>{document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(c.k);};
+  fw.appendChild(b);
+});
+fw.appendChild(fcEl);
 
-        const grid = document.getElementById('weaponsGrid');
-        
-        function getTypeName(type) {
-            const map = { melee: 'Холодное', ranged: 'Огнестрел', explosive: 'Взрывчатка', tool: 'Инструмент' };
-            return map[type] || type;
-        }
+function updateDisplay(item){
+  document.getElementById('adIcon').textContent=item.icon||'⚒';
+  document.getElementById('adName').textContent=item.name;
+  document.getElementById('adCat').textContent=item.catN.toUpperCase()+' // '+item.id;
+  document.getElementById('adDmg').textContent=item.dmg||'—';
+  document.getElementById('adSpd').textContent=item.speed||'—';
+  document.getElementById('adAmmo').textContent=item.ammo||'—';
+  document.getElementById('adApm').textContent=item.attacksMin||'—';
+  document.getElementById('adTier').textContent=item.tierN||'—';
+  document.getElementById('adBarFill').style.width=(item.eff||0)+'%';
+}
 
-        function renderWeapons(filter = 'all') {
-            if (!grid) return;
-            grid.innerHTML = '';
-            const filtered = filter === 'all' ? weapons : weapons.filter(w => w.type === filter);
-            filtered.forEach(w => {
-                const card = document.createElement('div');
-                card.className = 'glass-panel p-5 hover-lift';
-                card.setAttribute('data-aos', 'fade-up');
-                card.innerHTML = `
-                    <div class="flex items-start justify-between mb-2">
-                        <h3 class="text-xl font-bold text-yellow-300">${w.name}</h3>
-                        <span class="text-xs px-2 py-1 rounded bg-yellow-900/50 text-yellow-200">${getTypeName(w.type)}</span>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between"><span class="text-gray-400">⚔️ Урон:</span> <span class="font-medium">${w.dmg}</span></div>
-                        ${w.speed ? `<div class="flex justify-between"><span class="text-gray-400">⏱️ Скорость:</span> <span class="font-medium">${w.speed}</span></div>` : ''}
-                        ${w.stamina ? `<div class="flex justify-between"><span class="text-gray-400">💨 Выносливость:</span> <span class="font-medium">${w.stamina}</span></div>` : ''}
-                        ${w.ammo ? `<div class="flex justify-between"><span class="text-gray-400">🔫 Патроны:</span> <span class="font-medium">${w.ammo}</span></div>` : ''}
-                        ${w.radius ? `<div class="flex justify-between"><span class="text-gray-400">💥 Радиус:</span> <span class="font-medium">${w.radius}</span></div>` : ''}
-                        <p class="text-gray-300 mt-3 border-t border-yellow-800/30 pt-2">${w.desc}</p>
-                        ${w.craft ? `<p class="text-xs text-green-300 mt-2"><i class="fas fa-hammer mr-1"></i> ${w.craft}</p>` : ''}
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-            AOS.refresh();
-        }
+function render(f='all'){
+  const grid=document.getElementById('wgrid');grid.innerHTML='';
+  const list=f==='all'?items:items.filter(i=>i.cat===f);
+  fcEl.textContent=`ПОКАЗАНО: ${list.length}`;
+  document.getElementById('wcount').textContent=list.length;
+  list.forEach((item,idx)=>{
+    const el=document.createElement('div');el.className='wcard';el.dataset.reveal='';
+    const dmgN=item.dmg||0;
+    const blkN=typeof item.blkDmg==='number'?item.blkDmg:(parseFloat(String(item.blkDmg||'0').split('/')[0])||0);
+    const dmgPct=Math.min(100,Math.round(dmgN/2));
+    const blkPct=Math.min(100,Math.round(blkN/1.5));
+    const staPct=item.stamina?Math.min(100,Math.round((30-item.stamina)/30*100)):0;
+    el.innerHTML=`<div class="beam"></div>
+<div class="whead">
+  <div style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;background:rgba(232,136,32,.05);border:1px solid rgba(232,136,32,.15)">${item.icon||'⚒'}</div>
+  <div><div class="wname">${item.name}</div><div class="wcat">${item.catN}</div>${item.tier?`<span class="tier ${item.tier}">${tierLabel[item.tier]||''}</span>`:''}</div>
+</div>
+<p class="wdesc">${item.desc}</p>
+<div class="wbars">
+  ${dmgN?`<div class="wbar-row"><span class="wbar-lbl">УРОН</span><div class="wbar-track"><div class="wbar-fill" data-w="${dmgPct}" style="width:0;background:var(--blood)"></div></div><span style="font-family:'Share Tech Mono',monospace;font-size:.55rem;color:var(--muted)">${dmgN}</span></div>`:''}
+  ${blkN?`<div class="wbar-row"><span class="wbar-lbl">БЛОК</span><div class="wbar-track"><div class="wbar-fill" data-w="${blkPct}" style="width:0"></div></div></div>`:''}
+  ${staPct?`<div class="wbar-row"><span class="wbar-lbl">СТАМИНА</span><div class="wbar-track"><div class="wbar-fill" data-w="${staPct}" style="width:0;background:rgba(32,170,221,.8)"></div></div></div>`:''}
+</div>
+<div class="wstat-row">${item.attacksMin?`<span><span class="wstat-k">АТ/МИН:</span> <span class="wstat-v">${item.attacksMin}</span></span>`:''}${item.ammo?`<span><span class="wstat-k">ПАТРОН:</span> <span class="wstat-v">${item.ammo}</span></span>`:''}${item.speed?`<span><span class="wstat-k">СКОРОСТЬ:</span> <span class="wstat-v">${item.speed}</span></span>`:''}</div>`;
+    el.style.transitionDelay=`${Math.min(idx*.05,.4)}s`;
+    el.addEventListener('mouseenter',()=>updateDisplay(item));
+    el.onclick=()=>openModal(item);
+    grid.appendChild(el);
+    requestAnimationFrame(()=>{setTimeout(()=>el.querySelectorAll('.wbar-fill').forEach(b=>b.style.width=b.dataset.w+'%'),idx*30+100);});
+  });
+  setupReveal();
+}
 
-        // Первоначальный рендер
-        renderWeapons();
+function setupReveal(){
+  const ro=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed');});
+  },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(el=>ro.observe(el));
+}
 
-        // Фильтры
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                renderWeapons(this.dataset.filter);
-            });
-        });
-    });
+function openModal(item){
+  const blkStr=typeof item.blkDmg==='string'?item.blkDmg:String(item.blkDmg||'-');
+  document.getElementById('mbody').innerHTML=`
+<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">
+  <div style="width:68px;height:68px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:rgba(232,136,32,.05);border:1px solid rgba(232,136,32,.2);flex-shrink:0">${item.icon||'⚒'}</div>
+  <div>
+    <div style="font-family:'Orbitron',sans-serif;font-size:.5rem;color:var(--muted)">ФАЙЛ #${item.id} · ${item.tierN||''}</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;line-height:1">${item.name}</div>
+    <span style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--amber)">${item.catN.toUpperCase()}</span>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem">
+  ${item.dmg?`<div style="padding:.7rem;background:rgba(204,34,0,.07);border:1px solid rgba(204,34,0,.2)"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--muted);margin-bottom:.2rem">УРОН</div><div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--blood)">${item.dmg}</div></div>`:''}
+  ${item.ammo?`<div style="padding:.7rem;background:rgba(232,136,32,.06);border:1px solid rgba(232,136,32,.18)"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--muted);margin-bottom:.2rem">ПАТРОН</div><div style="font-family:'Share Tech Mono',monospace;font-size:.82rem;color:var(--pa)">${item.ammo}</div></div>`:''}
+  ${item.attacksMin?`<div style="padding:.7rem;background:rgba(232,136,32,.06);border:1px solid rgba(232,136,32,.18)"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--muted);margin-bottom:.2rem">АТАК/МИН</div><div style="font-family:'Share Tech Mono',monospace;font-size:.82rem;color:var(--pa)">${item.attacksMin}</div></div>`:''}
+  ${item.stamina?`<div style="padding:.7rem;background:rgba(32,170,221,.06);border:1px solid rgba(32,170,221,.18)"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--muted);margin-bottom:.2rem">СТАМИНА</div><div style="font-family:'Share Tech Mono',monospace;font-size:.82rem;color:#20aadd">${item.stamina}</div></div>`:''}
+</div>
+${item.blkDmg?`<div style="padding:.8rem;background:rgba(18,14,4,.8);border:1px solid var(--border);margin-bottom:1rem"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--amber);margin-bottom:.4rem">УРОН ПО БЛОКАМ (УР.1–6)</div><div style="font-family:'Share Tech Mono',monospace;font-size:.72rem;color:var(--text)">${blkStr}</div></div>`:''}
+<p style="font-size:.9rem;line-height:1.6;color:var(--text);margin-bottom:.8rem">${item.desc}</p>
+${item.tip?`<div style="padding:.8rem;background:rgba(168,232,32,.04);border:1px solid rgba(168,232,32,.15)"><div style="font-family:'Orbitron',sans-serif;font-size:.48rem;color:rgba(168,232,32,.7);margin-bottom:.4rem">◈ ТАКТИКА ПРИМЕНЕНИЯ</div><p style="font-size:.88rem;line-height:1.6;color:var(--text)">${item.tip}</p></div>`:''}`;
+  document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';
+}
+document.getElementById('mclose').onclick=()=>{document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modal').onclick=e=>{if(e.target===e.currentTarget){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}});
+
+const spb=document.getElementById('spb');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  spb.style.width=(window.scrollY/h*100)+'%';
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+  const hbg=document.getElementById('hbg');
+  if(window.scrollY<window.innerHeight)hbg.style.transform=`translateY(${window.scrollY*.3}px)`;
+},{passive:true});
+
+render();
 </script>
 </body>
 </html>

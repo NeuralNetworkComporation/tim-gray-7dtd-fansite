@@ -1,183 +1,822 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О канале · Tim Gray · 7 Days to Die</title>
-    <meta name="description" content="Информация о YouTube-канале Tim Gray: статистика, контент, ссылки.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: #050805;
-            font-family: 'Inter', sans-serif;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-        body::before {
-            content: "";
-            position: fixed; top:0; left:0; width:100%; height:100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
-            pointer-events: none; z-index: -1;
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0f0a; }
-        ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; box-shadow: 0 0 10px #3b82f6; }
-        .neon-text { text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 20px #2563eb; }
-        .neon-border { box-shadow: 0 0 5px #3b82f6, 0 0 15px #2563eb, inset 0 0 5px #3b82f6; }
-        .glass-panel {
-            background: rgba(10, 20, 30, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(59, 130, 246, 0.25);
-            border-radius: 24px;
-        }
-        .pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 15px #3b82f6; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
-        .hover-lift { transition: all 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5), 0 0 15px rgba(59,130,246,0.2); border-color: #3b82f6; }
-        .bg-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,130,246,0.03) 1px, transparent 1px); }
-        .stat-card { transition: all 0.3s; }
-        .stat-card:hover { background: rgba(59, 130, 246, 0.1); }
-    </style>
-</head>
-<body class="bg-grid">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ОПЕРАТИВНЫЙ ПРОФИЛЬ // TIM GRAY OPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --acid:#a8e820;--blood:#cc2200;--amber:#e88020;--cold:#20aadd;
+  --bg:#060e08;--bg2:#0a1408;--bg3:#101a0a;
+  --acid-dim:rgba(168,232,32,0.1);--acid-glow:rgba(168,232,32,0.4);
+  --text:#c8e8c0;--dim:#607860;--card-bg:rgba(10,20,8,0.92);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Barlow Condensed',sans-serif;
+  cursor:crosshair;overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(168,232,32,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(168,232,32,0.04) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:1;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity:.4;
+}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--acid)}
 
-<!-- Навигация -->
-<nav class="glass-panel fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 px-6 py-3 flex items-center justify-between shadow-2xl neon-border" style="border-radius: 60px;">
-    <div class="flex items-center gap-3" data-aos="fade-right">
-        <i class="fas fa-user-astronaut text-3xl text-blue-400"></i>
-        <a href="../index.html" class="font-bold text-xl text-blue-300 neon-text tracking-wider">TIM GRAY</a>
-    </div>
-    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="../index.html" class="hover:text-blue-300 transition">Главная</a>
-        <a href="guides.html" class="hover:text-blue-300 transition">Гайды</a>
-        <a href="zombies.html" class="hover:text-blue-300 transition">Зомби</a>
-        <a href="weapons.html" class="hover:text-blue-300 transition">Оружие</a>
-        <a href="about.html" class="text-blue-300 border-b-2 border-blue-400 pb-1">О канале</a>
-    </div>
-    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 pulse-btn transition">
-        <i class="fab fa-youtube"></i> Подписаться
-    </a>
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(6,14,8,0.95);
+  border-bottom:1px solid rgba(168,232,32,0.3);
+  backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2rem;height:56px;
+}
+.nav-logo{
+  font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:900;
+  color:var(--acid);letter-spacing:4px;text-decoration:none;
+  text-shadow:0 0 20px var(--acid-glow);
+}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;
+  letter-spacing:2px;color:var(--dim);text-decoration:none;
+  transition:color .2s;padding:4px 0;border-bottom:2px solid transparent;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--acid);border-color:var(--acid)}
+.nav-status{
+  font-family:'Share Tech Mono',monospace;font-size:.65rem;
+  color:var(--dim);display:flex;gap:1.5rem;align-items:center;
+}
+.status-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--acid);
+  display:inline-block;margin-right:6px;
+  box-shadow:0 0 8px var(--acid);
+  animation:pulse-a 2s infinite;
+}
+@keyframes pulse-a{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:80px 2rem 4rem;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 30% 50%,rgba(168,232,32,0.06) 0%,transparent 70%),
+    repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(168,232,32,0.01) 3px,rgba(168,232,32,0.01) 4px);
+}
+.hero-layout{
+  max-width:1400px;width:100%;margin:0 auto;
+  display:grid;grid-template-columns:400px 1fr;gap:5rem;
+  align-items:center;position:relative;z-index:2;
+}
+
+/* RADAR AVATAR */
+.radar-container{
+  display:flex;flex-direction:column;align-items:center;gap:1.5rem;
+}
+.radar{
+  position:relative;width:320px;height:320px;
+}
+.radar-rings{
+  position:absolute;inset:0;border-radius:50%;
+}
+.radar-ring{
+  position:absolute;border-radius:50%;border:1px solid rgba(168,232,32,0.2);
+}
+.radar-ring:nth-child(1){inset:0}
+.radar-ring:nth-child(2){inset:15%;border-color:rgba(168,232,32,0.15)}
+.radar-ring:nth-child(3){inset:30%;border-color:rgba(168,232,32,0.12)}
+.radar-ring:nth-child(4){inset:45%;border-color:rgba(168,232,32,0.1)}
+.radar-cross{
+  position:absolute;inset:0;
+}
+.radar-cross::before{
+  content:'';position:absolute;top:50%;left:0;right:0;
+  height:1px;background:rgba(168,232,32,0.15);transform:translateY(-50%);
+}
+.radar-cross::after{
+  content:'';position:absolute;left:50%;top:0;bottom:0;
+  width:1px;background:rgba(168,232,32,0.15);transform:translateX(-50%);
+}
+.radar-sweep{
+  position:absolute;inset:0;border-radius:50%;overflow:hidden;
+}
+.radar-sweep::after{
+  content:'';position:absolute;
+  width:50%;height:50%;
+  top:0;right:0;
+  background:conic-gradient(from 0deg,transparent 0deg,rgba(168,232,32,0.15) 60deg,transparent 60deg);
+  transform-origin:0% 100%;
+  animation:sweep 3s linear infinite;
+}
+@keyframes sweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.radar-avatar{
+  position:absolute;inset:30px;border-radius:50%;overflow:hidden;
+  border:2px solid rgba(168,232,32,0.4);
+  box-shadow:0 0 30px rgba(168,232,32,0.2),inset 0 0 30px rgba(168,232,32,0.05);
+}
+.radar-avatar img{
+  width:100%;height:100%;object-fit:cover;
+  filter:sepia(20%) hue-rotate(60deg) saturate(1.2);
+}
+.avatar-placeholder{
+  width:100%;height:100%;background:var(--bg2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Orbitron',sans-serif;font-size:3rem;font-weight:900;
+  color:var(--acid);opacity:.4;
+  text-shadow:0 0 30px var(--acid);
+}
+.radar-label{
+  font-family:'Share Tech Mono',monospace;font-size:.65rem;
+  color:var(--acid);letter-spacing:3px;text-align:center;
+  animation:pulse-a 2s infinite;
+}
+.radar-blips{position:absolute;inset:0}
+.blip{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:var(--acid);box-shadow:0 0 8px var(--acid);
+  animation:blip-pulse 2s infinite;
+}
+.blip:nth-child(1){top:20%;left:65%;animation-delay:.3s}
+.blip:nth-child(2){top:70%;left:25%;animation-delay:.8s}
+.blip:nth-child(3){top:45%;left:80%;animation-delay:1.4s}
+@keyframes blip-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.5)}}
+
+/* HERO RIGHT */
+.hero-info{}
+.hero-tag{
+  font-family:'Orbitron',sans-serif;font-size:.55rem;letter-spacing:6px;
+  color:var(--dim);margin-bottom:1rem;display:block;
+}
+.hero-callsign{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,5rem);
+  color:var(--acid);letter-spacing:4px;line-height:.9;
+  text-shadow:0 0 40px rgba(168,232,32,0.4);
+}
+.hero-realname{
+  font-family:'Orbitron',sans-serif;font-size:.9rem;
+  color:#fff;letter-spacing:3px;margin-top:.5rem;opacity:.7;
+}
+.hero-divider{
+  height:2px;width:80px;background:var(--acid);
+  margin:1.5rem 0;box-shadow:0 0 10px var(--acid);
+}
+.hero-bio{
+  font-size:1.1rem;font-weight:300;color:var(--dim);
+  line-height:1.8;max-width:500px;margin-bottom:2rem;
+}
+.readout-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+  margin-bottom:2rem;
+}
+.readout{
+  background:var(--card-bg);border:1px solid rgba(168,232,32,0.2);
+  padding:.8rem 1rem;position:relative;
+}
+.readout::before{
+  content:'';position:absolute;top:0;left:0;
+  border-top:2px solid var(--acid);border-left:2px solid var(--acid);
+  width:10px;height:10px;
+}
+.readout-label{
+  font-family:'Orbitron',sans-serif;font-size:.45rem;
+  letter-spacing:3px;color:var(--dim);display:block;margin-bottom:.3rem;
+}
+.readout-value{
+  font-family:'Share Tech Mono',monospace;font-size:1rem;
+  color:var(--acid);line-height:1;
+}
+.hero-cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{
+  font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;
+  letter-spacing:3px;padding:.7rem 1.8rem;
+  background:var(--acid);color:var(--bg);border:none;
+  cursor:crosshair;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+  transition:all .2s;text-decoration:none;display:inline-block;
+}
+.btn-primary:hover{background:#c8ff20;box-shadow:0 0 20px rgba(168,232,32,0.5)}
+.btn-outline{
+  font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;
+  letter-spacing:3px;padding:.7rem 1.8rem;
+  background:transparent;color:var(--acid);
+  border:1px solid rgba(168,232,32,0.5);
+  cursor:crosshair;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+  transition:all .2s;text-decoration:none;display:inline-block;
+}
+.btn-outline:hover{background:var(--acid-dim);border-color:var(--acid)}
+
+/* MAIN CONTENT */
+main{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:0 2rem 4rem}
+
+.section-header{
+  display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;
+  padding-bottom:1rem;border-bottom:1px solid rgba(168,232,32,0.2);
+}
+.section-tag{
+  font-family:'Orbitron',sans-serif;font-size:.55rem;
+  letter-spacing:4px;color:var(--dim);white-space:nowrap;
+}
+.section-title{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;
+  color:#fff;letter-spacing:3px;
+}
+.section-line{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,rgba(168,232,32,0.4),transparent);
+}
+
+/* CHANNEL STATS */
+.stats-section{margin-bottom:4rem}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
+}
+.stat-card{
+  background:var(--card-bg);border:1px solid rgba(168,232,32,0.2);
+  padding:1.5rem;text-align:center;position:relative;overflow:hidden;
+  transition:border-color .3s;
+}
+.stat-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  border-top:2px solid var(--acid);border-left:2px solid var(--acid);
+  width:16px;height:16px;pointer-events:none;
+}
+.stat-card::after{
+  content:'';position:absolute;bottom:0;right:0;
+  border-bottom:2px solid var(--acid);border-right:2px solid var(--acid);
+  width:16px;height:16px;pointer-events:none;
+}
+.stat-card:hover{border-color:rgba(168,232,32,0.5)}
+.stat-icon{
+  font-size:1.5rem;margin-bottom:.5rem;
+  filter:sepia(100%) hue-rotate(60deg) saturate(2) brightness(1.5);
+}
+.stat-number{
+  font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:900;
+  color:var(--acid);line-height:1;margin-bottom:.3rem;
+  text-shadow:0 0 20px var(--acid-glow);
+}
+.stat-label{
+  font-family:'Share Tech Mono',monospace;font-size:.6rem;
+  color:var(--dim);letter-spacing:2px;
+}
+
+/* CONTENT SECTIONS */
+.content-2col{
+  display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem;
+}
+.info-card{
+  background:var(--card-bg);border:1px solid rgba(168,232,32,0.2);
+  padding:1.5rem;position:relative;
+}
+.info-card::before{
+  content:'';position:absolute;top:0;left:0;
+  border-top:2px solid var(--acid);border-left:2px solid var(--acid);
+  width:16px;height:16px;
+}
+.info-card-title{
+  font-family:'Orbitron',sans-serif;font-size:.65rem;
+  letter-spacing:3px;color:var(--acid);margin-bottom:1rem;
+  padding-bottom:.7rem;border-bottom:1px solid rgba(168,232,32,0.2);
+}
+.spec-list{list-style:none}
+.spec-item{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:.6rem 0;border-bottom:1px solid rgba(168,232,32,0.08);
+  font-family:'Share Tech Mono',monospace;font-size:.72rem;
+}
+.spec-key{color:var(--dim)}
+.spec-val{color:var(--text);text-align:right}
+.spec-val.highlight{color:var(--acid)}
+
+/* TIMELINE */
+.timeline-section{margin-bottom:4rem}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{
+  content:'';position:absolute;left:6px;top:0;bottom:0;
+  width:1px;background:linear-gradient(180deg,var(--acid),transparent);
+}
+.timeline-item{
+  position:relative;margin-bottom:1.5rem;
+  padding:1.2rem 1.5rem;
+  background:var(--card-bg);border:1px solid rgba(168,232,32,0.15);
+}
+.timeline-item::before{
+  content:'';position:absolute;left:-2rem;top:1.4rem;
+  width:10px;height:10px;border-radius:50%;
+  background:var(--acid);box-shadow:0 0 12px var(--acid);
+}
+.timeline-year{
+  font-family:'Orbitron',sans-serif;font-size:.55rem;
+  letter-spacing:3px;color:var(--acid);margin-bottom:.3rem;
+}
+.timeline-event{
+  font-family:'Share Tech Mono',monospace;font-size:.8rem;
+  color:var(--text);line-height:1.5;
+}
+
+/* SERIES GRID */
+.series-section{margin-bottom:4rem}
+.series-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.2rem;
+}
+.series-card{
+  background:var(--card-bg);border:1px solid rgba(168,232,32,0.2);
+  padding:1.2rem;position:relative;overflow:hidden;
+  transition:all .3s;
+}
+.series-card:hover{
+  border-color:rgba(168,232,32,0.5);
+  transform:translateY(-2px);
+}
+.series-card::before{
+  content:'';position:absolute;top:0;left:0;
+  border-top:2px solid var(--acid);border-left:2px solid var(--acid);
+  width:14px;height:14px;
+}
+.series-num{
+  font-family:'Orbitron',sans-serif;font-size:2rem;font-weight:900;
+  color:var(--acid);opacity:.2;line-height:1;float:right;
+}
+.series-name{
+  font-family:'Bebas Neue',sans-serif;font-size:1.3rem;
+  color:#fff;letter-spacing:2px;margin-bottom:.4rem;
+}
+.series-desc{
+  font-size:.85rem;font-weight:300;color:var(--dim);
+  line-height:1.5;clear:both;
+}
+.series-badge{
+  display:inline-block;margin-top:.6rem;
+  font-family:'Share Tech Mono',monospace;font-size:.55rem;
+  padding:.2rem .5rem;background:var(--acid-dim);
+  border:1px solid rgba(168,232,32,0.3);color:var(--acid);letter-spacing:2px;
+}
+
+/* MISSION BOARD */
+.mission-section{margin-bottom:4rem}
+.missions-list{display:flex;flex-direction:column;gap:.8rem}
+.mission-item{
+  background:var(--card-bg);border:1px solid rgba(168,232,32,0.15);
+  padding:1rem 1.5rem;display:flex;align-items:center;gap:1.5rem;
+  transition:border-color .2s;
+}
+.mission-item:hover{border-color:rgba(168,232,32,0.4)}
+.mission-status{
+  width:10px;height:10px;border-radius:50%;flex-shrink:0;
+}
+.ms-complete{background:var(--acid);box-shadow:0 0 10px var(--acid)}
+.ms-active{background:var(--amber);box-shadow:0 0 10px var(--amber);animation:pulse-a 1.5s infinite}
+.ms-planned{background:var(--dim);border:1px solid var(--dim)}
+.mission-text{
+  font-family:'Share Tech Mono',monospace;font-size:.75rem;
+  color:var(--text);flex:1;line-height:1.4;
+}
+.mission-date{
+  font-family:'Orbitron',sans-serif;font-size:.5rem;
+  color:var(--dim);letter-spacing:2px;white-space:nowrap;
+}
+
+/* SUBSCRIBE SECTION */
+.subscribe-section{
+  background:rgba(168,232,32,0.04);
+  border:1px solid rgba(168,232,32,0.3);
+  padding:3rem;text-align:center;position:relative;overflow:hidden;
+  margin-bottom:4rem;
+}
+.subscribe-section::before{
+  content:'';position:absolute;top:0;left:0;
+  border-top:3px solid var(--acid);border-left:3px solid var(--acid);
+  width:30px;height:30px;
+}
+.subscribe-section::after{
+  content:'';position:absolute;bottom:0;right:0;
+  border-bottom:3px solid var(--acid);border-right:3px solid var(--acid);
+  width:30px;height:30px;
+}
+.sub-tag{
+  font-family:'Orbitron',sans-serif;font-size:.55rem;
+  letter-spacing:5px;color:var(--dim);margin-bottom:1rem;
+}
+.sub-title{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,4rem);
+  color:#fff;letter-spacing:4px;margin-bottom:.5rem;
+}
+.sub-title span{color:var(--acid)}
+.sub-sub{
+  font-family:'Share Tech Mono',monospace;font-size:.75rem;
+  color:var(--dim);margin-bottom:2rem;letter-spacing:2px;
+}
+
+/* FOOTER */
+footer{
+  position:relative;z-index:2;
+  border-top:1px solid rgba(168,232,32,0.2);
+  padding:2rem;text-align:center;
+  font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--dim);
+}
+footer a{color:var(--acid);text-decoration:none}
+footer a:hover{text-shadow:0 0 8px var(--acid)}
+
+@media(max-width:900px){
+  .hero-layout{grid-template-columns:1fr;gap:2rem}
+  .radar{width:240px;height:240px;margin:0 auto}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .content-2col{grid-template-columns:1fr}
+  .readout-grid{grid-template-columns:repeat(2,1fr)}
+  .nav-status{display:none}
+}
+
+/* SCROLLED NAV */
+#navMain{transition:background .3s,box-shadow .3s}
+#navMain.scrolled{background:rgba(6,14,8,.98)!important;box-shadow:0 4px 30px rgba(0,0,0,.5)}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal].revealed{opacity:1;transform:none}
+[data-reveal-left]{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal-left].revealed{opacity:1;transform:none}
+[data-reveal-right]{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+[data-reveal-right].revealed{opacity:1;transform:none}
+[data-reveal-delay="1"]{transition-delay:.1s}
+[data-reveal-delay="2"]{transition-delay:.2s}
+[data-reveal-delay="3"]{transition-delay:.3s}
+[data-reveal-delay="4"]{transition-delay:.4s}
+
+</style>
+</head>
+<body>
+<div id="spb" style="position:fixed;top:0;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--acid),var(--cold));z-index:9999;box-shadow:0 0 8px rgba(168,232,32,.4);transition:width .05s linear"></div>
+
+<nav id="navMain">
+  <a href="../index.html" class="nav-logo">TIM GRAY // OPS</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">ГЛАВНАЯ</a></li>
+    <li><a href="../pages/zombies.html">УГРОЗЫ</a></li>
+    <li><a href="../pages/weapons.html">АРСЕНАЛ</a></li>
+    <li><a href="../pages/guides.html">ПРОТОКОЛЫ</a></li>
+    <li><a href="../pages/about.html" class="active">ПРОФИЛЬ</a></li>
+  </ul>
+  <div class="nav-status">
+    <span><span class="status-dot"></span><span id="navTime">--:--:--</span></span>
+    <span>СТАТУС: АКТИВЕН</span>
+  </div>
 </nav>
 
-<div class="h-24"></div>
-
-<!-- Заголовок -->
-<header class="py-16 text-center border-b border-blue-900/40">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">
-        <span class="text-gradient" style="background: linear-gradient(135deg, #93c5fd, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent;">Tim Gray</span>
-    </h1>
-    <p class="text-xl text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">YouTube-канал о 7 Days to Die и выживании в постапокалипсисе</p>
-</header>
-
-<!-- Основная информация -->
-<section class="py-12 max-w-6xl mx-auto px-4">
-    <div class="grid md:grid-cols-2 gap-8">
-        <!-- Левая колонка -->
-        <div class="space-y-6" data-aos="fade-right">
-            <div class="glass-panel p-6">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-20 h-20 rounded-full bg-blue-900/60 flex items-center justify-center border-4 border-blue-400">
-                        <i class="fas fa-user-secret text-4xl text-blue-300"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold">Tim Gray</h2>
-                        <p class="text-blue-300">@Tim_Gray</p>
-                    </div>
-                </div>
-                <p class="text-gray-300 leading-relaxed">
-                    Tim Gray — русскоязычный ютубер, создающий контент по игре 7 Days to Die (версии 1.0+ и 2.5/2.6). 
-                    На канале выходят гайды, разборы обновлений, советы по выживанию, летсплеи и стримы. 
-                    Несмотря на скромное количество подписчиков, контент отличается глубиной и вниманием к деталям.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-3 gap-3">
-                <div class="glass-panel p-4 text-center stat-card">
-                    <i class="fas fa-users text-3xl text-blue-400 mb-2"></i>
-                    <div class="text-2xl font-bold">858+</div>
-                    <div class="text-xs text-gray-400">подписчиков</div>
-                </div>
-                <div class="glass-panel p-4 text-center stat-card">
-                    <i class="fas fa-video text-3xl text-blue-400 mb-2"></i>
-                    <div class="text-2xl font-bold">47+</div>
-                    <div class="text-xs text-gray-400">видео</div>
-                </div>
-                <div class="glass-panel p-4 text-center stat-card">
-                    <i class="fas fa-calendar-alt text-3xl text-blue-400 mb-2"></i>
-                    <div class="text-2xl font-bold">2024</div>
-                    <div class="text-xs text-gray-400">год старта</div>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-layout">
+    <div class="radar-container">
+      <div class="radar">
+        <div class="radar-rings">
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
         </div>
-        
-        <!-- Правая колонка -->
-        <div class="space-y-6" data-aos="fade-left">
-            <div class="glass-panel p-6">
-                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-link text-blue-400 mr-2"></i> Ссылки</h3>
-                <div class="space-y-3">
-                    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="flex items-center justify-between bg-red-900/30 hover:bg-red-900/60 p-3 rounded-lg transition">
-                        <span><i class="fab fa-youtube mr-2"></i> YouTube канал</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Tim_Gray/videos" target="_blank" class="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg transition">
-                        <span><i class="fas fa-play mr-2"></i> Все видео</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Tim_Gray/playlists" target="_blank" class="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg transition">
-                        <span><i class="fas fa-list mr-2"></i> Плейлисты</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Tim_Gray/community" target="_blank" class="flex items-center justify-between bg-gray-800/50 hover:bg-gray-800 p-3 rounded-lg transition">
-                        <span><i class="fas fa-users mr-2"></i> Сообщество</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="glass-panel p-6">
-                <h3 class="text-xl font-bold mb-3 flex items-center"><i class="fas fa-clock text-blue-400 mr-2"></i> Последние видео</h3>
-                <ul class="space-y-2 text-sm">
-                    <li class="border-b border-blue-800/30 pb-2">• 7 Days To Die 2.6 · Обзор обновления</li>
-                    <li class="border-b border-blue-800/30 pb-2">• Где найти латунь? Лучшие способы</li>
-                    <li class="border-b border-blue-800/30 pb-2">• Руда и ресурсы · Гайд для новичков</li>
-                    <li>• Боевые хитрости и оборона базы</li>
-                </ul>
-            </div>
+        <div class="radar-cross"></div>
+        <div class="radar-sweep"></div>
+        <div class="radar-blips">
+          <div class="blip"></div>
+          <div class="blip"></div>
+          <div class="blip"></div>
         </div>
+        <div class="radar-avatar">
+          <div class="avatar-placeholder">TG</div>
+        </div>
+      </div>
+      <div class="radar-label">⊕ СИГНАЛ ЗАХВАЧЕН // ИДЕНТИФИКАЦИЯ УСПЕШНА</div>
     </div>
-    
-    <!-- Контент-план -->
-    <div class="mt-8 glass-panel p-6" data-aos="fade-up">
-        <h3 class="text-xl font-bold mb-3"><i class="fas fa-calendar-check mr-2 text-blue-400"></i> Что выходит на канале</h3>
-        <div class="grid md:grid-cols-3 gap-4 text-sm">
-            <div class="p-3 rounded-lg bg-blue-950/20"><span class="font-bold text-blue-300">Понедельник</span> — новости и патчи</div>
-            <div class="p-3 rounded-lg bg-blue-950/20"><span class="font-bold text-blue-300">Среда</span> — гайд или разбор механики</div>
-            <div class="p-3 rounded-lg bg-blue-950/20"><span class="font-bold text-blue-300">Пятница</span> — стрим / летсплей</div>
+
+    <div class="hero-info">
+      <span class="hero-tag">// ДОСЬЕ — УРОВЕНЬ ДОСТУПА: ВЫЖИВШИЙ</span>
+      <div class="hero-callsign">TIM GRAY</div>
+      <div class="hero-realname">ПОЗЫВНОЙ: «СЕРЫЙ» // ЮТУБ-КОНТЕНТ-ОПЕРАТОР</div>
+      <div class="hero-divider"></div>
+      <p class="hero-bio">
+        Ветеран пустоши. Специализация — 7 Days to Die. Ведёт разведывательные репортажи из зоны заражения с 2014 года. Знает всё о выживании, фортификации и тактике ближнего боя с зомби-угрозами. Сотни часов боевого опыта задокументированы и доступны бесплатно.
+      </p>
+      <div class="readout-grid">
+        <div class="readout">
+          <span class="readout-label">ПЛАТФОРМА</span>
+          <div class="readout-value">YOUTUBE</div>
         </div>
+        <div class="readout">
+          <span class="readout-label">СПЕЦИАЛИЗАЦИЯ</span>
+          <div class="readout-value">7DTD</div>
+        </div>
+        <div class="readout">
+          <span class="readout-label">СТАТУС</span>
+          <div class="readout-value" style="color:#68dd68;font-size:.85rem">● АКТИВЕН</div>
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="btn-primary">⊕ ПОДПИСАТЬСЯ</a>
+        <a href="../index.html" class="btn-outline">↩ НА ГЛАВНУЮ</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Футер -->
-<footer class="bg-black/80 border-t border-blue-900/50 py-10 mt-10">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="text-gray-400 hover:text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-telegram"></i></a>
-        </div>
-        <p class="text-gray-500 text-sm">© 2025 Tim Gray · Фан-сайт 7 Days to Die</p>
+<main>
+
+  <!-- CHANNEL STATS -->
+  <div class="stats-section">
+    <div class="section-header">
+      <span class="section-tag">// РАЗДЕЛ 01</span>
+      <h2 class="section-title">БОЕВЫЕ ПОКАЗАТЕЛИ</h2>
+      <div class="section-line"></div>
     </div>
+    <div class="stats-grid">
+      <div class="stat-card" data-reveal="">
+        <div class="stat-icon">📺</div>
+        <div class="stat-number" id="subsCount">0</div>
+        <div class="stat-label">ПОДПИСЧИКОВ</div>
+      </div>
+      <div class="stat-card" data-reveal="">
+        <div class="stat-icon">🎬</div>
+        <div class="stat-number" id="videosCount">0</div>
+        <div class="stat-label">ВИДЕО</div>
+      </div>
+      <div class="stat-card" data-reveal="">
+        <div class="stat-icon">👁</div>
+        <div class="stat-number" id="viewsCount">0</div>
+        <div class="stat-label">ПРОСМОТРОВ</div>
+      </div>
+      <div class="stat-card" data-reveal="">
+        <div class="stat-icon">📅</div>
+        <div class="stat-number" id="yearsCount">0</div>
+        <div class="stat-label">ЛЕТ НА КАНАЛЕ</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPECS + SOCIAL -->
+  <div class="content-2col">
+    <div class="info-card" data-reveal="">
+      <div class="info-card-title">// ТАКТИЧЕСКИЕ ХАРАКТЕРИСТИКИ</div>
+      <ul class="spec-list">
+        <li class="spec-item"><span class="spec-key">ОСНОВНАЯ ИГРА</span><span class="spec-val highlight">7 Days to Die</span></li>
+        <li class="spec-item"><span class="spec-key">ТИП КОНТЕНТА</span><span class="spec-val">Let's Play / Туториалы / Гайды</span></li>
+        <li class="spec-item"><span class="spec-key">ЯЗЫК</span><span class="spec-val">Английский</span></li>
+        <li class="spec-item"><span class="spec-key">РЕЖИМ</span><span class="spec-val">Сольный / Кооп</span></li>
+        <li class="spec-item"><span class="spec-key">СЛОЖНОСТЬ</span><span class="spec-val">Warrior / Nightmare</span></li>
+        <li class="spec-item"><span class="spec-key">ВЕРСИЯ</span><span class="spec-val">Alpha 21 / 1.0</span></li>
+        <li class="spec-item"><span class="spec-key">ПЛАТФОРМА</span><span class="spec-val">PC (Steam)</span></li>
+        <li class="spec-item"><span class="spec-key">МОДИФИКАЦИИ</span><span class="spec-val">Vanilla + Моды</span></li>
+      </ul>
+    </div>
+    <div class="info-card" data-reveal="">
+      <div class="info-card-title">// ОПЕРАТИВНЫЕ ССЫЛКИ</div>
+      <ul class="spec-list">
+        <li class="spec-item">
+          <span class="spec-key">YouTube</span>
+          <span class="spec-val"><a href="https://www.youtube.com/@Tim_Gray" target="_blank" style="color:var(--acid);text-decoration:none">@Tim_Gray ↗</a></span>
+        </li>
+        <li class="spec-item">
+          <span class="spec-key">Фан-сайт</span>
+          <span class="spec-val highlight">timgray.ops</span>
+        </li>
+        <li class="spec-item">
+          <span class="spec-key">Официальность</span>
+          <span class="spec-val" style="color:var(--blood)">НЕ ОФИЦИАЛЬНЫЙ</span>
+        </li>
+        <li class="spec-item">
+          <span class="spec-key">Создан</span>
+          <span class="spec-val">Сообществом фанатов</span>
+        </li>
+        <li class="spec-item">
+          <span class="spec-key">7 Days to Die</span>
+          <span class="spec-val"><a href="https://store.steampowered.com/app/251570" target="_blank" style="color:var(--acid);text-decoration:none">Steam ↗</a></span>
+        </li>
+        <li class="spec-item">
+          <span class="spec-key">Разработчик</span>
+          <span class="spec-val">The Fun Pimps</span>
+        </li>
+        <li class="spec-item">
+          <span class="spec-key">Жанр</span>
+          <span class="spec-val">Survival Horror / Sandbox</span>
+        </li>
+        <li class="spec-item">
+          <span class="spec-key">Год релиза</span>
+          <span class="spec-val">2013 (Early Access)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline-section">
+    <div class="section-header">
+      <span class="section-tag">// РАЗДЕЛ 02</span>
+      <h2 class="section-title">ХРОНОЛОГИЯ ОПЕРАЦИЙ</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item" data-reveal-right="">
+        <div class="timeline-year">2014 — НАЧАЛО ОПЕРАЦИИ</div>
+        <div class="timeline-event">Первые видео по 7 Days to Die. Канал запущен. Зомби-апокалипсис привлёк внимание первых зрителей.</div>
+      </div>
+      <div class="timeline-item" data-reveal-left="">
+        <div class="timeline-year">2016-2018 — РАСШИРЕНИЕ БАЗЫ</div>
+        <div class="timeline-event">Серии Let's Play разных Alpha-версий. Рост аудитории. Гайды и туториалы становятся основным контентом.</div>
+      </div>
+      <div class="timeline-item" data-reveal-right="">
+        <div class="timeline-year">2020-2022 — АКТИВНАЯ ЗОНА</div>
+        <div class="timeline-event">Alpha 19-20. Обширные серии прохождений. Сравнение версий игры. Кооп-серии с другими ютуберами.</div>
+      </div>
+      <div class="timeline-item" data-reveal-left="">
+        <div class="timeline-year">2023 — ALPHA 21</div>
+        <div class="timeline-event">Полное прохождение Alpha 21. Детальные гайды по новым механикам. Серии по оружию и выживанию.</div>
+      </div>
+      <div class="timeline-item" data-reveal-right="">
+        <div class="timeline-year">2024 — 1.0 RELEASE</div>
+        <div class="timeline-event">Исторический релиз 7 Days to Die версии 1.0 после 10+ лет Early Access. Tim Gray одним из первых разбирает все изменения.</div>
+      </div>
+      <div class="timeline-item" style="border-color:rgba(168,232,32,0.4)">
+        <div class="timeline-year" style="color:#68dd68">2025+ — ПРОДОЛЖЕНИЕ ОПЕРАЦИИ</div>
+        <div class="timeline-event" style="color:#a0d090">Канал активен. Новый контент выходит регулярно. Орды продолжаются.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERIES -->
+  <div class="series-section">
+    <div class="section-header">
+      <span class="section-tag">// РАЗДЕЛ 03</span>
+      <h2 class="section-title">СЕРИИ ОПЕРАЦИЙ</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="series-grid">
+      <div class="series-card" data-reveal="">
+        <div class="series-num">01</div>
+        <div class="series-name">ВЫЖИВАНИЕ С НУЛЯ</div>
+        <div class="series-desc">Прохождение с самого начала на высокой сложности. Каждый шаг, каждое решение показано и объяснено.</div>
+        <span class="series-badge">LET'S PLAY</span>
+      </div>
+      <div class="series-card" data-reveal="">
+        <div class="series-num">02</div>
+        <div class="series-name">ТАКТИКА ОРДЫ</div>
+        <div class="series-desc">Специальные серии посвящённые подготовке и прохождению кровавых лун. Разные базы, разные тактики.</div>
+        <span class="series-badge">ГАЙДЫ</span>
+      </div>
+      <div class="series-card" data-reveal="">
+        <div class="series-num">03</div>
+        <div class="series-name">АРСЕНАЛ ВЫЖИВШЕГО</div>
+        <div class="series-desc">Детальные обзоры всего оружия и инструментов. Сравнение по уровням, билды, рекомендации.</div>
+        <span class="series-badge">ОБЗОРЫ</span>
+      </div>
+      <div class="series-card" data-reveal="">
+        <div class="series-num">04</div>
+        <div class="series-name">КООП В ЗОНЕ</div>
+        <div class="series-desc">Совместное выживание с другими ютуберами. Командная тактика, разделение ролей, хаос.</div>
+        <span class="series-badge">КООП</span>
+      </div>
+      <div class="series-card" data-reveal="">
+        <div class="series-num">05</div>
+        <div class="series-name">АРХИТЕКТУРА БАЗЫ</div>
+        <div class="series-desc">Строительство и фортификация. От временного лагеря до неприступной крепости. Инженерные решения.</div>
+        <span class="series-badge">СТРОИТЕЛЬСТВО</span>
+      </div>
+      <div class="series-card" data-reveal="">
+        <div class="series-num">06</div>
+        <div class="series-name">ВЕРСИЯ 1.0</div>
+        <div class="series-desc">Разбор финального релиза. Все изменения, новые механики, сравнение с Alpha 21. Исторический контент.</div>
+        <span class="series-badge">АКТУАЛЬНО</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSION BOARD -->
+  <div class="mission-section">
+    <div class="section-header">
+      <span class="section-tag">// РАЗДЕЛ 04</span>
+      <h2 class="section-title">ДОСКА ДОСТИЖЕНИЙ</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="missions-list">
+      <div class="mission-item" data-reveal="">
+        <div class="mission-status ms-complete"></div>
+        <div class="mission-text">Пережил первую кровавую луну на Nightmare сложности</div>
+        <div class="mission-date">ВЫПОЛНЕНО</div>
+      </div>
+      <div class="mission-item" data-reveal="">
+        <div class="mission-status ms-complete"></div>
+        <div class="mission-text">Задокументировал всех зомби включая радированных мутантов</div>
+        <div class="mission-date">ВЫПОЛНЕНО</div>
+      </div>
+      <div class="mission-item" data-reveal="">
+        <div class="mission-status ms-complete"></div>
+        <div class="mission-text">Построил неприступную базу, пережившую 20+ орд без ремонта</div>
+        <div class="mission-date">ВЫПОЛНЕНО</div>
+      </div>
+      <div class="mission-item" data-reveal="">
+        <div class="mission-status ms-complete"></div>
+        <div class="mission-text">Создал полный гайд по всем торговцам и системе квестов</div>
+        <div class="mission-date">ВЫПОЛНЕНО</div>
+      </div>
+      <div class="mission-item" data-reveal="">
+        <div class="mission-status ms-active"></div>
+        <div class="mission-text">Прохождение версии 1.0 — исследование всех новых механик</div>
+        <div class="mission-date">В ПРОЦЕССЕ</div>
+      </div>
+      <div class="mission-item" data-reveal="">
+        <div class="mission-status ms-active"></div>
+        <div class="mission-text">Серия кооп-выживания с другими создателями контента</div>
+        <div class="mission-date">В ПРОЦЕССЕ</div>
+      </div>
+      <div class="mission-item" data-reveal="">
+        <div class="mission-status ms-planned"></div>
+        <div class="mission-text">Мегапроект: выжить 200+ дней на максимальной сложности в прямом эфире</div>
+        <div class="mission-date">ЗАПЛАНИРОВАНО</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBSCRIBE CTA -->
+  <div class="subscribe-section">
+    <div class="sub-tag">// ФИНАЛЬНЫЙ ПРИКАЗ</div>
+    <div class="sub-title">ВСТУПИ В РЯДЫ<br><span>ВЫЖИВШИХ</span></div>
+    <div class="sub-sub">ПОДПИШИСЬ · СМОТРИ · ВЫЖИВАЙ // ЭТО НЕ ПРОСЬБА</div>
+    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="btn-primary">⊕ YOUTUBE: @TIM_GRAY</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>TIM GRAY FANSITE // НЕОФИЦИАЛЬНЫЙ РЕСУРС — НЕ СВЯЗАН С @TIM_GRAY</p>
+  <p style="margin-top:.5rem">
+    <a href="https://www.youtube.com/@Tim_Gray" target="_blank">YOUTUBE</a> &nbsp;|&nbsp;
+    <a href="../index.html">ГЛАВНАЯ</a> &nbsp;|&nbsp;
+    <a href="../pages/zombies.html">УГРОЗЫ</a> &nbsp;|&nbsp;
+    <a href="../pages/weapons.html">АРСЕНАЛ</a> &nbsp;|&nbsp;
+    <a href="../pages/guides.html">ПРОТОКОЛЫ</a>
+  </p>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 800, once: true });</script>
-</body>
-</html>
+<script>
+function animateCount(el,target,suffix='',duration=2000){
+  let start=0,startTime=null;
+  const step=ts=>{
+    if(!startTime)startTime=ts;
+    const p=Math.min((ts-startTime)/duration,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(ease*target)+suffix;
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target+suffix;
+  };
+  requestAnimationFrame(step);
+}
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const year=new Date().getFullYear();
+      animateCount(document.getElementById('subsCount'),50,'K+');
+      animateCount(document.getElementById('videosCount'),400,'+');
+      animateCount(document.getElementById('viewsCount'),5,'M+');
+      animateCount(document.getElementById('yearsCount'),year-2014,'+');
+      observer.disconnect();
+    }
+  });
+},{threshold:.3});
+const statsEl=document.querySelector('.stats-section');
+if(statsEl)observer.observe(statsEl);
+
+function tick(){
+  const n=new Date();
+  document.getElementById('navTime').textContent=n.toTimeString().slice(0,8);
+}
+setInterval(tick,1000);tick();
+
+/* ─ SCROLL PROGRESS ─ */
+const spb=document.getElementById('spb');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  spb.style.width=(window.scrollY/h*100)+'%';
+  document.getElementById('navMain').classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+/* ─ REVEAL ALL ─ */
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed');});
+},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-reveal],[data-reveal-left],[data-reveal-right]').forEach(el=>ro.observe(el));
+
+</script>

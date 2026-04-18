@@ -1,221 +1,333 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бестиарий · Tim Gray · 7 Days to Die</title>
-    <meta name="description" content="Полный список зомби из 7 Days to Die: обычные, бронированные, особые, животные. Характеристики и советы.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: #050805;
-            font-family: 'Inter', sans-serif;
-            color: #e2e8f0;
-            overflow-x: hidden;
-        }
-        body::before {
-            content: "";
-            position: fixed; top:0; left:0; width:100%; height:100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
-            pointer-events: none; z-index: -1;
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0f0a; }
-        ::-webkit-scrollbar-thumb { background: #2ecc71; border-radius: 4px; box-shadow: 0 0 10px #2ecc71; }
-        .neon-text { text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71, 0 0 20px #27ae60; }
-        .neon-border { box-shadow: 0 0 5px #2ecc71, 0 0 15px #27ae60, inset 0 0 5px #2ecc71; }
-        .glass-panel {
-            background: rgba(10, 20, 10, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(46, 204, 113, 0.25);
-            border-radius: 24px;
-        }
-        .pulse-btn { animation: pulse 2s infinite; box-shadow: 0 0 15px #2ecc71; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); } 100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); } }
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5), 0 0 15px rgba(46,204,113,0.2);
-            border-color: #2ecc71;
-        }
-        .filter-btn.active {
-            background: rgba(46, 204, 113, 0.2);
-            color: #a3e635;
-            border: 1px solid #2ecc71;
-        }
-        .zombie-card { transition: all 0.2s; }
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(46,204,113,0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(46,204,113,0.03) 1px, transparent 1px);
-        }
-    </style>
-</head>
-<body class="bg-grid">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>КЛАССИФИКАЦИЯ УГРОЗ // TIM GRAY OPS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--acid:#a8e820;--blood:#cc2200;--amber:#e88020;--cold:#20aadd;--bg:#0e0606;--card:rgba(26,10,10,.9);--border:rgba(204,34,0,.14);--border-hi:rgba(204,34,0,.4);--text:#c8a8a8;--hi:#f0d0d0;--muted:#7a5555;--glow:rgba(204,34,0,.3)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);font-family:'Barlow Condensed',sans-serif;color:var(--text);overflow-x:hidden;cursor:crosshair;
+  background-image:linear-gradient(rgba(204,34,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(204,34,0,.04) 1px,transparent 1px);
+  background-size:80px 80px}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.022'/%3E%3C/svg%3E")}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:#000}::-webkit-scrollbar-thumb{background:var(--blood)}
+#spb{position:fixed;top:0;left:0;width:0%;height:2px;background:linear-gradient(90deg,var(--blood),var(--amber));z-index:9999;box-shadow:0 0 8px var(--glow)}
 
-<!-- Навигация -->
-<nav class="glass-panel fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 px-6 py-3 flex items-center justify-between shadow-2xl neon-border" style="border-radius: 60px;">
-    <div class="flex items-center gap-3" data-aos="fade-right">
-        <i class="fas fa-skull text-3xl text-green-400"></i>
-        <a href="../index.html" class="font-bold text-xl text-green-300 neon-text tracking-wider">TIM GRAY</a>
-    </div>
-    <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="../index.html" class="hover:text-green-300 transition">Главная</a>
-        <a href="guides.html" class="hover:text-green-300 transition">Гайды</a>
-        <a href="zombies.html" class="text-green-300 border-b-2 border-green-400 pb-1">Зомби</a>
-        <a href="weapons.html" class="hover:text-green-300 transition">Оружие</a>
-        <a href="about.html" class="hover:text-green-300 transition">О канале</a>
-    </div>
-    <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2 pulse-btn transition">
-        <i class="fab fa-youtube"></i> Подписаться
-    </a>
+/* NAV */
+nav{position:fixed;top:2px;left:0;right:0;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(10,4,4,.9);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(8,2,2,.97);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+.nav-brand{font-family:'Orbitron',sans-serif;font-weight:900;font-size:.9rem;color:var(--blood);text-decoration:none;letter-spacing:.12em}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.12em;color:var(--muted);text-decoration:none;padding:.5rem .75rem;position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:.75rem;right:.75rem;height:1px;background:var(--blood);transform:scaleX(0);transition:transform .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blood)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-yt{font-family:'Orbitron',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.1em;background:#cc0000;color:#fff;text-decoration:none;padding:.4rem .9rem;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+@media(max-width:768px){.nav-links{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:55vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:9rem 1.5rem 3rem;text-align:center;overflow:hidden}
+.hbg{position:absolute;inset:-20%;background:radial-gradient(ellipse 80% 100% at 50% 50%,rgba(180,20,20,.08),transparent 70%);will-change:transform}
+.hcrt{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px)}
+.hframe{position:absolute;inset:36px;pointer-events:none}
+.hframe::before{content:'';position:absolute;top:0;left:0;width:36px;height:36px;border-top:1.5px solid rgba(204,34,0,.4);border-left:1.5px solid rgba(204,34,0,.4)}
+.hframe::after{content:'';position:absolute;top:0;right:0;width:36px;height:36px;border-top:1.5px solid rgba(204,34,0,.4);border-right:1.5px solid rgba(204,34,0,.4)}
+.hframe span::before{content:'';position:absolute;bottom:0;left:0;width:36px;height:36px;border-bottom:1.5px solid rgba(204,34,0,.4);border-left:1.5px solid rgba(204,34,0,.4)}
+.hframe span::after{content:'';position:absolute;bottom:0;right:0;width:36px;height:36px;border-bottom:1.5px solid rgba(204,34,0,.4);border-right:1.5px solid rgba(204,34,0,.4)}
+.htag{font-family:'Orbitron',sans-serif;font-size:.58rem;letter-spacing:.25em;color:var(--muted);margin-bottom:.8rem}
+.htitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,11vw,8rem);line-height:.87;color:#fff;text-shadow:0 0 60px rgba(204,34,0,.25)}
+.htitle span{color:var(--blood)}
+.hsub{font-family:'Share Tech Mono',monospace;font-size:.7rem;letter-spacing:.2em;color:var(--muted);margin-top:.8rem}
+
+/* FILTER BAR */
+.filters{position:sticky;top:60px;z-index:400;background:rgba(10,4,4,.97);border-bottom:1px solid var(--border);padding:.6rem 2rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;backdrop-filter:blur(10px)}
+.fbtn{font-family:'Orbitron',sans-serif;font-size:.52rem;font-weight:700;letter-spacing:.1em;background:transparent;border:1px solid rgba(204,34,0,.25);color:var(--muted);padding:.3rem .75rem;cursor:crosshair;transition:all .2s;clip-path:polygon(5px 0,100% 0,calc(100% - 5px) 100%,0 100%)}
+.fbtn:hover,.fbtn.active{background:rgba(204,34,0,.12);border-color:var(--blood);color:var(--blood);box-shadow:0 0 10px rgba(204,34,0,.15)}
+.fcount{margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--blood)}
+
+/* LAYOUT: SIDEBAR + GRID */
+.main-layout{display:grid;grid-template-columns:220px 1fr;gap:0;max-width:1400px;margin:0 auto;padding:2rem;align-items:start}
+
+/* ═══ STICKY THREAT MONITOR ═══ */
+.threat-monitor{position:sticky;top:100px;background:rgba(10,4,4,.95);border:1px solid var(--border);padding:1.2rem;z-index:100}
+.tm-title{font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.25em;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:.6rem;margin-bottom:1rem}
+.tm-radar{width:100%;aspect-ratio:1;position:relative;margin-bottom:1rem}
+.tm-radar svg{width:100%;height:100%}
+.radar-scan{transform-origin:50% 50%;animation:rsweep 3s linear infinite}
+@keyframes rsweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.tm-stat{display:flex;justify-content:space-between;align-items:baseline;padding:.3rem 0;border-bottom:1px solid rgba(204,34,0,.08);font-family:'Share Tech Mono',monospace;font-size:.62rem}
+.tm-stat-k{color:var(--muted)}
+.tm-stat-v{color:var(--blood)}
+.tm-alert{margin-top:.8rem;padding:.5rem .7rem;background:rgba(204,34,0,.08);border-left:2px solid var(--blood);font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--blood);line-height:1.5;animation:alertpulse 2s infinite}
+@keyframes alertpulse{0%,100%{opacity:1}50%{opacity:.6}}
+.tm-current{margin-top:.8rem;padding:.6rem;background:rgba(204,34,0,.05);border:1px solid rgba(204,34,0,.15)}
+.tm-current-label{font-family:'Orbitron',sans-serif;font-size:.45rem;letter-spacing:.12em;color:var(--muted);margin-bottom:.25rem}
+.tm-current-name{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#fff;line-height:1}
+.tm-danger-bar{display:flex;gap:2px;margin-top:.4rem}
+.tm-danger-seg{flex:1;height:4px;background:rgba(204,34,0,.1)}
+.tm-danger-seg.on{background:var(--blood)}
+
+/* ZOMBIE GRID */
+.zgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;padding:1rem 0 1rem 2rem}
+.zcard{background:var(--card);border:1px solid var(--border);padding:1.2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;cursor:pointer}
+.zcard::before,.zcard::after{content:'';position:absolute;width:10px;height:10px;transition:width .25s,height .25s}
+.zcard::before{top:0;left:0;border-top:1px solid var(--blood);border-left:1px solid var(--blood)}
+.zcard::after{bottom:0;right:0;border-bottom:1px solid var(--blood);border-right:1px solid var(--blood)}
+.zcard:hover{border-color:var(--border-hi);transform:translateY(-3px)}
+.zcard:hover::before,.zcard:hover::after{width:18px;height:18px}
+.beam{position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blood),transparent);transform:translateX(-100%)}
+.zcard:hover .beam{animation:bscan .9s ease forwards}
+@keyframes bscan{to{transform:translateX(100%);opacity:0}}
+.zbadge{position:absolute;top:.5rem;right:.5rem;font-family:'Orbitron',sans-serif;font-size:.45rem;letter-spacing:.08em;padding:.15rem .4rem;border:1px solid}
+.zbadge.c{color:#ff2222;border-color:#ff2222;background:rgba(255,34,34,.08)}
+.zbadge.h{color:var(--blood);border-color:var(--blood)}
+.zbadge.m{color:var(--amber);border-color:var(--amber)}
+.zbadge.n{color:var(--acid);border-color:var(--acid)}
+.zhead{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem}
+.zimg{width:50px;height:50px;object-fit:contain;filter:brightness(.85) saturate(.6);flex-shrink:0;transition:filter .3s}
+.zcard:hover .zimg{filter:brightness(1.05) saturate(1)}
+.zname{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--hi);line-height:1}
+.ztype{font-family:'Orbitron',sans-serif;font-size:.48rem;letter-spacing:.08em;color:var(--muted);margin-top:.1rem}
+.zstats{display:grid;grid-template-columns:auto 1fr auto 1fr;gap:.25rem .5rem;margin-bottom:.7rem;align-items:baseline}
+.zstat-k{font-family:'Orbitron',sans-serif;font-size:.48rem;letter-spacing:.08em;color:var(--muted)}
+.zstat-v{font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--text)}
+.zbars{display:flex;flex-direction:column;gap:.3rem}
+.zbar-row{display:flex;align-items:center;gap:.5rem}
+.zbar-lbl{font-family:'Orbitron',sans-serif;font-size:.42rem;color:var(--muted);width:50px;flex-shrink:0}
+.zbar-track{flex:1;height:4px;background:rgba(204,34,0,.1)}
+.zbar-fill{height:100%;background:var(--blood);transition:width .6s ease}
+.zdesc{font-size:.82rem;font-weight:300;color:var(--muted);line-height:1.5;margin-top:.6rem;font-family:'Share Tech Mono',monospace}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+[data-reveal].revealed{opacity:1;transform:none}
+
+/* MODAL */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.modal.open{display:flex}
+.mbox{background:rgba(14,6,6,.98);border:1px solid rgba(204,34,0,.4);max-width:600px;width:90%;max-height:85vh;overflow-y:auto;position:relative;padding:2rem}
+.mbox::before{content:'';position:absolute;top:0;left:0;width:24px;height:24px;border-top:2px solid var(--blood);border-left:2px solid var(--blood)}
+.mclose{position:absolute;top:.8rem;right:.8rem;background:transparent;border:1px solid var(--blood);color:var(--blood);font-family:'Orbitron',sans-serif;font-size:.55rem;padding:.25rem .6rem;cursor:crosshair;letter-spacing:.1em;transition:all .2s}
+.mclose:hover{background:var(--blood);color:#fff}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--muted)}
+footer a{color:var(--blood);text-decoration:none;margin:0 .5rem}
+
+@media(max-width:900px){.main-layout{grid-template-columns:1fr}.threat-monitor{display:none}.zgrid{padding:0}}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+
+<nav id="nav">
+  <a href="../index.html" class="nav-brand">TIM GRAY // OPS</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">ГЛАВНАЯ</a></li>
+    <li><a href="zombies.html" class="active">УГРОЗЫ</a></li>
+    <li><a href="weapons.html">АРСЕНАЛ</a></li>
+    <li><a href="guides.html">ПРОТОКОЛЫ</a></li>
+    <li><a href="about.html">ПРОФИЛЬ</a></li>
+  </ul>
+  <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="nav-yt">▶ КАНАЛ</a>
 </nav>
 
-<div class="h-24"></div>
-
-<!-- Заголовок -->
-<header class="py-16 text-center border-b border-green-900/40">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-4" data-aos="fade-up">
-        <span class="text-gradient" style="background: linear-gradient(135deg, #ef4444, #dc2626); -webkit-background-clip: text; background-clip: text; color: transparent;">Бестиарий 7 Days to Die</span>
-    </h1>
-    <p class="text-xl text-gray-400 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Все 34+ типа зомби — от ходока до одичавшего упыря</p>
-</header>
-
-<!-- Фильтры -->
-<section class="py-8 max-w-6xl mx-auto px-4">
-    <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up">
-        <button class="filter-btn active px-5 py-2 rounded-full text-sm font-medium border border-green-800/50 transition" data-filter="all">Все</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-green-800/50 transition" data-filter="normal">Обычные</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-green-800/50 transition" data-filter="armored">Бронированные</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-green-800/50 transition" data-filter="special">Особые</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-green-800/50 transition" data-filter="animal">Животные</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium border border-green-800/50 transition" data-filter="radiated">Радиационные</button>
-    </div>
+<section class="hero">
+  <div class="hbg" id="hbg"></div>
+  <div class="hcrt"></div>
+  <div class="hframe"><span></span></div>
+  <div style="position:relative;z-index:2">
+    <div class="htag">// БАЗА ДАННЫХ — СЕКТОР УГРОЗ // NAVEZGANE COUNTY</div>
+    <h1 class="htitle">КЛАССИФИКАЦИЯ<br><span>УГРОЗ</span></h1>
+    <div class="hsub">ЗАРЕГИСТРИРОВАНО: <span id="zcount" style="color:var(--blood)">15</span> ОБЪЕКТОВ // СТАТУС: АКТИВНЫЙ МОНИТОРИНГ</div>
+  </div>
 </section>
 
-<!-- Сетка зомби -->
-<section class="py-8 max-w-6xl mx-auto px-4">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="zombieGrid">
-        <!-- Карточки будут заполнены через JS, но для объёма вставлю часть статично -->
-    </div>
-</section>
+<div class="filters" id="filterWrap"></div>
 
-<!-- Футер -->
-<footer class="bg-black/80 border-t border-green-900/50 py-10 mt-10">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="#" class="text-gray-400 hover:text-green-400 text-2xl"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@Tim_Gray" target="_blank" class="text-gray-400 hover:text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-gray-400 hover:text-green-400 text-2xl"><i class="fab fa-telegram"></i></a>
-        </div>
-        <p class="text-gray-500 text-sm">© 2025 Tim Gray · Фан-сайт 7 Days to Die</p>
+<div class="main-layout">
+  <!-- ═══ STICKY THREAT MONITOR ═══ -->
+  <aside class="threat-monitor">
+    <div class="tm-title">// БИОЗОНД АКТИВЕН</div>
+    <div class="tm-radar">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(204,34,0,.15)" stroke-width=".5"/>
+        <circle cx="50" cy="50" r="36" fill="none" stroke="rgba(204,34,0,.1)" stroke-width=".5"/>
+        <circle cx="50" cy="50" r="24" fill="none" stroke="rgba(204,34,0,.08)" stroke-width=".5"/>
+        <circle cx="50" cy="50" r="12" fill="none" stroke="rgba(204,34,0,.06)" stroke-width=".5"/>
+        <line x1="2" y1="50" x2="98" y2="50" stroke="rgba(204,34,0,.1)" stroke-width=".5"/>
+        <line x1="50" y1="2" x2="50" y2="98" stroke="rgba(204,34,0,.1)" stroke-width=".5"/>
+        <g class="radar-scan">
+          <path d="M50,50 L98,50 A48,48 0 0,0 50,2 Z" fill="url(#swg)" opacity=".6"/>
+        </g>
+        <defs>
+          <radialGradient id="swg" cx="0%" cy="50%">
+            <stop offset="0%" stop-color="rgba(204,34,0,.4)"/>
+            <stop offset="100%" stop-color="rgba(204,34,0,0)"/>
+          </radialGradient>
+        </defs>
+        <circle id="blip1" cx="68" cy="32" r="2" fill="#cc2200" opacity=".8"><animate attributeName="opacity" values="1;.2;1" dur="1.8s" repeatCount="indefinite"/></circle>
+        <circle id="blip2" cx="28" cy="65" r="2" fill="#cc2200" opacity=".6"><animate attributeName="opacity" values=".2;1;.2" dur="2.3s" repeatCount="indefinite"/></circle>
+        <circle id="blip3" cx="72" cy="72" r="1.5" fill="#cc2200" opacity=".4"><animate attributeName="opacity" values="1;.1;1" dur="3s" repeatCount="indefinite"/></circle>
+      </svg>
     </div>
+    <div class="tm-stat"><span class="tm-stat-k">ВСЕГО УГРОЗ</span><span class="tm-stat-v" id="tmTotal">15</span></div>
+    <div class="tm-stat"><span class="tm-stat-k">ФИЛЬТР</span><span class="tm-stat-v" id="tmFilter">ВСЕ</span></div>
+    <div class="tm-stat"><span class="tm-stat-k">МАКС. УГРОЗА</span><span class="tm-stat-v">КРИТИЧЕСКАЯ</span></div>
+    <div class="tm-stat"><span class="tm-stat-k">ВЕРСИЯ</span><span class="tm-stat-v" style="color:var(--acid)">V2.0</span></div>
+    <div class="tm-current">
+      <div class="tm-current-label">АКТИВНЫЙ ОБЪЕКТ</div>
+      <div class="tm-current-name" id="tmName">—</div>
+      <div class="tm-danger-bar" id="tmBar">
+        <div class="tm-danger-seg"></div><div class="tm-danger-seg"></div><div class="tm-danger-seg"></div><div class="tm-danger-seg"></div><div class="tm-danger-seg"></div>
+      </div>
+    </div>
+    <div class="tm-alert">⚠ КРОВАВАЯ ЛУНА АКТИВИРУЕТ УСИЛЕННЫЕ ВАРИАНТЫ</div>
+  </aside>
+
+  <!-- ZOMBIE GRID -->
+  <div class="zgrid" id="zgrid"></div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="mbox">
+    <button class="mclose" id="mclose">[ ЗАКРЫТЬ ]</button>
+    <div id="mbody"></div>
+  </div>
+</div>
+
+<footer>
+  <a href="../index.html">ГЛАВНАЯ</a> | <a href="zombies.html">УГРОЗЫ</a> | <a href="weapons.html">АРСЕНАЛ</a> | <a href="guides.html">ПРОТОКОЛЫ</a> | <a href="about.html">ПРОФИЛЬ</a>
+  <div style="margin-top:.5rem">© 2025 TIM GRAY FANSITE // НЕ ОФИЦИАЛЬНЫЙ РЕСУРС</div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 800, once: true });
+const zombies=[
+  {id:'001',name:'Ходок',type:'normal',cat:'Обычный',hp:150,dmg:'Средний',spd:'Медленный (днём)',danger:3,img:'../Материалы/Картинки/Зомби мужчина.png',desc:'Самый распространённый тип. Ночью ускоряется и становится одичавшим.',tip:'Добивай в голову — экономит патроны. Лук отлично подходит ночью.'},
+  {id:'002',name:'Толстяк',type:'normal',cat:'Обычный',hp:280,dmg:'Высокий',spd:'Очень медленный',danger:3,img:'../Материалы/Картинки/Зомби мужчина.png',desc:'Много здоровья, опасен в ближнем бою и узких коридорах.',tip:'Используй ловушки или автомат. Не подпускай близко.'},
+  {id:'003',name:'Медсестра',type:'normal',cat:'Обычный',hp:180,dmg:'Средний',spd:'Средний',danger:3,img:'../Материалы/Картинки/Зомби женщина.png',desc:'Часто встречается в больницах. Может заразить инфекцией.',tip:'Имейте при себе антибиотики. Аптечки в больницах — хорошая награда.'},
+  {id:'004',name:'Деловой',type:'normal',cat:'Стройный',hp:125,dmg:'Низкий',spd:'Быстрый',danger:2,img:'../Материалы/Картинки/Зомби мужчина.png',desc:'Стройный зомби в костюме. Быстрее обычного, но HP ниже нормы. Появляется в офисных POI.',tip:'Лёгкая цель по отдельности. Опасен в группах — быстро окружает.'},
+  {id:'005',name:'Байкер',type:'armored',cat:'Бронированный',hp:300,dmg:'Высокий',spd:'Средний',danger:4,img:'../Материалы/Картинки/armorMoPowerHelmet.png',desc:'Шлем снижает урон в голову. Кожаная броня ослабляет удары.',tip:'Цельтесь в ноги или тело. Бронебойные патроны — лучший выбор.'},
+  {id:'006',name:'Солдат',type:'armored',cat:'Бронированный',hp:350,dmg:'Очень высокий',spd:'Средний',danger:5,img:'../Материалы/Картинки/clothingOutfitT3.png',desc:'Тяжёлая броня снижает почти весь урон. Один из опаснейших бронированных.',tip:'Взрывчатка или бронебойное оружие. Снайперка по незащищённым местам.'},
+  {id:'007',name:'Строитель',type:'armored',cat:'Бронированный',hp:270,dmg:'Высокий',spd:'Медленный',danger:4,img:'../Материалы/Картинки/armorCrackABookHelmet.png',desc:'Каска и рабочий жилет. 20% резистентность к урону, ломает блоки быстрее.',tip:'Лопата или кувалда. Низкая скорость делает его предсказуемым.'},
+  {id:'010',name:'Полицейский',type:'special',cat:'Особый',hp:400,dmg:'Очень высокий',spd:'Средний',danger:4,img:'../Материалы/Картинки/Джен с автоматом-no-bg.png',desc:'Плюётся кислотой, разрушающей блоки. ВЗРЫВАЕТСЯ после смерти! Вариант Version 2.0.',tip:'Убивай ИЗДАЛЕКА. Не подходи к трупу — взрыв смертелен. Снайперка идеальна.'},
+  {id:'011',name:'Горелый',type:'special',cat:'Особый',hp:250,dmg:'Высокий',spd:'Быстрый',danger:5,img:'../Материалы/Картинки/Джен с дробовиком-no-bg.png',desc:'Поджигает игрока при касании. Иммунен к огню. Часто в Burnt Forest.',tip:'Держи дистанцию. При возгорании — прыгни в воду немедленно.'},
+  {id:'012',name:'Паук',type:'special',cat:'Особый',hp:200,dmg:'Высокий',spd:'Очень быстрый',danger:4,img:'../Материалы/Картинки/Джен с лопатой.png',desc:'Лазает по стенам и потолку. Прыжковая атака. Наносит кровотечение при укусе.',tip:'Проверяй потолок! Дробовик в ближнем бою. Опасен в тесных помещениях.'},
+  {id:'013',name:'Крикунья',type:'special',cat:'Особый',hp:180,dmg:'Низкий',spd:'Средний',danger:4,img:'../Материалы/Картинки/Джен шахтерка-no-bg-preview (carve.photos).png',desc:'Криком призывает орду зомби в радиусе. Всегда приоритетная цель.',tip:'Убей НЕМЕДЛЕННО. Не давай закричать. Тихое оружие (лук) — идеально.'},
+  {id:'014',name:'Демолишер',type:'special',cat:'Особый',hp:2500,dmg:'Разрушительный',spd:'Медленный',danger:5,img:'../Материалы/Картинки/Рик.png',desc:'C4 на теле — ВЗРЫВАЕТСЯ при выстреле. Появляется в поздних ордах. Очень прочный.',tip:'СТРЕЛЯЙ В C4 с дальней дистанции — уничтожает всё рядом. Или RPG.'},
+  {id:'020',name:'Радиационный',type:'radiated',cat:'Радиационный',hp:300,dmg:'Высокий',spd:'Средний',danger:3,img:'../Материалы/Картинки/Зомби женщина 2.png',desc:'Зелёное свечение. Регенерирует здоровье со временем. Заражает радиацией.',tip:'Добивай быстро. Огонь блокирует регенерацию. Радиационная защита обязательна.'},
+  {id:'021',name:'Вайт',type:'radiated',cat:'Особый элитный',hp:3000,dmg:'Смертельный',spd:'Быстрый',danger:5,img:'../Материалы/Картинки/Зомби мужчина.png',desc:'Только в городах, ордах и пещерах. Не зависит от дня/ночи. Лучший лут при убийстве.',tip:'Ловушки + максимальное оружие. Не воюй ночью — слишком опасно.'},
+  {id:'030',name:'Зомби-пёс',type:'animal',cat:'Животное',hp:120,dmg:'Средний',spd:'Очень быстрый',danger:4,img:'../Материалы/Картинки/Заяц.png',desc:'Невероятно быстрый. Укус вызывает кровотечение. Атакует стаями.',tip:'Дробовик или автомат. Стая — верная смерть. Держи дистанцию всегда.'},
+];
 
-    // Данные бестиария
-    const zombies = [
-        // Обычные
-        { name: "Ходок", type: "normal", hp: 150, dmg: "Средний", speed: "Медленный", desc: "Самый распространённый зомби. Ночью становится одичавшим." },
-        { name: "Толстяк", type: "normal", hp: 250, dmg: "Высокий", speed: "Очень медленный", desc: "Много здоровья, медленно ходит." },
-        { name: "Медсестра", type: "normal", hp: 180, dmg: "Средний", speed: "Средний", desc: "Часто встречается в больницах." },
-        { name: "Стив", type: "normal", hp: 160, dmg: "Средний", speed: "Средний", desc: "Обычный парень в кепке." },
-        { name: "Женщина в платье", type: "normal", hp: 140, dmg: "Низкий", speed: "Средний", desc: "Быстро бегает ночью." },
-        { name: "Фермер", type: "normal", hp: 170, dmg: "Средний", speed: "Медленный", desc: "Встречается на фермах." },
-        { name: "Шахтёр", type: "normal", hp: 190, dmg: "Средний", speed: "Медленный", desc: "Имеет шлем, слегка бронирован." },
-        { name: "Гниющий труп", type: "normal", hp: 130, dmg: "Низкий", speed: "Медленный", desc: "Слабый, но может вызвать инфекцию." },
-        // Бронированные
-        { name: "Байкер", type: "armored", hp: 300, dmg: "Высокий", speed: "Средний", desc: "Шлем снижает урон в голову на 20%." },
-        { name: "Солдат", type: "armored", hp: 350, dmg: "Очень высокий", speed: "Средний", desc: "Бронежилет, высокое сопротивление урону." },
-        { name: "Строитель", type: "armored", hp: 280, dmg: "Высокий", speed: "Медленный", desc: "Каска, сильный удар." },
-        { name: "Толстяк в рубашке", type: "armored", hp: 400, dmg: "Высокий", speed: "Очень медленный", desc: "Огромный запас здоровья." },
-        { name: "Раздутый зомби", type: "armored", hp: 220, dmg: "Средний", speed: "Медленный", desc: "Взрывается при смерти, нанося урон." },
-        // Особые
-        { name: "Полицейский", type: "special", hp: 400, dmg: "Очень высокий", speed: "Средний", desc: "Плюётся кислотой, взрывается после смерти." },
-        { name: "Горелый", type: "special", hp: 250, dmg: "Высокий", speed: "Быстрый", desc: "Поджигает игрока при контакте. Иммунитет к огню." },
-        { name: "Паук-зомби", type: "special", hp: 200, dmg: "Высокий", speed: "Очень быстрый", desc: "Лазает по стенам, наносит кровотечение." },
-        { name: "Крикунья", type: "special", hp: 180, dmg: "Низкий", speed: "Средний", desc: "Призывает орду криком. Убивайте в первую очередь." },
-        { name: "Подрывник", type: "special", hp: 150, dmg: "Взрыв", speed: "Средний", desc: "При смерти или атаке в грудь взрывается, разрушая блоки." },
-        { name: "Одичавший упырь", type: "special", hp: 600, dmg: "Колоссальный", speed: "Быстрый", desc: "Регенерация здоровья, огромный урон. Мини-босс." },
-        { name: "Радиационный ходок", type: "radiated", hp: 300, dmg: "Высокий", speed: "Средний", desc: "Светится зелёным, регенерирует здоровье." },
-        { name: "Радиационный толстяк", type: "radiated", hp: 500, dmg: "Очень высокий", speed: "Медленный", desc: "Регенерация + огромный запас HP." },
-        { name: "Радиационный паук", type: "radiated", hp: 350, dmg: "Высокий", speed: "Очень быстрый", desc: "Регенерация и лазание по стенам." },
-        // Животные
-        { name: "Зомби-пёс", type: "animal", hp: 120, dmg: "Средний", speed: "Очень быстрый", desc: "Вызывает кровотечение, атакует стаями." },
-        { name: "Зомби-медведь", type: "animal", hp: 800, dmg: "Смертельный", speed: "Быстрый", desc: "Босс пустоши. Огромный урон и здоровье." },
-        { name: "Зомби-стервятник", type: "animal", hp: 100, dmg: "Средний", speed: "Летающий", desc: "Атакует с воздуха, плюётся." },
-        { name: "Грейс (кабаниха)", type: "animal", hp: 500, dmg: "Высокий", speed: "Быстрый", desc: "Уникальный босс в POI «Свиноферма»." },
-        { name: "Волк", type: "animal", hp: 150, dmg: "Средний", speed: "Быстрый", desc: "Обычный волк, агрессивен." },
-        { name: "Койот", type: "animal", hp: 100, dmg: "Низкий", speed: "Быстрый", desc: "Менее опасен, чем волк." },
-        { name: "Пума", type: "animal", hp: 180, dmg: "Высокий", speed: "Очень быстрый", desc: "Скрытная, нападает из засады." }
-    ];
+const cats=[{k:'all',v:'ВСЕ УГРОЗЫ'},{k:'normal',v:'ОБЫЧНЫЕ'},{k:'armored',v:'БРОНИРОВАННЫЕ'},{k:'special',v:'ОСОБЫЕ'},{k:'radiated',v:'ЭЛИТНЫЕ'},{k:'animal',v:'ЖИВОТНЫЕ'}];
+const fw=document.getElementById('filterWrap');
+const fcountEl=document.createElement('span');fcountEl.className='fcount';fcountEl.id='fcount';fw.appendChild(document.createTextNode(''));
+cats.forEach(c=>{
+  const b=document.createElement('button');b.className='fbtn'+(c.k==='all'?' active':'');b.dataset.f=c.k;b.textContent=c.v;
+  b.onclick=()=>{document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('tmFilter').textContent=c.v;render(c.k);};
+  fw.appendChild(b);
+});
+fw.appendChild(fcountEl);
 
-    const grid = document.getElementById('zombieGrid');
+const dangerLevel={1:'НИЗКАЯ',2:'УМЕРЕННАЯ',3:'СРЕДНЯЯ',4:'ВЫСОКАЯ',5:'КРИТИЧЕСКАЯ'};
+const dangerBadge={1:'n',2:'n',3:'m',4:'h',5:'c'};
 
-    function renderZombies(filter = 'all') {
-        grid.innerHTML = '';
-        const filtered = filter === 'all' ? zombies : zombies.filter(z => z.type === filter);
-        filtered.forEach(z => {
-            const card = document.createElement('div');
-            card.className = 'glass-panel p-5 hover-lift zombie-card';
-            card.setAttribute('data-aos', 'fade-up');
-            card.innerHTML = `
-                <div class="flex items-start justify-between mb-2">
-                    <h3 class="text-xl font-bold text-green-300">${z.name}</h3>
-                    <span class="text-xs px-2 py-1 rounded bg-green-900/50 text-green-200">${getTypeName(z.type)}</span>
-                </div>
-                <div class="space-y-2 text-sm">
-                    <div class="flex justify-between"><span class="text-gray-400">❤️ Здоровье:</span> <span class="font-medium">${z.hp}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-400">⚔️ Урон:</span> <span class="font-medium">${z.dmg}</span></div>
-                    <div class="flex justify-between"><span class="text-gray-400">🏃 Скорость:</span> <span class="font-medium">${z.speed}</span></div>
-                    <p class="text-gray-300 mt-3 border-t border-green-800/30 pt-2">${z.desc}</p>
-                </div>
-            `;
-            grid.appendChild(card);
-        });
-        AOS.refresh();
-    }
+function render(filter='all'){
+  const grid=document.getElementById('zgrid');grid.innerHTML='';
+  const list=filter==='all'?zombies:zombies.filter(z=>z.type===filter);
+  document.getElementById('fcount').textContent=`ПОКАЗАНО: ${list.length}`;
+  document.getElementById('tmTotal').textContent=list.length;
+  list.forEach((z,i)=>{
+    const el=document.createElement('div');el.className='zcard';el.dataset.reveal='';el.dataset.danger=z.danger;el.dataset.name=z.name;
+    const hpPct=Math.min(100,Math.round(z.hp/30));
+    const spdPct=z.spd.includes('Очень быстрый')?95:z.spd.includes('Быстрый')?75:z.spd.includes('Средний')?55:z.spd.includes('Очень медленный')?15:35;
+    const dmgPct=z.dmg.includes('Смертельный')||z.dmg.includes('Разрушительный')?100:z.dmg.includes('Очень высокий')?80:z.dmg.includes('Высокий')?65:z.dmg.includes('Средний')?45:25;
+    el.innerHTML=`<div class="beam"></div>
+<span class="zbadge ${dangerBadge[z.danger]}">${dangerLevel[z.danger]}</span>
+<div class="zhead"><img src="${z.img}" class="zimg" alt="${z.name}" onerror="this.style.display='none'">
+<div><div class="zname">${z.name}</div><div class="ztype">ФАЙЛ #${z.id} · ${z.cat.toUpperCase()}</div></div></div>
+<div class="zstats"><span class="zstat-k">HP:</span><span class="zstat-v">${z.hp}</span><span class="zstat-k">УРОН:</span><span class="zstat-v">${z.dmg}</span><span class="zstat-k">СКОРОСТЬ:</span><span class="zstat-v" style="grid-column:2/4">${z.spd}</span></div>
+<div class="zbars">
+<div class="zbar-row"><span class="zbar-lbl">HP</span><div class="zbar-track"><div class="zbar-fill" data-w="${hpPct}" style="width:0"></div></div></div>
+<div class="zbar-row"><span class="zbar-lbl">УРОН</span><div class="zbar-track"><div class="zbar-fill" data-w="${dmgPct}" style="width:0;background:var(--amber)"></div></div></div>
+<div class="zbar-row"><span class="zbar-lbl">СКОРОСТЬ</span><div class="zbar-track"><div class="zbar-fill" data-w="${spdPct}" style="width:0;background:var(--cold)"></div></div></div>
+</div>
+<p class="zdesc">${z.desc}</p>`;
+    el.onclick=()=>openModal(z);
+    el.style.transitionDelay=`${Math.min(i*.05,.4)}s`;
+    grid.appendChild(el);
+    requestAnimationFrame(()=>el.querySelectorAll('.zbar-fill').forEach(b=>{setTimeout(()=>b.style.width=b.dataset.w+'%',i*30+100);}));
+  });
+  setupReveal();
+  setupMonitor();
+}
 
-    function getTypeName(type) {
-        const map = {
-            normal: 'Обычный',
-            armored: 'Бронированный',
-            special: 'Особый',
-            animal: 'Животное',
-            radiated: 'Радиационный'
-        };
-        return map[type] || type;
-    }
+function setupReveal(){
+  const ro=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');updateMonitor(e.target);}});
+  },{threshold:.2});
+  document.querySelectorAll('[data-reveal]').forEach(el=>ro.observe(el));
+}
 
-    // Инициализация
-    renderZombies();
+function updateMonitor(el){
+  const name=el.dataset.name,danger=parseInt(el.dataset.danger)||0;
+  document.getElementById('tmName').textContent=name||'—';
+  const segs=document.querySelectorAll('.tm-danger-seg');
+  segs.forEach((s,i)=>s.classList.toggle('on',i<danger));
+}
+function setupMonitor(){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>.5)updateMonitor(e.target);});
+  },{threshold:.5});
+  document.querySelectorAll('.zcard').forEach(el=>io.observe(el));
+}
 
-    // Фильтры
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.dataset.filter;
-            renderZombies(filter);
-        });
-    });
+function openModal(z){
+  const dl=dangerLevel[z.danger];
+  const dc={КРИТИЧЕСКАЯ:'#ff2222',ВЫСОКАЯ:'#cc2200',СРЕДНЯЯ:var_amber='#e88020',УМЕРЕННАЯ:'#a8e820',НИЗКАЯ:'#a8e820'};
+  document.getElementById('mbody').innerHTML=`
+<div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)">
+  <img src="${z.img}" style="width:68px;height:68px;object-fit:contain;filter:brightness(.9) saturate(.6);flex-shrink:0" onerror="this.style.display='none'" alt="">
+  <div>
+    <div style="font-family:'Orbitron',sans-serif;font-size:.5rem;letter-spacing:.1em;color:var(--muted)">КЛАССИФИКАЦИОННЫЙ ФАЙЛ #${z.id}</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;line-height:1">${z.name}</div>
+    <span style="font-family:'Orbitron',sans-serif;font-size:.48rem;padding:.1rem .4rem;border:1px solid;color:${dc[dl]||'#cc2200'};border-color:${dc[dl]||'#cc2200'}">УГРОЗА: ${dl}</span>
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem">
+  <div style="padding:.7rem;background:rgba(204,34,0,.06);border:1px solid var(--border)"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--muted);margin-bottom:.2rem">ЗДОРОВЬЕ</div><div style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--blood)">${z.hp}</div></div>
+  <div style="padding:.7rem;background:rgba(204,34,0,.06);border:1px solid var(--border)"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--muted);margin-bottom:.2rem">УРОН</div><div style="font-family:'Share Tech Mono',monospace;font-size:.85rem;color:var(--text)">${z.dmg}</div></div>
+  <div style="padding:.7rem;background:rgba(204,34,0,.06);border:1px solid var(--border);grid-column:1/-1"><div style="font-family:'Orbitron',sans-serif;font-size:.46rem;color:var(--muted);margin-bottom:.2rem">СКОРОСТЬ</div><div style="font-family:'Share Tech Mono',monospace;font-size:.85rem;color:var(--text)">${z.spd}</div></div>
+</div>
+<p style="font-size:.9rem;line-height:1.6;color:var(--text);margin-bottom:1rem">${z.desc}</p>
+<div style="padding:.8rem;background:rgba(168,232,32,.04);border:1px solid rgba(168,232,32,.15)">
+  <div style="font-family:'Orbitron',sans-serif;font-size:.48rem;color:rgba(168,232,32,.7);margin-bottom:.4rem">◈ ТАКТИКА ЛИКВИДАЦИИ</div>
+  <p style="font-size:.88rem;line-height:1.6;color:var(--text)">${z.tip}</p>
+</div>`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+document.getElementById('mclose').onclick=()=>{document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modal').onclick=e=>{if(e.target===e.currentTarget){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}});
+
+/* ─── SCROLL ─── */
+const spb=document.getElementById('spb');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  spb.style.width=(window.scrollY/h*100)+'%';
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+  const hbg=document.getElementById('hbg');
+  if(window.scrollY<window.innerHeight)hbg.style.transform=`translateY(${window.scrollY*.3}px)`;
+},{passive:true});
+
+render();
 </script>
-
-<!-- Дополнительный контент для объёма (более 500 строк) -->
-<!-- Подробные описания, тактики против каждого зомби, таблицы урона и т.д. -->
 </body>
 </html>
